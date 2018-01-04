@@ -20,7 +20,7 @@ if (exec(`ngc`).code !== 0) {
 echo(chalk.green(`AoT compilation completed`));
 echo(`Start bundling`);
 echo(`Rollup package`);
-exec(`rollup -i ${NPM_DIR}/index.js -o ${MODULES_DIR}/${PACKAGE}.js --sourcemap`, { silent: true });
+exec(`rollup -i ${NPM_DIR}/index.js -o ${MODULES_DIR}/${PACKAGE}.js -f cjs --sourcemap`, { silent: true });
 exec(`node scripts/map-sources -f ${MODULES_DIR}/${PACKAGE}.js`);
 echo(`Downleveling ES2015 to ESM/ES5`);
 cp(`${MODULES_DIR}/${PACKAGE}.js`, `${MODULES_DIR}/${PACKAGE}.es5.ts`);

@@ -11,9 +11,11 @@ const globals = {
   'rxjs/Subscription' : 'Rx'
 };
 export default {
-  entry: './dist/modules/spaier-ng-recaptcha.es5.js',
-  dest: './dist/bundles/spaier-ng-recaptcha.umd.js',
-  format: 'umd',
+  input: './dist/modules/spaier-ng-recaptcha.es5.js',
+  output: {
+    file: './dist/bundles/spaier-ng-recaptcha.umd.js',
+    format: 'umd'
+  },
   exports: 'named',
   moduleName: 'ng.spaierRecaptcha',
   plugins: [
