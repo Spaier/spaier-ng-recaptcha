@@ -2,3 +2,5 @@
 node_modules
 # Ignore js bundle
 dist
+# Ignore Visual Studio files
+.vs
