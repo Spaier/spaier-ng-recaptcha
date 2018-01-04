@@ -1,5 +1,5 @@
 import {
-	AfterViewInit, Directive, HostListener, ElementRef, EventEmitter,
+	AfterViewInit, Directive, ElementRef, EventEmitter,
 	Input, NgZone, OnDestroy, Optional, Output, forwardRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';

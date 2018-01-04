@@ -18,8 +18,8 @@ export class RecaptchaLoaderService {
 
 	private _recaptcha: BehaviorSubject<ReCaptchaV2.ReCaptcha>
 
-	constructor( @Inject(PLATFORM_ID) private readonly platformId,
-		@Optional() @Inject(DOCUMENT) private readonly documentWrapper: Document,
+	constructor( @Inject(PLATFORM_ID) platformId,
+		@Optional() @Inject(DOCUMENT) documentWrapper: Document,
 		@Inject(RECAPTCHA_LANGUAGE) @Optional() public language: string) {
 		const onLoad = 'recaptchaloaded';
 
