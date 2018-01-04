@@ -12,13 +12,13 @@ Node >= 8.9.3 and npm or yarn >= 1.3.2
 
 ## Installation
 
-```
+```bash
 npm install spaier-ng-recaptcha
 ```
 
 or
 
-```
+```bash
 yarn add spaier-ng-recaptcha
 ```
 
@@ -26,7 +26,7 @@ yarn add spaier-ng-recaptcha
 ## Usage
 
 0. Import RecaptchaLoaderModule and provide RecaptchaConfig in your AppModule or CoreModule.
-```
+```typescript
 @NgModule({
 	imports: [
         ...
@@ -54,14 +54,14 @@ export class CoreModule {
 ```
 1. Add rcpRecaptcha directive to a html element.
 
-```
+```html
 <div rcpRecaptcha></div>
 
 ```
 
 2. Specify recaptcha parameters
 
-```
+```html
 <div rcpRecaptcha size="normal" siteKey="another key?" type="audio" theme="dark"></div>
 ```
 
@@ -69,7 +69,7 @@ export class CoreModule {
 
 Html template
 
-```
+```html
 <ng-container [formGroup]="someForm">
     <div rcpRecaptcha [formControlName]="someName"></div>
 </ng-container>
@@ -77,12 +77,12 @@ Html template
 
 4. Template Forms
 
-```
+```html
 <div rcp [(ngModel)]="someModel">
 ```
 
 In your component
-```
+```typescript
 someModel: string
 ```
 
