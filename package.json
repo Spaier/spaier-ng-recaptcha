@@ -16,6 +16,10 @@
     "angular-recaptcha",
     "ng-recaptcha"
   ],
+  "engines": {
+    "node": ">=8.9.3",
+    "yarn": ">=1.3.2 <2.0.0"
+  },
   "main": "index.js",
   "typings": "index.d.ts",
   "optionalDependencies": {
