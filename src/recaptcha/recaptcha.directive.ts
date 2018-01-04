@@ -7,7 +7,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
 import { RecaptchaConfig } from './recaptcha.config';
-import { RecaptchaLoaderService } from './loader/recaptcha-loader.service';
+import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service';
 
 @Directive({
 	selector: '[rcpRecaptcha]',
