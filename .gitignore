@@ -24,3 +24,4 @@ dist/*
 
 # Ignore Visual Studio files
 .vs
+.vscode
