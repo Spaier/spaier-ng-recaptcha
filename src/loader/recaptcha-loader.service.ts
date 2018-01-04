@@ -1,0 +1,49 @@
+import {
+	isPlatformBrowser, isPlatformServer, isPlatformWorkerApp, isPlatformWorkerUi, DOCUMENT
+} from '@angular/common';
+import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
+
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token';
+
+/**
+ * Service for loading recaptcha.
+ */
+@Injectable()
+export class RecaptchaLoaderService {
+
+	readonly recaptcha: Observable<ReCaptchaV2.ReCaptcha>
+
+	private _recaptcha: BehaviorSubject<ReCaptchaV2.ReCaptcha>
+
+	constructor( @Inject(PLATFORM_ID) private readonly platformId,
+		@Optional() @Inject(DOCUMENT) private readonly documentWrapper: Document,
+		@Inject(RECAPTCHA_LANGUAGE) @Optional() public language: string) {
+		const onLoad = 'recaptchaloaded';
+
+		this._recaptcha = new BehaviorSubject<ReCaptchaV2.ReCaptcha>(null);
+
+		if (isPlatformBrowser(platformId)) {
+			window[onLoad] = () => {
+				this._recaptcha.next(grecaptcha)
+			}
+			const googleRecaptchaUrl = 'https://www.google.com/recaptcha/api.js'
+			const script = documentWrapper.createElement('script')
+			const languageParameter = this.language ? '&hl=' + this.language : ''
+			script.src = `${googleRecaptchaUrl}?render=explicit&onload=${onLoad}${languageParameter}`
+			script.async = true
+			script.defer = true
+			documentWrapper.body.appendChild(script)
+		} else if (isPlatformServer(platformId)) {
+			// TODO
+		} else if (isPlatformWorkerApp(platformId)) {
+			// TODO
+		} else if (isPlatformWorkerUi(platformId)) {
+			// TODO
+		}
+
+		this.recaptcha = this._recaptcha.asObservable()
+	}
+}
