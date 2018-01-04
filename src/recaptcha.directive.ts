@@ -10,8 +10,8 @@ import { RecaptchaConfig } from './recaptcha.config';
 import { RecaptchaLoaderService } from './loader/recaptcha-loader.service';
 
 @Directive({
-	selector: '[appRecaptcha]',
-	exportAs: 'appRecaptcha',
+	selector: '[rcpRecaptcha]',
+	exportAs: 'rcpRecaptcha',
 	providers: [{
 		multi: true,
 		provide: NG_VALUE_ACCESSOR,
