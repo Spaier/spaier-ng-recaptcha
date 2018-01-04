@@ -39,5 +39,8 @@
     "tslint": "^5.8.0",
     "typescript": "~2.5.3"
   },
-  "scripts": {}
+  "readme": "README.md",
+  "scripts": {
+    "prepublish": "tsc"
+  }
 }
