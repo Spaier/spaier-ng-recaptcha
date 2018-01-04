@@ -87,7 +87,7 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 	}
 
 	/**
-	 * Resets recaptcha and
+	 * Resets recaptcha.
 	 */
 	ngOnDestroy(): void {
 		this.reset()
@@ -110,9 +110,6 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 		this.onTouched = fn
 	}
 
-	/**
-	 *
-	 */
 	getResponse(): string {
 		if (this.widgetId) {
 			return this.grecaptcha.getResponse(this.widgetId)
