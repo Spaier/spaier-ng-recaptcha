@@ -7,6 +7,8 @@
   ],
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
+    "rootDir": "./src",
     "skipLibCheck": true,
     "outDir": "./dist/",
     "module": "es2015",
