@@ -91,7 +91,6 @@
             "allow-null-check",
             "allow-undefined-check"
         ],
-        "typeof-compare": true,
         "use-default-type-parameter": true,
         "use-isnan": true,
         // Maintainability
