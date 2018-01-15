@@ -1,13 +1,24 @@
 {
+  "compileOnSave": false,
+  "files": [
+    "public-api.ts"
+  ],
   "exclude": [
+    "**/*.spec.ts",
     "node_modules"
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
+    "paths": {
+      "@angular/*": [
+        "node_modules/@angular/*"
+      ]
+    },
+    "outDir": "./dist",
     "skipLibCheck": true,
     "stripInternal": true,
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "target": "es2015",
     "lib": [
@@ -24,5 +35,14 @@
     "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true,
+    "flatModuleOutFile": "spaier-ng-recaptcha.js",
+    "flatModuleId": "spaier-ng-recaptcha"
   }
 }

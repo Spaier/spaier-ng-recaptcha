@@ -1,0 +1,4 @@
+/**
+ * @license spaier-ng-recaptcha
+ * MIT license
+ */

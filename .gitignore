@@ -1,27 +1,16 @@
 # Node
 node_modules
-npm-debug.log
+
+# Code coverage
+coverage
 
 # Ignore js bundle
 dist
-
-# Windows
-Thumbs.db
-Desktop.ini
-
-# Mac
-.DS_Store
-**/.DS_Store
-
-# Ngc generated files
-**/*.ngfactory.ts
-
-# Build files
-dist/*
-
-# Playground tmp files
-.playground
+*.tgz
 
 # Ignore Visual Studio files
 .vs
 .vscode
+
+# Tests
+*.log
