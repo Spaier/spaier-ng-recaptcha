@@ -19,9 +19,11 @@ export class RecaptchaLoaderService {
 	private _recaptcha: BehaviorSubject<ReCaptchaV2.ReCaptcha>
 
 	constructor( @Inject(PLATFORM_ID) platformId,
-		@Optional() @Inject(DOCUMENT) documentWrapper: Document,
+		@Optional() @Inject(DOCUMENT) documentWrapper,
 		@Inject(RECAPTCHA_LANGUAGE) @Optional() public language: string) {
 		const onLoad = 'recaptchaloaded';
+		// Workaround for angular bug. See issue: https://github.com/angular/angular/issues/15640
+		const documentObject = documentWrapper as Document
 
 		this._recaptcha = new BehaviorSubject<ReCaptchaV2.ReCaptcha>(null);
 
@@ -30,12 +32,12 @@ export class RecaptchaLoaderService {
 				this._recaptcha.next(grecaptcha)
 			}
 			const googleRecaptchaUrl = 'https://www.google.com/recaptcha/api.js'
-			const script = documentWrapper.createElement('script')
+			const script = documentObject.createElement('script')
 			const languageParameter = this.language ? '&hl=' + this.language : ''
 			script.src = `${googleRecaptchaUrl}?render=explicit&onload=${onLoad}${languageParameter}`
 			script.async = true
 			script.defer = true
-			documentWrapper.body.appendChild(script)
+			documentObject.body.appendChild(script)
 		} else if (isPlatformServer(platformId)) {
 			// TODO
 		} else if (isPlatformWorkerApp(platformId)) {
