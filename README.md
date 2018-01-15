@@ -1,10 +1,10 @@
 # spaier-ng-recaptcha
 [![Build Status](https://travis-ci.org/Spaier/spaier-ng-recaptcha.svg?branch=master)](https://travis-ci.org/Spaier/spaier-ng-recaptcha)
 [![npm](https://img.shields.io/npm/v/spaier-ng-recaptcha.svg)](https://www.npmjs.com/package/spaier-ng-recaptcha)
-[![npm](https://img.shields.io/npm/l/spaier-ng-recaptcha.svg)](https://www.npmjs.com/package/spaier-ng-recaptcha)]
+[![npm](https://img.shields.io/npm/l/spaier-ng-recaptcha.svg)](https://www.npmjs.com/package/spaier-ng-recaptcha)
 ## Prerequisites
 
-Node >= 8.9.3 and npm or yarn >= 1.3.2
+Node >= 8.9.4 and npm or yarn >= 1.3.2
 
 ## Table of Contents
 
@@ -80,7 +80,7 @@ Html template
 4. Template Forms
 
 ```html
-<div rcp [(ngModel)]="someModel">
+<div rcp [(ngModel)]="someModel"></div>
 ```
 
 In your component
