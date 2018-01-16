@@ -373,7 +373,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(platformId: , documentWrapper: Document, language: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                                    <code>constructor(platformId: , documentWrapper: , language: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                                 </td>
                             </tr>
                                     <tr>
@@ -407,7 +407,6 @@
                                                             <tr>
                                                               <td>documentWrapper</td>
                                                               <td>
-                                                                        <code>Document</code>
                                                               </td>
                                                               <td>
                                                               </td>
@@ -574,9 +573,11 @@ export class RecaptchaLoaderService {
 	private _recaptcha: BehaviorSubject&lt;ReCaptchaV2.ReCaptcha&gt;
 
 	constructor( @Inject(PLATFORM_ID) platformId,
-		@Optional() @Inject(DOCUMENT) documentWrapper: Document,
+		@Optional() @Inject(DOCUMENT) documentWrapper,
 		@Inject(RECAPTCHA_LANGUAGE) @Optional() public language: string) {
 		const onLoad &#x3D; &#x27;recaptchaloaded&#x27;;
+		// Workaround for angular bug. See issue: https://github.com/angular/angular/issues/15640
+		const documentObject &#x3D; documentWrapper as Document
 
 		this._recaptcha &#x3D; new BehaviorSubject&lt;ReCaptchaV2.ReCaptcha&gt;(null);
 
@@ -585,12 +586,12 @@ export class RecaptchaLoaderService {
 				this._recaptcha.next(grecaptcha)
 			}
 			const googleRecaptchaUrl &#x3D; &#x27;https://www.google.com/recaptcha/api.js&#x27;
-			const script &#x3D; documentWrapper.createElement(&#x27;script&#x27;)
+			const script &#x3D; documentObject.createElement(&#x27;script&#x27;)
 			const languageParameter &#x3D; this.language ? &#x27;&amp;hl&#x3D;&#x27; + this.language : &#x27;&#x27;
 			script.src &#x3D; &#x60;${googleRecaptchaUrl}?render&#x3D;explicit&amp;onload&#x3D;${onLoad}${languageParameter}&#x60;
 			script.async &#x3D; true
 			script.defer &#x3D; true
-			documentWrapper.body.appendChild(script)
+			documentObject.body.appendChild(script)
 		} else if (isPlatformServer(platformId)) {
 			// TODO
 		} else if (isPlatformWorkerApp(platformId)) {

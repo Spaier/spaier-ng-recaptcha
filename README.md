@@ -80,7 +80,7 @@ Html template
 4. Template Forms
 
 ```html
-<div rcp [(ngModel)]="someModel"></div>
+<div rcpRecaptcha [(ngModel)]="someModel"></div>
 ```
 
 In your component
