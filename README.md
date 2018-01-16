@@ -10,6 +10,7 @@ Node >= 8.9.4 and npm or yarn >= 1.3.2
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Resources](#resources)
 * [License](#license)
 
 ## Installation
@@ -23,7 +24,6 @@ or
 ```bash
 yarn add spaier-ng-recaptcha
 ```
-
 
 ## Usage
 
@@ -87,6 +87,10 @@ In your component
 ```typescript
 someModel: string
 ```
+
+## Resources
+
+* Docs: https://spaier.github.io/spaier-ng-recaptcha/ 
 
 ## License
 
