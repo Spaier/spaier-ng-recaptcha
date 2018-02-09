@@ -6,78 +6,78 @@
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/8fold-marked/-/8fold-marked-0.3.9.tgz#bb89c645612f8ccfaffac1ca6e3c11f168c9cf59"
 
-"@angular/animations@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-5.2.1.tgz#cc325c23db98c13539cbedf9405bc068bd3041cd"
+"@angular/animations@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-5.2.4.tgz#c5ec749d84a0434733a28a82c6cb6a4e15246201"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/common@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.2.1.tgz#a6f2d349f6102e6be7cc488899578a0dc327b755"
+"@angular/common@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.2.4.tgz#a0ee6ef65f731196d3037bce515f7bbec90740d2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.1.tgz#9ee3431d937767a4f4ae401f172b507b5db6456e"
+"@angular/compiler-cli@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.4.tgz#6d236f8433abe6752441e20884e599e8aa13c567"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
     tsickle "^0.26.0"
 
-"@angular/compiler@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.2.1.tgz#758ed236c361cff018699e041fabbc4bcb7cdc72"
+"@angular/compiler@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.2.4.tgz#f653176bf6c4e253b2c445a1e50941ffba009fb2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.1.tgz#47347e4098b0e997220d77652f4d9ca44dda8923"
+"@angular/core@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.4.tgz#44a59bcea87b3aac9ce8ff2ff674fe9cb60e2041"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/forms@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.2.1.tgz#530f1249bc71d9560297be642d55a5a6c439d920"
+"@angular/forms@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.2.4.tgz#a731087e147ca61f5051cbe22597a24d937c4852"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/language-service@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.1.tgz#438bc1f61bab5ba2e0eeb687ae6be9e6ab0edb18"
+"@angular/language-service@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.4.tgz#281631793671844ae8f6f9c0ec80b91d064db2d8"
 
-"@angular/platform-browser-dynamic@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.1.tgz#df073c48f5b90e8c5d5b0774aa2bef49f288989c"
+"@angular/platform-browser-dynamic@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.4.tgz#708457c9aafb1b812187c95d10365685521314d4"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.1.tgz#0d05a4ba107e7ad8241a862683c83193c26b3c5e"
+"@angular/platform-browser@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.4.tgz#dcb2dc6083774dcf2e17c9e9d0653d87057bf732"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-server@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-5.2.1.tgz#5230f0845d937eafa084015c28de90a594896de6"
+"@angular/platform-server@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-5.2.4.tgz#9ee3313ba4a1c09528206d6de74be60be9bdd0ad"
   dependencies:
     domino "^1.0.29"
     tslib "^1.7.1"
     xhr2 "^0.1.4"
 
-"@angular/platform-webworker-dynamic@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-webworker-dynamic/-/platform-webworker-dynamic-5.2.1.tgz#0cb0d6c712aef0e88900de28de95207064b76838"
+"@angular/platform-webworker-dynamic@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-webworker-dynamic/-/platform-webworker-dynamic-5.2.4.tgz#2f50f4c633ce72788329dbd675167da8f5c3f242"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-webworker@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-webworker/-/platform-webworker-5.2.1.tgz#e2495f1da7ad90f0e09621e32d765699e8647ace"
+"@angular/platform-webworker@^5.2.4||^4.4.6":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-webworker/-/platform-webworker-5.2.4.tgz#c9bd96f4b708ad87391648a1a530be9d52ef6bb2"
   dependencies:
     tslib "^1.7.1"
 
@@ -131,9 +131,9 @@
   version "8.5.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.5.tgz#6f9e8164ae1a55a9beb1d2571cfb7acf9d720c61"
 
-"@types/node@^9.3.0":
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
+"@types/node@^8.9.1":
+  version "8.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.9.1.tgz#5a329d73a97f3c5a626dfe0ed8c0b831fee5357a"
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
@@ -472,9 +472,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codelyzer@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.0.2.tgz#d5e2390b97d95e73a7b1e6f0cf03e16cbf35b06f"
+codelyzer@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.1.0.tgz#3117754538d8f5ffa36dff91d340573a836cf373"
   dependencies:
     app-root-path "^2.0.1"
     css-selector-tokenizer "^0.7.0"
@@ -1895,9 +1895,9 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rollup-plugin-commonjs@^8.2.6:
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-8.2.6.tgz#27e5b9069ff94005bb01e01bb46a1e4873784677"
+rollup-plugin-commonjs@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-8.3.0.tgz#91b4ba18f340951e39ed7b1901f377a80ab3f9c3"
   dependencies:
     acorn "^5.2.1"
     estree-walker "^0.5.0"
@@ -1937,9 +1937,9 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@^0.54.1:
-  version "0.54.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.54.1.tgz#415a5d999421502646cf54b873fc4ce1a7393970"
+rollup@^0.55.3:
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.3.tgz#0af082a766d51c3058430c8372442ff5207d8736"
 
 rxjs@^5.5.6:
   version "5.5.6"
@@ -2032,9 +2032,9 @@ shelljs@^0.7.8:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shelljs@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.0.tgz#12f561c52ec5d0d3315af15616c011a18ff80d59"
+shelljs@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.1.tgz#729e038c413a2254c4078b95ed46e0397154a9f1"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
