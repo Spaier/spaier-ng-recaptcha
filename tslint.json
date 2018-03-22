@@ -3,15 +3,8 @@
     "node_modules/codelyzer"
   ],
   "rules": {
-    // Typescript-specific Rules.
     "adjacent-overload-signatures": true,
     "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": "instance-sandwich"
-      }
-    ],
     "no-empty-interface": true,
     "no-inferrable-types": [
       true,
@@ -37,7 +30,6 @@
       }
     ],
     "unified-signatures": true,
-    // Functionality
     "await-promise": true,
     "curly": true,
     "forin": true,
@@ -93,7 +85,6 @@
     ],
     "use-default-type-parameter": true,
     "use-isnan": true,
-    // Maintainability
     "deprecation": true,
     "eofline": true,
     "indent": [
@@ -126,7 +117,6 @@
         "singleline": "never"
       }
     ],
-    // Style
     "align": true,
     "array-type": [
       true,
@@ -174,7 +164,10 @@
       true,
       "single"
     ],
-    "semicolon": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
     "variable-name": false,
     "whitespace": [
       true,
@@ -184,7 +177,6 @@
       "check-separator",
       "check-type"
     ],
-    // Codelyzer
     "directive-selector": [
       true,
       "attribute",
@@ -206,7 +198,6 @@
     "use-host-property-decorator": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
-    "no-input-rename": true,
     "no-output-rename": true,
     "no-output-on-prefix": true,
     "component-class-suffix": true,
