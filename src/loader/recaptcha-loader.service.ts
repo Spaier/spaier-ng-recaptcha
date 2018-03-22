@@ -1,12 +1,12 @@
 import {
 	isPlatformBrowser, isPlatformServer, isPlatformWorkerApp, isPlatformWorkerUi, DOCUMENT
-} from '@angular/common';
-import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
+} from '@angular/common'
+import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core'
 
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable'
+import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
-import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token';
+import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token'
 
 /**
  * Service for loading recaptcha.
@@ -21,11 +21,11 @@ export class RecaptchaLoaderService {
 	constructor( @Inject(PLATFORM_ID) platformId,
 		@Optional() @Inject(DOCUMENT) documentWrapper,
 		@Inject(RECAPTCHA_LANGUAGE) @Optional() public language: string) {
-		const onLoad = 'recaptchaloaded';
+		const onLoad = 'recaptchaloaded'
 		// Workaround for angular bug. See issue: https://github.com/angular/angular/issues/15640
 		const documentObject = documentWrapper as Document
 
-		this._recaptcha = new BehaviorSubject<ReCaptchaV2.ReCaptcha>(null);
+		this._recaptcha = new BehaviorSubject<ReCaptchaV2.ReCaptcha>(null)
 
 		if (isPlatformBrowser(platformId)) {
 			window[onLoad] = () => {

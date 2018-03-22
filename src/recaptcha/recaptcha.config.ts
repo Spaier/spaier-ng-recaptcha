@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable()
 /**
@@ -14,11 +14,11 @@ export class RecaptchaConfig {
 	 */
 	v2Key?: string
 	/**
-	 * V2 Theme.
+	 * Light or Dark V2 reCAPTCHA's theme.
 	 */
 	theme?: ReCaptchaV2.Theme
 	/**
-	 * reCAPTCHA type.
+	 * Image or Audio.
 	 */
 	type?: ReCaptchaV2.Type
 	/**
@@ -26,11 +26,11 @@ export class RecaptchaConfig {
 	 */
 	tabindex?: number
 	/**
-	 * reCAPTCHA size.
+	 * Normal / Compact / Invisible.
 	 */
 	size?: ReCaptchaV2.Size
 	/**
-	 * Invisible reCAPTCHA badge.
+	 * Placing of invisible reCAPTCHA badge.
 	 */
 	badge?: ReCaptchaV2.Badge
 }

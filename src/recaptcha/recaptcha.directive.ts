@@ -1,13 +1,13 @@
 import {
 	AfterViewInit, Directive, ElementRef, EventEmitter,
 	Input, NgZone, OnDestroy, Optional, Output, forwardRef
-} from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+} from '@angular/core'
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Subscription'
 
-import { RecaptchaConfig } from './recaptcha.config';
-import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service';
+import { RecaptchaConfig } from './recaptcha.config'
+import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service'
 
 @Directive({
 	selector: '[rcpRecaptcha]',
@@ -38,7 +38,7 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 
 	@Output() recaptchaOnReset = new EventEmitter<void>()
 
-	widgetId: number
+	private widgetId: number
 
 	private grecaptcha: ReCaptchaV2.ReCaptcha
 
@@ -56,7 +56,7 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 			if (!this.tabIndex) { this.tabIndex = this.config.tabindex }
 			if (!this.type) { this.type = this.config.type }
 			if (!this.size) { this.size = this.config.size }
-			let key: string;
+			let key: string
 			if (this.size === 'invisible') {
 				key = this.config.invisibleKey
 				if (!this.badge) { this.badge = this.config.badge }
@@ -71,10 +71,10 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 				this.widgetId = grecaptcha.render(this.el.nativeElement, {
 					badge: this.badge,
 					callback: (response: string) => {
-						this.zone.run(() => this.onCallback(response));
+						this.zone.run(() => this.onCallback(response))
 					},
 					'expired-callback': () => {
-						this.zone.run(() => this.onExpired());
+						this.zone.run(() => this.onExpired())
 					},
 					sitekey: this.siteKey,
 					size: this.size,
@@ -133,7 +133,7 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 			if (this.grecaptcha.getResponse(this.widgetId)) {
 				this.onReset()
 			}
-			this.zone.runOutsideAngular(() => grecaptcha.reset(this.widgetId));
+			this.zone.runOutsideAngular(() => grecaptcha.reset(this.widgetId))
 		}
 	}
 
