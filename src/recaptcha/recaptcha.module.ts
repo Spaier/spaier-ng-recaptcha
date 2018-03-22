@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
+import { ModuleWithProviders, NgModule } from '@angular/core'
 
-import { RecaptchaDirective } from './recaptcha.directive';
+import { RecaptchaDirective } from './recaptcha.directive'
+import { RecaptchaConfig } from './recaptcha.config'
 
 const DIRECTIVES = [
 	RecaptchaDirective
@@ -21,4 +22,12 @@ const DIRECTIVES = [
 		...DIRECTIVES
 	]
 })
-export class RecaptchaModule { }
+export class RecaptchaModule {
+	public static forRoot(config: RecaptchaConfig): ModuleWithProviders {
+		return {
+			ngModule: RecaptchaModule, providers: [
+				{ provide: RecaptchaConfig, useValue: config }
+			]
+		}
+	}
+}
