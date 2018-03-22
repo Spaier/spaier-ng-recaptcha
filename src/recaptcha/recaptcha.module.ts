@@ -23,6 +23,10 @@ const DIRECTIVES = [
 	]
 })
 export class RecaptchaModule {
+	/**
+	 * Injects module and sets default recaptcha configuration.
+	 * @param config Default recaptcha configuration
+	 */
 	public static forRoot(config: RecaptchaConfig): ModuleWithProviders {
 		return {
 			ngModule: RecaptchaModule, providers: [

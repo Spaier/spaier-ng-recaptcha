@@ -20,6 +20,10 @@ export class RecaptchaLoaderModule {
 				'RecaptchaLoaderModule is already loaded. Import it only in the CoreModule or AppModule.')
 		}
 	}
+	/**
+	 * Injects module and sets recaptcha language.
+	 * @param language https://developers.google.com/recaptcha/docs/language
+	 */
 	public static withLanguage(language: string): ModuleWithProviders {
 		return {
 			ngModule: RecaptchaLoaderModule, providers: [
