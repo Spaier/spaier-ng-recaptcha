@@ -137,17 +137,17 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 		}
 	}
 
-	public onCallback(response: string): void {
+	private onCallback(response: string): void {
 		this.triggerEvents(response)
 		this.recaptchaOnResolved.emit(response)
 	}
 
-	public onExpired(): void {
+	private onExpired(): void {
 		this.triggerEvents(null)
 		this.recaptchaOnExpired.emit()
 	}
 
-	public onReset(): void {
+	private onReset(): void {
 		this.triggerEvents(null)
 		this.recaptchaOnReset.emit()
 	}
