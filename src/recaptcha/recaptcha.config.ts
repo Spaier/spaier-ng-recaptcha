@@ -14,13 +14,13 @@ export class RecaptchaConfig {
 	 */
 	v2Key?: string
 	/**
-	 * Light or Dark V2 reCAPTCHA's theme.
+	 * "audio" | "image"
+	 */
+	type?: string
+	/**
+	 * "light" | "dark"
 	 */
 	theme?: ReCaptchaV2.Theme
-	/**
-	 * Image or Audio.
-	 */
-	type?: ReCaptchaV2.Type
 	/**
 	 * reCAPTCHA index.
 	 */
@@ -30,7 +30,31 @@ export class RecaptchaConfig {
 	 */
 	size?: ReCaptchaV2.Size
 	/**
-	 * Placing of invisible reCAPTCHA badge.
+	 * "bottomright" | "bottomleft" | "inline" | "none"
 	 */
-	badge?: ReCaptchaV2.Badge
+	badge?: string
+	/**
+	 * If true, this reCAPTCHA instance will be part of a separate ID space and badge value will be set to "none".
+	 * Id starts with 1E5 instead of 0.
+	 * @default false
+	 */
+	isolated?: boolean
+	/**
+	 * If true, preloads recaptcha(probably challenge)
+	 * By default only invisible is preloaded.
+	 */
+	preload?: boolean
+	// Only God and Google know what are these parameters for. It's better to leave them alone.
+	stoken?: any
+	s?: any
+	pool?: any
+	action?: any
+	'content-binding'?: any
+	origin?: any
+	version?: any
+	/**
+	 * Language.
+	 * Accepted values: https://developers.google.com/recaptcha/docs/language
+	 */
+	hl?: string
 }

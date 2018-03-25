@@ -14,9 +14,9 @@ import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token'
 @Injectable()
 export class RecaptchaLoaderService {
 
-	readonly recaptcha: Observable<ReCaptchaV2.ReCaptcha>
+	readonly recaptcha: Observable<any>
 
-	private _recaptcha: BehaviorSubject<ReCaptchaV2.ReCaptcha>
+	private _recaptcha: BehaviorSubject<any>
 
 	constructor( @Inject(PLATFORM_ID) platformId,
 		@Optional() @Inject(DOCUMENT) documentWrapper,
@@ -25,7 +25,7 @@ export class RecaptchaLoaderService {
 		// Workaround for angular bug. See issue: https://github.com/angular/angular/issues/15640
 		const documentObject = documentWrapper as Document
 
-		this._recaptcha = new BehaviorSubject<ReCaptchaV2.ReCaptcha>(null)
+		this._recaptcha = new BehaviorSubject<any>(null)
 
 		if (isPlatformBrowser(platformId)) {
 			window[onLoad] = () => {

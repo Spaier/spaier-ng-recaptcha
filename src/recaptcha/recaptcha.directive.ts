@@ -1,6 +1,7 @@
 import {
-	AfterViewInit, Directive, ElementRef, EventEmitter,
-	Input, NgZone, OnDestroy, Optional, Output, forwardRef
+	Directive, ElementRef, EventEmitter,
+	Input, NgZone, OnChanges, OnInit, OnDestroy, Optional, Output, SimpleChanges,
+	forwardRef
 } from '@angular/core'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
@@ -18,29 +19,53 @@ import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service'
 		useExisting: forwardRef(() => RecaptchaDirective)
 	}]
 })
-export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, OnDestroy {
+export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnInit, OnDestroy {
 
-	@Input() badge: ReCaptchaV2.Badge
+	@Input() invisibleKey: string
 
-	@Input() siteKey: string
+	@Input() v2Key: string
 
-	@Input() size: ReCaptchaV2.Size
-
-	@Input() type: ReCaptchaV2.Type
+	@Input() type: string
 
 	@Input() theme: ReCaptchaV2.Theme
 
+	@Input() size: ReCaptchaV2.Size
+
 	@Input() tabIndex: number
+
+	@Input() bind: string | HTMLElement
+
+	@Input() badge: string
+
+	@Input() preload: boolean
+
+	@Input() stoken: any
+
+	@Input() s: any
+
+	@Input() pool: any
+
+	@Input() action: any
+
+	@Input() contentBinding: any
+
+	@Input() isolated: boolean
+
+	@Input() origin: any
+
+	@Input() hl: string
+
+	@Input() version: string
 
 	@Output() recaptchaOnResolved = new EventEmitter<string>()
 
 	@Output() recaptchaOnExpired = new EventEmitter<void>()
 
-	@Output() recaptchaOnReset = new EventEmitter<void>()
+	@Output() recaptchaOnError = new EventEmitter<void>()
 
 	private widgetId: number
 
-	private grecaptcha: ReCaptchaV2.ReCaptcha
+	private grecaptcha
 
 	private subscription: Subscription
 
@@ -51,50 +76,43 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 	constructor(private readonly loader: RecaptchaLoaderService, private readonly el: ElementRef,
 		private readonly zone: NgZone, @Optional() public config: RecaptchaConfig) { }
 
-	ngAfterViewInit(): void {
+	// Lifecycle hooks
+
+	ngOnInit() {
 		if (this.config) {
-			if (!this.tabIndex) { this.tabIndex = this.config.tabindex }
+			if (!this.v2Key) { this.v2Key = this.config.v2Key }
+			if (!this.invisibleKey) { this.invisibleKey = this.config.invisibleKey }
 			if (!this.type) { this.type = this.config.type }
+			if (!this.theme) { this.theme = this.config.theme }
 			if (!this.size) { this.size = this.config.size }
-			let key: string
-			if (this.size === 'invisible') {
-				key = this.config.invisibleKey
-				if (!this.badge) { this.badge = this.config.badge }
-			} else {
-				key = this.config.v2Key
-				if (!this.theme) { this.theme = this.config.theme }
-			}
-			if (!this.siteKey) { this.siteKey = key }
+			if (!this.tabIndex) { this.tabIndex = this.config.tabindex }
+			if (!this.badge) { this.badge = this.config.badge }
+			if (!this.preload) { this.preload = this.config.preload }
+			if (!this.stoken) { this.stoken = this.config.stoken }
+			if (!this.s) { this.s = this.config.s }
+			if (!this.action) { this.action = this.config.action }
+			if (!this.contentBinding) { this.contentBinding = this.config['content-binding'] }
+			if (!this.pool) { this.pool = this.config.pool }
+			if (!this.isolated) { this.isolated = this.config.isolated }
+			if (!this.origin) { this.origin = this.config.origin }
+			if (!this.hl) { this.hl = this.config.hl }
+			if (!this.version) { this.version = this.config.version }
 		}
-		this.subscription = this.loader.recaptcha.subscribe((grecaptcha: ReCaptchaV2.ReCaptcha) => {
-			if (grecaptcha) {
-				this.widgetId = grecaptcha.render(this.el.nativeElement, {
-					badge: this.badge,
-					callback: (response: string) => {
-						this.zone.run(() => this.onCallback(response))
-					},
-					'expired-callback': () => {
-						this.zone.run(() => this.onExpired())
-					},
-					sitekey: this.siteKey,
-					size: this.size,
-					tabindex: this.tabIndex,
-					theme: this.theme,
-					type: this.type
-				})
-			}
+		this.subscription = this.loader.recaptcha.subscribe(recaptcha => {
+			this.grecaptcha = recaptcha
+			this.render()
 		})
 	}
 
-	/**
-	 * Resets recaptcha.
-	 */
-	ngOnDestroy(): void {
-		this.reset()
-		if (this.subscription) {
-			this.subscription.unsubscribe()
-		}
+	ngOnChanges(changes: SimpleChanges): void {
+		this.reset(true)
 	}
+
+	ngOnDestroy(): void {
+		this.subscription.unsubscribe()
+	}
+
+	// Forms implementation
 
 	writeValue(value: string): void {
 		if (!value) {
@@ -110,32 +128,74 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 		this.onTouched = fn
 	}
 
-	getResponse(): string {
-		if (this.widgetId) {
-			return this.grecaptcha.getResponse(this.widgetId)
+	// grecaptcha methods
+
+	/**
+	 * Renders recaptcha.
+	 */
+	private render() {
+		console.log(this.grecaptcha)
+		if (this.grecaptcha) {
+			this.widgetId = this.grecaptcha.render(this.el.nativeElement, this.getParameters())
 		}
+	}
+
+	/**
+	 * Returns stored value.
+	 */
+	getResponse(): string {
+		return this.grecaptcha ? this.grecaptcha.getResponse(this.widgetId) : ''
 	}
 
 	/**
 	 * Executes invisible recaptcha.
 	 */
 	execute(): void {
-		if (this.size === 'invisible' && this.widgetId) {
-			this.grecaptcha.execute(this.widgetId)
-		}
+		this.grecaptcha && this.grecaptcha.execute(this.widgetId)
 	}
 
 	/**
 	 * Resets recaptcha.
+	 * @param rerender if true, rerenders recaptcha.
 	 */
-	reset(): void {
-		if (this.widgetId && this.grecaptcha) {
-			if (this.grecaptcha.getResponse(this.widgetId)) {
-				this.onReset()
-			}
-			this.zone.runOutsideAngular(() => grecaptcha.reset(this.widgetId))
+	reset(rerender?: boolean): void {
+		this.grecaptcha && this.zone.runOutsideAngular(
+			() => this.grecaptcha.reset(this.widgetId, rerender ? this.getParameters() : undefined)
+		)
+	}
+
+	private getParameters() {
+		return {
+			sitekey: this.size === 'invisible' ? this.invisibleKey : this.v2Key,
+			type: this.type,
+			theme: this.theme,
+			size: this.size,
+			tabindex: this.tabIndex,
+			bind: this.bind,
+			badge: this.badge,
+			preload: this.preload,
+			callback: (response: string) => {
+				this.zone.run(() => this.onCallback(response))
+			},
+			'expired-callback': () => {
+				this.zone.run(() => this.onExpired())
+			},
+			'error-callback': () => {
+				this.zone.run(() => this.onError())
+			},
+			stoken: this.stoken,
+			s: this.s,
+			pool: this.pool,
+			action: this.action,
+			'content-binding': this.contentBinding,
+			isolated: this.isolated,
+			origin: this.origin,
+			hl: this.hl,
+			version: this.version
 		}
 	}
+
+	// Events
 
 	private onCallback(response: string): void {
 		this.triggerEvents(response)
@@ -147,9 +207,9 @@ export class RecaptchaDirective implements ControlValueAccessor, AfterViewInit, 
 		this.recaptchaOnExpired.emit()
 	}
 
-	private onReset(): void {
+	private onError(): void {
 		this.triggerEvents(null)
-		this.recaptchaOnReset.emit()
+		this.recaptchaOnError.emit()
 	}
 
 	private triggerEvents(value: string): void {

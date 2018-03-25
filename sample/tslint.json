@@ -174,13 +174,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "rcp",
+      "app",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "rcp",
+      "app",
       "kebab-case"
     ],
     "angular-whitespace": [
