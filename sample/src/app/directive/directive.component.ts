@@ -13,7 +13,7 @@ export class DirectiveComponent implements OnInit {
 
 	size: ReCaptchaV2.Size = 'normal'
 
-	badge: string = 'bottomright'
+	badge = 'bottomright'
 
 	constructor() { }
 
