@@ -1,7 +1,8 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core'
 
-import { RecaptchaLoaderService } from './recaptcha-loader.service'
+import { RECAPTCHA_IMPLICIT } from './recaptcha-implicit.token'
 import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token'
+import { RecaptchaLoaderService } from './recaptcha-loader.service'
 
 /**
  * Module for loading recaptcha.
@@ -21,13 +22,15 @@ export class RecaptchaLoaderModule {
 		}
 	}
 	/**
-	 * Injects module and sets recaptcha language.
-	 * @param language https://developers.google.com/recaptcha/docs/language
+	 * Injects module and sets default recaptcha language.
+	 * @param language Script's default language. https://developers.google.com/recaptcha/docs/language .
+	 * @param explicit If set to true, enables rendering with g-recaptcha class.
 	 */
-	public static withLanguage(language: string): ModuleWithProviders {
+	public static withParameters(language?: string, implicit?: boolean): ModuleWithProviders {
 		return {
 			ngModule: RecaptchaLoaderModule, providers: [
-				{ provide: RECAPTCHA_LANGUAGE, useValue: language }
+				{ provide: RECAPTCHA_LANGUAGE, useValue: language },
+				{ provide: RECAPTCHA_IMPLICIT, useValue: implicit }
 			]
 		}
 	}
