@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { RecaptchaModule, RecaptchaLoaderModule } from '../../../src/spaier-ng-recaptcha'
+import { RecaptchaModule, RecaptchaLoaderModule } from '../../../'
 
 import { MaterialModule } from './material.module'
 import { AppRoutingModule } from './app-routing.module'
@@ -26,10 +26,14 @@ import { DirectiveComponent } from './directive/directive.component'
 		FormsModule,
 		ReactiveFormsModule,
 		MaterialModule,
-		RecaptchaLoaderModule.withLanguage('ru'),
+		RecaptchaLoaderModule.withParameters('ru'),
 		RecaptchaModule.forRoot({
-			invisibleKey: '6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW',
-			v2Key: '6LeuTU4UAAAAADq1qPnyrCHnzgET3PqQlxRbC0Er'
+			invisibleConfig: {
+				sitekey: '6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW'
+			},
+			v2Config: {
+				sitekey: '6LeuTU4UAAAAADq1qPnyrCHnzgET3PqQlxRbC0Er'
+			}
 		}),
 		AppRoutingModule
 	],

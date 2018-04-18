@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "files": [
-    "public-api.ts"
+    "index.ts"
   ],
   "exclude": [
     "**/*.spec.ts",
@@ -26,7 +26,8 @@
       "dom"
     ],
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "typings"
     ],
     "noUnusedLocals": true,
     "sourceMap": true,

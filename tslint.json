@@ -68,7 +68,7 @@
     "no-unsafe-any": false,
     "no-unsafe-finally": true,
     "no-use-before-declare": true,
-    "no-var-keyword": true,
+    "no-var-keyword": false,
     "prefer-conditional-expression": [
       true,
       "check-else-if"

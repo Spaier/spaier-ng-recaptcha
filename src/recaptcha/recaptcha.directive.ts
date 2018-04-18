@@ -7,6 +7,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
 import { Subscription } from 'rxjs/Subscription'
 
+import { KeyVersion } from './key-version.enum'
 import { RecaptchaConfig } from './recaptcha.config'
 import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service'
 
@@ -25,17 +26,17 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 
 	@Input() v2Key: string
 
-	@Input() type: string
+	@Input() type: GReCaptcha.Type
 
-	@Input() theme: ReCaptchaV2.Theme
+	@Input() theme: GReCaptcha.Theme
 
-	@Input() size: ReCaptchaV2.Size
+	@Input() size: GReCaptcha.Size
 
 	@Input() tabIndex: number
 
 	@Input() bind: string | HTMLElement
 
-	@Input() badge: string
+	@Input() badge: GReCaptcha.Badge
 
 	@Input() preload: boolean
 
@@ -65,7 +66,7 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 
 	private widgetId: number
 
-	private grecaptcha
+	private grecaptcha: GReCaptcha.Recaptcha
 
 	private subscription: Subscription
 
@@ -79,25 +80,6 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 	// Lifecycle hooks
 
 	ngOnInit() {
-		if (this.config) {
-			if (!this.v2Key) { this.v2Key = this.config.v2Key }
-			if (!this.invisibleKey) { this.invisibleKey = this.config.invisibleKey }
-			if (!this.type) { this.type = this.config.type }
-			if (!this.theme) { this.theme = this.config.theme }
-			if (!this.size) { this.size = this.config.size }
-			if (!this.tabIndex) { this.tabIndex = this.config.tabindex }
-			if (!this.badge) { this.badge = this.config.badge }
-			if (!this.preload) { this.preload = this.config.preload }
-			if (!this.stoken) { this.stoken = this.config.stoken }
-			if (!this.s) { this.s = this.config.s }
-			if (!this.action) { this.action = this.config.action }
-			if (!this.contentBinding) { this.contentBinding = this.config['content-binding'] }
-			if (!this.pool) { this.pool = this.config.pool }
-			if (!this.isolated) { this.isolated = this.config.isolated }
-			if (!this.origin) { this.origin = this.config.origin }
-			if (!this.hl) { this.hl = this.config.hl }
-			if (!this.version) { this.version = this.config.version }
-		}
 		this.subscription = this.loader.recaptcha.subscribe(recaptcha => {
 			this.grecaptcha = recaptcha
 			this.render()
@@ -164,16 +146,25 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 		)
 	}
 
-	private getParameters() {
+	private getParameters(): GReCaptcha.Parameters {
+		let configuration: GReCaptcha.Parameters
+		let sitekey: string
+		if (this.config.defaultVersion === KeyVersion.Invisible || this.size === 'invisible') {
+			configuration = this.config.invisibleConfig
+			sitekey = this.invisibleKey
+		} else {
+			configuration = this.config.v2Config
+			sitekey = this.v2Key
+		}
 		return {
-			sitekey: this.size === 'invisible' ? this.invisibleKey : this.v2Key,
-			type: this.type,
-			theme: this.theme,
-			size: this.size,
-			tabindex: this.tabIndex,
-			bind: this.bind,
-			badge: this.badge,
-			preload: this.preload,
+			sitekey: sitekey || configuration.sitekey,
+			type: this.type || configuration.type,
+			theme: this.theme || configuration.theme,
+			size: this.size || configuration.size,
+			tabindex: this.tabIndex || configuration.tabindex,
+			bind: this.bind || configuration.bind,
+			badge: this.badge || configuration.badge,
+			preload: this.preload || configuration.preload,
 			callback: (response: string) => {
 				this.zone.run(() => this.onCallback(response))
 			},
@@ -183,15 +174,15 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 			'error-callback': () => {
 				this.zone.run(() => this.onError())
 			},
-			stoken: this.stoken,
-			s: this.s,
-			pool: this.pool,
-			action: this.action,
-			'content-binding': this.contentBinding,
-			isolated: this.isolated,
-			origin: this.origin,
-			hl: this.hl,
-			version: this.version
+			stoken: this.stoken || configuration.preload,
+			s: this.s || configuration.preload,
+			pool: this.pool || configuration.preload,
+			action: this.action || configuration.action,
+			'content-binding': this.contentBinding || configuration['content-binding'],
+			isolated: this.isolated || configuration.isolated,
+			origin: this.origin || configuration.origin,
+			hl: this.hl || configuration.hl,
+			version: this.version || configuration.version
 		}
 	}
 
