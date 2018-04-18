@@ -127,52 +127,52 @@ declare namespace GReCaptcha {
 		 * Attribute: data-error-callback.
 		 */
 		'error-callback'?(): void
-		/**
-		 * Optional secure token.
-		 * Attribute: data-stoken.
-		 * @deprecated
-		 */
-		stoken?: any
-		/**
-		 * Optional.
-		 * Attribute: data-s.
-		 * @deprecated
-		 */
-		s?: any
-		/**
-		 * Optional.
-		 * Attribute: data-pool.
-		 * @deprecated
-		 */
-		pool?: any
-		/**
-		 * Optional.
-		 * Attribute: data-action.
-		 * @deprecated
-		 */
-		action?: any
-		/**
-		 * Optional.
-		 * Attribute: data-content-binding.
-		 */
-		'content-binding'?: any
-		/**
-		 * Optional.
-		 * Has no corresponding attribute.
-		 * @deprecated
-		 */
-		origin?: any
-		/**
-		 * Optional.
-		 * @deprecated
-		 */
-		version?: string
-		/**
-		 * Optional preload(probably challenge).
-		 * Defaults to true if recaptcha is invisible.
-		 * Attribute: data-preload
-		 * @deprecated
-		 */
-		preload?: boolean
+		// /**
+		//  * Optional secure token.
+		//  * Attribute: data-stoken.
+		//  * @deprecated
+		//  */
+		// stoken?: any
+		// /**
+		//  * Optional.
+		//  * Attribute: data-s.
+		//  * @deprecated
+		//  */
+		// s?: any
+		// /**
+		//  * Optional.
+		//  * Attribute: data-pool.
+		//  * @deprecated
+		//  */
+		// pool?: any
+		// /**
+		//  * Optional.
+		//  * Attribute: data-action.
+		//  * @deprecated
+		//  */
+		// action?: any
+		// /**
+		//  * Optional.
+		//  * Attribute: data-content-binding.
+		//  */
+		// 'content-binding'?: any
+		// /**
+		//  * Optional.
+		//  * Has no corresponding attribute.
+		//  * @deprecated
+		//  */
+		// origin?: any
+		// /**
+		//  * Optional.
+		//  * @deprecated
+		//  */
+		// version?: string
+		// /**
+		//  * Optional preload(probably challenge).
+		//  * Defaults to true if recaptcha is invisible.
+		//  * Attribute: data-preload
+		//  * @deprecated
+		//  */
+		// preload?: boolean
 	}
 }

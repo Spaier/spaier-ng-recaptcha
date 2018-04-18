@@ -34,29 +34,21 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 
 	@Input() tabIndex: number
 
-	@Input() bind: string | HTMLElement
-
 	@Input() badge: GReCaptcha.Badge
-
-	@Input() preload: boolean
-
-	@Input() stoken: any
-
-	@Input() s: any
-
-	@Input() pool: any
-
-	@Input() action: any
-
-	@Input() contentBinding: any
 
 	@Input() isolated: boolean
 
-	@Input() origin: any
-
 	@Input() hl: string
 
-	@Input() version: string
+	// @Input() preload: boolean
+	// @Input() stoken: any
+	// @Input() s: any
+	// @Input() pool: any
+	// @Input() action: any
+	// @Input() contentBinding: any
+	// @Input() version: string
+	// @Input() origin: any
+	// @Input() bind: string | HTMLElement
 
 	@Output() recaptchaOnResolved = new EventEmitter<string>()
 
@@ -162,9 +154,7 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 			theme: this.theme || configuration.theme,
 			size: this.size || configuration.size,
 			tabindex: this.tabIndex || configuration.tabindex,
-			bind: this.bind || configuration.bind,
 			badge: this.badge || configuration.badge,
-			preload: this.preload || configuration.preload,
 			callback: (response: string) => {
 				this.zone.run(() => this.onCallback(response))
 			},
@@ -174,15 +164,17 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 			'error-callback': () => {
 				this.zone.run(() => this.onError())
 			},
-			stoken: this.stoken || configuration.preload,
-			s: this.s || configuration.preload,
-			pool: this.pool || configuration.preload,
-			action: this.action || configuration.action,
-			'content-binding': this.contentBinding || configuration['content-binding'],
 			isolated: this.isolated || configuration.isolated,
-			origin: this.origin || configuration.origin,
-			hl: this.hl || configuration.hl,
-			version: this.version || configuration.version
+			hl: this.hl || configuration.hl
+			// bind: this.bind || configuration.bind,
+			// preload: this.preload || configuration.preload,
+			// stoken: this.stoken || configuration.preload,
+			// s: this.s || configuration.preload,
+			// pool: this.pool || configuration.preload,
+			// action: this.action || configuration.action,
+			// 'content-binding': this.contentBinding || configuration['content-binding'],
+			// origin: this.origin || configuration.origin,
+			// version: this.version || configuration.version
 		}
 	}
 
