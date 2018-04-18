@@ -56,11 +56,10 @@
 <mat-card>
   <mat-card-content>
     <h2 class="example-h2">V2 reCAPTCHA</h2>
-    <button mat-button id="coolButton">Bind Execute</button>
     <button mat-button (click)="recaptcha.execute()">Angular Execute</button>
     <button mat-button (click)="recaptcha.reset()">Reset</button>
-    <div #recaptcha="rcpRecaptcha" (recaptchaOnResolved)="onSuccess($event)" (recaptchaOnError)="onError()" (recaptchaOnExpired)="onExpired()"
-      [isolated]="isolated" bind="coolButton" rcpRecaptcha
-      [size]="size" [theme]="theme" [badge]="badge"></div>
+    <div #recaptcha="rcpRecaptcha"
+      (recaptchaOnResolved)="onSuccess($event)" (recaptchaOnError)="onError()" (recaptchaOnExpired)="onExpired()"
+      [isolated]="isolated" rcpRecaptcha [size]="size" [theme]="theme" [badge]="badge"></div>
   </mat-card-content>
 </mat-card>

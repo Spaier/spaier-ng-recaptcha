@@ -5,20 +5,17 @@ import { Component, OnInit } from '@angular/core'
 	templateUrl: './directive.component.html',
 	styleUrls: ['./directive.component.scss']
 })
-export class DirectiveComponent implements OnInit {
+export class DirectiveComponent {
 
 	isolated = false
 
-	theme: ReCaptchaV2.Theme = 'dark'
+	theme: GReCaptcha.Theme = 'dark'
 
-	size: ReCaptchaV2.Size = 'normal'
+	size: GReCaptcha.Size = 'normal'
 
 	badge = 'bottomright'
 
 	constructor() { }
-
-	ngOnInit() {
-	}
 
 	onSuccess(response: string) {
 		console.log(response)
@@ -30,9 +27,5 @@ export class DirectiveComponent implements OnInit {
 
 	onExpired() {
 		console.log('Expired')
-	}
-
-	preload(recaptcha) {
-		return true
 	}
 }
