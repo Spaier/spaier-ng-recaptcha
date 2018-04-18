@@ -27,7 +27,7 @@ export class RecaptchaLoaderService {
 		// Workaround for angular bug. See issue: https://github.com/angular/angular/issues/15640
 		const documentObject = documentWrapper as Document
 
-		this._recaptcha = new BehaviorSubject<any>(null)
+		this._recaptcha = new BehaviorSubject<GReCaptcha.Recaptcha>(null)
 
 		if (isPlatformBrowser(platformId)) {
 			window[onLoad] = () => {
