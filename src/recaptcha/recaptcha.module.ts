@@ -30,7 +30,7 @@ export class RecaptchaModule {
 	public static forRoot(config?: RecaptchaConfig): ModuleWithProviders {
 		return {
 			ngModule: RecaptchaModule, providers: [
-				{ provide: RecaptchaConfig, useValue: config }
+				{ provide: RecaptchaConfig, useValue: config ? config : { invisibleConfig: { }, v2Config: { } } }
 			]
 		}
 	}
