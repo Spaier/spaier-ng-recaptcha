@@ -8,8 +8,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { Subscription } from 'rxjs/Subscription'
 
 import { KeyVersion } from './key-version.enum'
+import { RecaptchaBadge } from './recaptcha-badge'
 import { RecaptchaConfig } from './recaptcha.config'
 import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service'
+import { RecaptchaParameters } from './recaptcha-parameters'
 
 @Directive({
 	selector: '[rcpRecaptcha]',
@@ -26,29 +28,19 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 
 	@Input() v2Key: string
 
-	@Input() type: GReCaptcha.Type
+	@Input() type: ReCaptchaV2.Type
 
-	@Input() theme: GReCaptcha.Theme
+	@Input() theme: ReCaptchaV2.Theme
 
-	@Input() size: GReCaptcha.Size
+	@Input() size: ReCaptchaV2.Size
 
 	@Input() tabIndex: number
 
-	@Input() badge: GReCaptcha.Badge
+	@Input() badge: RecaptchaBadge
 
 	@Input() isolated: boolean
 
 	@Input() hl: string
-
-	// @Input() preload: boolean
-	// @Input() stoken: any
-	// @Input() s: any
-	// @Input() pool: any
-	// @Input() action: any
-	// @Input() contentBinding: any
-	// @Input() version: string
-	// @Input() origin: any
-	// @Input() bind: string | HTMLElement
 
 	@Output() recaptchaOnResolved = new EventEmitter<string>()
 
@@ -58,7 +50,7 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 
 	private widgetId: number
 
-	private grecaptcha: GReCaptcha.Recaptcha
+	private grecaptcha
 
 	private subscription: Subscription
 
@@ -138,8 +130,8 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 		)
 	}
 
-	private getParameters(): GReCaptcha.Parameters {
-		let configuration: GReCaptcha.Parameters
+	private getParameters(): RecaptchaParameters {
+		let configuration: RecaptchaParameters
 		let sitekey: string
 		if (this.config.defaultVersion === KeyVersion.Invisible || this.size === 'invisible') {
 			configuration = this.config.invisibleConfig

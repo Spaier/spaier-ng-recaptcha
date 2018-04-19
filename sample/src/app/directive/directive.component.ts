@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
 	selector: 'app-directive',
@@ -9,9 +9,9 @@ export class DirectiveComponent {
 
 	isolated = false
 
-	theme: GReCaptcha.Theme = 'dark'
+	theme: ReCaptchaV2.Theme = 'dark'
 
-	size: GReCaptcha.Size = 'normal'
+	size: ReCaptchaV2.Size = 'normal'
 
 	badge = 'bottomright'
 

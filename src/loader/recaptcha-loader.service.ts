@@ -15,9 +15,9 @@ import { RECAPTCHA_IMPLICIT } from './recaptcha-implicit.token'
 @Injectable()
 export class RecaptchaLoaderService {
 
-	readonly recaptcha: Observable<GReCaptcha.Recaptcha>
+	readonly recaptcha: Observable<any>
 
-	private _recaptcha: BehaviorSubject<GReCaptcha.Recaptcha>
+	private _recaptcha: BehaviorSubject<any>
 
 	constructor( @Inject(PLATFORM_ID) platformId,
 		@Optional() @Inject(DOCUMENT) documentWrapper,
@@ -27,7 +27,7 @@ export class RecaptchaLoaderService {
 		// Workaround for angular bug. See issue: https://github.com/angular/angular/issues/15640
 		const documentObject = documentWrapper as Document
 
-		this._recaptcha = new BehaviorSubject<GReCaptcha.Recaptcha>(null)
+		this._recaptcha = new BehaviorSubject<any>(null)
 
 		if (isPlatformBrowser(platformId)) {
 			window[onLoad] = () => {
