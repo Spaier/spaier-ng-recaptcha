@@ -27,7 +27,7 @@ export class RecaptchaModule {
 	 * Injects module and sets default recaptcha configuration.
 	 * @param config Default recaptcha configuration
 	 */
-	public static forRoot(config: RecaptchaConfig): ModuleWithProviders {
+	public static forRoot(config?: RecaptchaConfig): ModuleWithProviders {
 		return {
 			ngModule: RecaptchaModule, providers: [
 				{ provide: RecaptchaConfig, useValue: config }
