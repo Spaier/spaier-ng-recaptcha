@@ -19,28 +19,6 @@ export interface RecaptchaParameters {
 	 */
 	theme?: ReCaptchaV2.Theme
 	/**
-	 * Optional. The size of the widget.
-	 * Attribute: data-size.
-	 * Accepted values: "compact", "normal", "invisible".
-	 * if bind is provided defaults to "invisible". Otherwise "normal"
-	 */
-	size?: ReCaptchaV2.Size
-	/**
-	 * Optional. The tabindex of the widget and challenge.
-	 * Attribute: data-tabindex.
-	 * If other elements in your page use tabindex, it should be set to make user navigation easier.
-	 * @default 0
-	 */
-	tabindex?: number
-	/**
-	 * Optional. Specify either the ID of the container (string) or the DOM element itself if you
-	 * want to trigger validation of this reCAPTCHA instance by button click or input events.
-	 * By default if reCAPTCHA is rendered in a button or input with type submit/button then bind is set to an element
-	 * where reCAPTCHA is rendered.
-	 * Attribute: data-bind.
-	 */
-	bind?: string | HTMLElement
-	/**
 	 * Optional. The badge location for g-recaptcha with size of "invisible".
 	 * If isolated this value is ignored and "none" is used instead.
 	 * Accepted values: "none", "inline", "bottomright", "bottomleft"

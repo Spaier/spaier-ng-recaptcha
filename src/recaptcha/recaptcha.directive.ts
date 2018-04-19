@@ -7,7 +7,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
 import { Subscription } from 'rxjs/Subscription'
 
-import { KeyVersion } from './key-version.enum'
 import { RecaptchaBadge } from './recaptcha-badge'
 import { RecaptchaConfig } from './recaptcha.config'
 import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service'
@@ -130,10 +129,10 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 		)
 	}
 
-	private getParameters(): RecaptchaParameters {
+	private getParameters() {
 		let configuration: RecaptchaParameters
 		let sitekey: string
-		if (this.config.defaultVersion === KeyVersion.Invisible || this.size === 'invisible') {
+		if (this.size === 'invisible') {
 			configuration = this.config.invisibleConfig
 			sitekey = this.invisibleKey
 		} else {
@@ -144,9 +143,11 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 			sitekey: sitekey || configuration.sitekey,
 			type: this.type || configuration.type,
 			theme: this.theme || configuration.theme,
-			size: this.size || configuration.size,
-			tabindex: this.tabIndex || configuration.tabindex,
 			badge: this.badge || configuration.badge,
+			isolated: this.isolated || configuration.isolated,
+			hl: this.hl || configuration.hl,
+			size: this.size,
+			tabindex: this.tabIndex,
 			callback: (response: string) => {
 				this.zone.run(() => this.onCallback(response))
 			},
@@ -155,18 +156,7 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 			},
 			'error-callback': () => {
 				this.zone.run(() => this.onError())
-			},
-			isolated: this.isolated || configuration.isolated,
-			hl: this.hl || configuration.hl
-			// bind: this.bind || configuration.bind,
-			// preload: this.preload || configuration.preload,
-			// stoken: this.stoken || configuration.preload,
-			// s: this.s || configuration.preload,
-			// pool: this.pool || configuration.preload,
-			// action: this.action || configuration.action,
-			// 'content-binding': this.contentBinding || configuration['content-binding'],
-			// origin: this.origin || configuration.origin,
-			// version: this.version || configuration.version
+			}
 		}
 	}
 
