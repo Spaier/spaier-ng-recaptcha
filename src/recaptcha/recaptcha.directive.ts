@@ -99,7 +99,6 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 	 * Renders recaptcha.
 	 */
 	private render() {
-		console.log(this.grecaptcha)
 		if (this.grecaptcha) {
 			this.widgetId = this.grecaptcha.render(this.el.nativeElement, this.getParameters())
 		}
