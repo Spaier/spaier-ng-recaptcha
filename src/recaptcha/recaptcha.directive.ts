@@ -9,8 +9,12 @@ import { Subscription } from 'rxjs/Subscription'
 
 import { RecaptchaBadge } from './recaptcha-badge'
 import { RecaptchaConfig } from './recaptcha.config'
+import { RecaptchaType } from './recaptcha-type'
+import { RecaptchaTheme } from './recaptcha-theme'
+
 import { RecaptchaLoaderService } from '../loader/recaptcha-loader.service'
 import { RecaptchaParameters } from './recaptcha-parameters'
+import { RecaptchaSize } from './recaptcha-size'
 
 @Directive({
 	selector: '[rcpRecaptcha]',
@@ -27,11 +31,11 @@ export class RecaptchaDirective implements ControlValueAccessor, OnChanges, OnIn
 
 	@Input() v2Key: string
 
-	@Input() type: ReCaptchaV2.Type
+	@Input() type: RecaptchaType
 
-	@Input() theme: ReCaptchaV2.Theme
+	@Input() theme: RecaptchaTheme
 
-	@Input() size: ReCaptchaV2.Size
+	@Input() size: RecaptchaSize
 
 	@Input() tabIndex: number
 

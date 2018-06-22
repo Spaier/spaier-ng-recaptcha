@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 
+import { RecaptchaSize, RecaptchaTheme } from '../../../../index'
+
 @Component({
 	selector: 'app-directive',
 	templateUrl: './directive.component.html',
@@ -9,9 +11,9 @@ export class DirectiveComponent {
 
 	isolated = false
 
-	theme: ReCaptchaV2.Theme = 'dark'
+	theme: RecaptchaTheme = 'dark'
 
-	size: ReCaptchaV2.Size = 'normal'
+	size: RecaptchaSize = 'normal'
 
 	badge = 'bottomright'
 

@@ -1,4 +1,6 @@
 import { RecaptchaBadge } from './recaptcha-badge'
+import { RecaptchaType } from './recaptcha-type'
+import { RecaptchaTheme } from './recaptcha-theme'
 
 export interface RecaptchaParameters {
 	/**
@@ -10,14 +12,14 @@ export interface RecaptchaParameters {
 	 * Accepted values: "audio", "image"
 	 * @default "image"
 	 */
-	type?: ReCaptchaV2.Type
+	type?: RecaptchaType
 	/**
 	 * Optional. The color theme of the widget.
 	 * Attribute: data-theme.
 	 * Accepted values: "light", "dark"
 	 * @default "light"
 	 */
-	theme?: ReCaptchaV2.Theme
+	theme?: RecaptchaTheme
 	/**
 	 * Optional. The badge location for g-recaptcha with size of "invisible".
 	 * If isolated this value is ignored and "none" is used instead.

@@ -9,6 +9,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token'
 import { RECAPTCHA_IMPLICIT } from './recaptcha-implicit.token'
 
+declare var grecaptcha
+
 /**
  * Service for loading recaptcha.
  */
