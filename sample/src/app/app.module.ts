@@ -9,15 +9,11 @@ import { MaterialModule } from './material.module'
 import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent } from './app.component'
-import { ReactiveComponent } from './reactive/reactive.component'
-import { TemplateComponent } from './template/template.component'
 import { DirectiveComponent } from './directive/directive.component'
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		ReactiveComponent,
-		TemplateComponent,
 		DirectiveComponent
 	],
 	imports: [
