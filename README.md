@@ -34,6 +34,7 @@ yarn add spaier-ng-recaptcha
 * Languages: <https://developers.google.com/recaptcha/docs/language>
 * Invisible settings: <https://developers.google.com/recaptcha/docs/invisible#config>
 * V2 settings: <https://developers.google.com/recaptcha/docs/display#config>
+* V3 documentation: <https://developers.google.com/recaptcha/docs/v3>
 * CoreModule: <https://angular.io/guide/styleguide#core-feature-module>
 * SharedModule: <https://angular.io/guide/styleguide#shared-feature-module>
 
