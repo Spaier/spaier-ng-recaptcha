@@ -7,6 +7,7 @@
 ## Prerequisites
 
 Node and npm or yarn.
+To use version 1.x.x version with Angular 6 `rxjs-compat` node package must be installed.
 
 ## Table of Contents
 
@@ -24,6 +25,16 @@ or
 
 ```bash
 yarn add spaier-ng-recaptcha
+```
+
+To use version 1.x.x with Angular 6 install `rxjs-compat`
+
+```bash
+npm install rxjs-compat
+```
+
+```bash
+yarn add rxjs-compat
 ```
 
 ## Resources
