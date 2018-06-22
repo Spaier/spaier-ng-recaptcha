@@ -55,7 +55,7 @@
     <section class="example-section">
       <label class="example-margin">Language:</label>
       <mat-radio-group [(ngModel)]="lang">
-        <mat-radio-button *ngFor="let language of langs" class="example-margin" value="language">
+        <mat-radio-button *ngFor="let language of langs" class="example-margin" [value]="language">
           {{language}}
         </mat-radio-button>
       </mat-radio-group>
