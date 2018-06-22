@@ -1,6 +1,6 @@
 {
   "name": "spaier-ng-recaptcha",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "library for using reCAPTCHA in angular",
   "author": "Pavel Levchuk <SpaierInstinct@gmail.com>",
   "license": "MIT",

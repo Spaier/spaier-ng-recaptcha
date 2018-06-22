@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0]
+
 ### Added
 
 - RecaptchaSize, RecaptchaTheme and RecaptchaType types.
@@ -29,4 +31,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Provide empty configs if none specified
 
-[Unreleased]: https://github.com/Spaier/Spaier.Recaptcha/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/Spaier/Spaier.Recaptcha/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/Spaier/Spaier.Recaptcha/compare/1.0.0...1.1.0
