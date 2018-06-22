@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 
-import { RecaptchaSize, RecaptchaTheme } from '../../../../index'
+import { RecaptchaSize, RecaptchaTheme } from '../../../../dist'
 
 @Component({
 	selector: 'app-directive',
@@ -10,6 +10,17 @@ import { RecaptchaSize, RecaptchaTheme } from '../../../../index'
 export class DirectiveComponent {
 
 	isolated = false
+
+	lang = 'en'
+
+	langs = [
+		'en',
+		'ru',
+		'fr',
+		'de',
+		'it',
+		'es'
+	]
 
 	theme: RecaptchaTheme = 'dark'
 

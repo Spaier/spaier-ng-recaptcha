@@ -51,6 +51,15 @@
         </mat-radio-button>
       </mat-radio-group>
     </section>
+
+    <section class="example-section">
+      <label class="example-margin">Language:</label>
+      <mat-radio-group [(ngModel)]="lang">
+        <mat-radio-button *ngFor="let language of langs" class="example-margin" value="language">
+          {{language}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -58,7 +67,7 @@
     <h2 class="example-h2">V2 reCAPTCHA</h2>
     <button mat-button (click)="recaptcha.execute()">Angular Execute</button>
     <button mat-button (click)="recaptcha.reset()">Reset</button>
-    <div #recaptcha="rcpRecaptcha"
+    <div #recaptcha="rcpRecaptcha" [hl]="lang"
       (recaptchaOnResolved)="onSuccess($event)" (recaptchaOnError)="onError()" (recaptchaOnExpired)="onExpired()"
       [isolated]="isolated" rcpRecaptcha [size]="size" [theme]="theme" [badge]="badge"></div>
   </mat-card-content>

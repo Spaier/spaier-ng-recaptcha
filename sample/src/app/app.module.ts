@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { RecaptchaModule, RecaptchaLoaderModule } from '../../../'
+import { RecaptchaModule, RecaptchaLoaderModule } from '../../../dist'
 
 import { MaterialModule } from './material.module'
 import { AppRoutingModule } from './app-routing.module'
