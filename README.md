@@ -9,6 +9,22 @@
 Node and npm or yarn.
 To use version 1.x.x version with Angular 6 `rxjs-compat` node package must be installed.
 
+## Features
+
+- Supports Angular Reactive/Template forms.
+- Supports required attribute.
+- Supports V2(I'm not a robot and Invisible) reCAPTCHA.
+- Supports dynamic updating of a style or a language without manually reloading a `recaptcha.js` script.
+- You can specify a `recaptcha.js` script parameters via `RECAPTCHA_IMPLICIT` and `RECAPTCHA_LANGUAGE` tokens or `RecaptchaLoaderModule.withParameters` method.
+- You can provide a custom loader by providing your own `RecaptchaLoaderService`.
+
+## Roadmap
+
+- V3 support
+- Providing any amount of reCAPTCHA configurations
+- Use Angular 6 CLI
+- Angular Elements support
+
 ## Table of Contents
 
 * [Installation](#installation)
