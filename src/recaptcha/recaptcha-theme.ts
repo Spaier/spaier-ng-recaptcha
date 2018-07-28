@@ -1,1 +1,1 @@
-export type RecaptchaTheme = 'light' | 'dark'
+export enum RecaptchaTheme { Light = 'light', Dark = 'dark' }

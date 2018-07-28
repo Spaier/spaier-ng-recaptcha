@@ -1,1 +1,1 @@
-export type RecaptchaType = 'image' | 'audio'
+export enum RecaptchaType { Image = 'image', Audio = 'audio' }
