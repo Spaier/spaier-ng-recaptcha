@@ -1,0 +1,29 @@
+{
+  "name": "spaier-ng-recaptcha",
+  "version": "1.1.1",
+  "description": "library for using reCAPTCHA in angular",
+  "author": "Pavel Levchuk <SpaierInstinct@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Spaier/spaier-ng-recaptcha",
+  "bugs": "https://github.com/Spaier/spaier-ng-recaptcha/issues",
+  "repository": {
+    "url": "https://github.com/Spaier/spaier-ng-recaptcha",
+    "type": "git"
+  },
+  "keywords": [
+    "angular",
+    "recaptcha",
+    "angular-recaptcha",
+    "ng-recaptcha",
+    "grecaptcha"
+  ],
+  "readme": "README.md",
+  "peerDependencies": {
+    "@angular/common": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0",
+    "@angular/core": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0",
+    "@angular/forms": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0"
+  },
+  "optionalDependencies": {
+    "rxjs-compat": "^6.0.0"
+  }
+}

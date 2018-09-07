@@ -1,28 +1,29 @@
 {
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": ".",
-    "skipLibCheck": true,
-    "stripInternal": true,
-    "module": "commonjs",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
     "moduleResolution": "node",
-    "target": "es2015",
-    "lib": [
-      "es2015",
-      "dom"
-    ],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
-    "noUnusedLocals": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "declaration": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "spaier-ng-recaptcha": [
+        "dist/spaier-ng-recaptcha"
+      ],
+      "spaier-ng-recaptcha/*": [
+        "dist/spaier-ng-recaptcha/*"
+      ]
+    }
   }
 }

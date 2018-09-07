@@ -1,0 +1,67 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "cli": {
+    "packageManager": "yarn"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  },
+  "projects": {
+    "spaier-ng-recaptcha": {
+      "root": "projects/spaier-ng-recaptcha",
+      "sourceRoot": "projects/spaier-ng-recaptcha/src",
+      "projectType": "library",
+      "prefix": "rcp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/spaier-ng-recaptcha/tsconfig.lib.json",
+            "project": "projects/spaier-ng-recaptcha/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/spaier-ng-recaptcha/src/test.ts",
+            "tsConfig": "projects/spaier-ng-recaptcha/tsconfig.spec.json",
+            "karmaConfig": "projects/spaier-ng-recaptcha/karma.conf.js"
+          },
+          "configurations": {
+            "ci": {
+              "codeCoverage": true,
+              "karmaConfig": "projects/spaier-ng-recaptcha/karma.conf.ci.js",
+              "progress": false
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/spaier-ng-recaptcha/tsconfig.lib.json",
+              "projects/spaier-ng-recaptcha/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "sample": {
+      "root": "projects/sample",
+      "sourceRoot": "projects/sample/src",
+      "projectType": "application",
+      "prefix": "app",
+      "architect": {
+
+      }
+    }
+  },
+  "defaultProject": "spaier-ng-recaptcha"
+}
