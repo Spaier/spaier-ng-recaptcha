@@ -80,7 +80,7 @@
     "no-unbound-method": true,
     "no-unsafe-any": false,
     "no-unsafe-finally": true,
-    "no-unused-expression": true,
+    "no-unused-expression": false,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "prefer-conditional-expression": [
