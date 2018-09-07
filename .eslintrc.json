@@ -1,0 +1,42 @@
+{
+  "plugins": [
+    "jasmine",
+    "protractor"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jasmine": true,
+    "node": true,
+    "protractor": true,
+    "serviceworker": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jasmine/recommended",
+    "plugin:protractor/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "no-unused-vars": "warn",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ]
+  }
+}
