@@ -3,5 +3,9 @@
   "dest": "../../dist/spaier-ng-recaptcha",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "ngx-dom-wrappers",
+    "tslib"
+  ]
 }

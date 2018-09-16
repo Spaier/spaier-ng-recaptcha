@@ -29,13 +29,14 @@
           "options": {
             "main": "projects/spaier-ng-recaptcha/src/test.ts",
             "tsConfig": "projects/spaier-ng-recaptcha/tsconfig.spec.json",
-            "karmaConfig": "projects/spaier-ng-recaptcha/karma.conf.js"
+            "karmaConfig": "karma.conf.js"
           },
           "configurations": {
             "ci": {
               "codeCoverage": true,
-              "karmaConfig": "projects/spaier-ng-recaptcha/karma.conf.ci.js",
-              "progress": false
+              "progress": false,
+              "watch": false,
+              "browsers": "ChromeHeadlessCI"
             }
           }
         },
@@ -54,12 +55,101 @@
       }
     },
     "sample": {
-      "root": "projects/sample",
+      "root": "projects/sample/",
       "sourceRoot": "projects/sample/src",
       "projectType": "application",
       "prefix": "app",
+      "schematics": {},
       "architect": {
-
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sample",
+            "index": "projects/sample/src/index.html",
+            "main": "projects/sample/src/main.ts",
+            "polyfills": "projects/sample/src/polyfills.ts",
+            "tsConfig": "projects/sample/tsconfig.app.json",
+            "assets": [
+              "projects/sample/src/favicon.ico"
+            ],
+            "styles": [
+              "projects/sample/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sample/src/environments/environment.ts",
+                  "with": "projects/sample/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sample:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sample:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sample:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sample/src/test.ts",
+            "polyfills": "projects/sample/src/polyfills.ts",
+            "tsConfig": "projects/sample/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "styles": [
+              "projects/sample/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/sample/src/favicon.ico"
+            ]
+          },
+          "configurations": {
+            "ci": {
+              "codeCoverage": true,
+              "progress": false,
+              "watch": false,
+              "browsers": "ChromeHeadlessCI"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sample/tsconfig.app.json",
+              "projects/sample/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
       }
     }
   },

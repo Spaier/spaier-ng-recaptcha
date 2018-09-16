@@ -18,12 +18,15 @@
     "grecaptcha"
   ],
   "readme": "README.md",
+  "dependencies": {
+    "ngx-dom-wrappers": "^0.0.1"
+  },
   "peerDependencies": {
     "@angular/common": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0",
-    "@angular/core": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0",
-    "@angular/forms": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0"
+    "@angular/core": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0"
   },
   "optionalDependencies": {
+    "@angular/forms": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-rc0",
     "rxjs-compat": "^6.0.0"
   }
 }
