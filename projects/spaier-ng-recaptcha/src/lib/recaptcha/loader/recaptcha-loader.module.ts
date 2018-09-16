@@ -41,7 +41,7 @@ export class RecaptchaLoaderModule {
   public static withParameters(
     parameters: {
       /**
-       * Language code.
+       * Language code. https://developers.google.com/recaptcha/docs/language.
        */
       language?: string,
       /**
