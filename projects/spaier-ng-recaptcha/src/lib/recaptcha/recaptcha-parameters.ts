@@ -13,17 +13,17 @@ export interface RecaptchaParameters {
    * An initial problem to solve.
    * Attribute: data-type.
    */
-  type?: RecaptchaType
+  type?: RecaptchaType | string
   /**
    * The color theme of the widget.
    * Attribute: data-theme.
    */
-  theme?: RecaptchaTheme
+  theme?: RecaptchaTheme | string
   /**
    * Size of the reCAPTCHA.
    * Attribute: data-size.
    */
-  size?: RecaptchaSize
+  size?: RecaptchaSize | string
   /**
    * Tab index.
    * Attribute: data-tabindex.
@@ -51,7 +51,7 @@ export interface RecaptchaParameters {
    * If isolated this value is ignored.
    * Attribute: data-badge.
    */
-  badge?: RecaptchaBadge
+  badge?: RecaptchaBadge | string
   /**
    * Don't touch it.
    * Attribute: data-s.
