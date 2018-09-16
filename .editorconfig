@@ -11,5 +11,5 @@ indent_style = space
 max_line_length = off
 trim_trailing_whitespace = false
 
-[*.{html,json,ts,js}]
+[*.{html,json,ts,js,scss}]
 indent_size = 2
