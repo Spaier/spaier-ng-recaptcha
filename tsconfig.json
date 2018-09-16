@@ -7,6 +7,7 @@
     "declaration": false,
     "module": "es2015",
     "moduleResolution": "node",
+    "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
@@ -19,10 +20,10 @@
     ],
     "paths": {
       "spaier-ng-recaptcha": [
-        "dist/spaier-ng-recaptcha"
+        "projects/spaier-ng-recaptcha"
       ],
       "spaier-ng-recaptcha/*": [
-        "dist/spaier-ng-recaptcha/*"
+        "projects/spaier-ng-recaptcha/*"
       ]
     }
   }
