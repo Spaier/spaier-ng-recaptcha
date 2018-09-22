@@ -1,15 +1,20 @@
 import { Component, ViewChild } from '@angular/core'
+import { FormBuilder, Validators } from '@angular/forms'
 
 import { RecaptchaDirective } from 'spaier-ng-recaptcha'
 
 @Component({
-  selector: 'app-directive',
-  templateUrl: './directive.component.html',
-  styleUrls: ['./directive.component.scss']
+  selector: 'app-reactive',
+  templateUrl: './reactive.component.html',
+  styleUrls: ['./reactive.component.scss']
 })
-export class DirectiveComponent {
+export class ReactiveComponent {
 
   @ViewChild('recaptcha') recaptcha: RecaptchaDirective
+
+  form = this.fb.group({
+    'captcha': ['', Validators.required]
+  })
 
   theme = 'dark'
 
@@ -23,7 +28,7 @@ export class DirectiveComponent {
 
   action = 'form'
 
-  constructor() { }
+  constructor(private readonly fb: FormBuilder) { }
 
   async execute() {
     console.log('executed button: ' + await this.recaptcha.execute())
@@ -47,5 +52,9 @@ export class DirectiveComponent {
 
   onExpired() {
     console.log('expired')
+  }
+
+  onSubmit() {
+    console.log(this.form.value)
   }
 }

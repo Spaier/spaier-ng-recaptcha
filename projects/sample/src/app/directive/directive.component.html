@@ -1,73 +1,24 @@
-<!-- <mat-card>
-  <mat-card-content>
-    <h2>reCAPTCHA V2 configuration</h2>
-
-    <section class="example-section">
-      <label class="example-margin">Isolated:</label>
-      <mat-checkbox [(ngModel)]="isolated"></mat-checkbox>
-    </section>
-
-    <section class="example-section">
-      <label class="example-margin">Size:</label>
-      <mat-radio-group [(ngModel)]="size">
-        <mat-radio-button class="example-margin" value="normal">
-          Normal
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="compact">
-          Compact
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="invisible">
-          Invisible
-        </mat-radio-button>
-      </mat-radio-group>
-    </section>
-
-    <section class="example-section">
-      <label class="example-margin">Theme:</label>
-      <mat-radio-group [(ngModel)]="theme">
-        <mat-radio-button class="example-margin" value="dark">
-          Dark
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="light">
-          Light
-        </mat-radio-button>
-      </mat-radio-group>
-    </section>
-
-    <section class="example-section">
-      <label class="example-margin">Badge:</label>
-      <mat-radio-group [(ngModel)]="badge">
-        <mat-radio-button class="example-margin" value="bottomright">
-          Bottom Right
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="bottomleft">
-          Bottom Left
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="inline">
-          Inline
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="none">
-          None
-        </mat-radio-button>
-      </mat-radio-group>
-    </section>
-
-    <section class="example-section">
-      <label class="example-margin">Language:</label>
-      <mat-radio-group [(ngModel)]="lang">
-        <mat-radio-button *ngFor="let language of langs" class="example-margin" [value]="language">
-          {{language}}
-        </mat-radio-button>
-      </mat-radio-group>
-    </section>
-  </mat-card-content>
-</mat-card> -->
-<mat-card>
-  <mat-card-content>
-    <!-- <button mat-button (click)="recaptcha.execute()">Angular Execute</button>
-    <button mat-button (click)="recaptcha.reset()">Reset</button>
-    <div #recaptcha="rcpRecaptcha" [hl]="lang"
-      (recaptchaOnResolved)="onSuccess($event)" (recaptchaOnError)="onError()" (recaptchaOnExpired)="onExpired()"
-      [isolated]="isolated" rcpRecaptcha [size]="size" [theme]="theme" [badge]="badge"></div> -->
-  </mat-card-content>
-</mat-card>
+<select [(ngModel)]="theme">
+  <option>dark</option>
+  <option>light</option>
+</select>
+<select [(ngModel)]="size">
+  <option>normal</option>
+  <option>compact</option>
+  <option>invisible</option>
+</select>
+<select [(ngModel)]="badge">
+  <option>bottomright</option>
+  <option>bottomleft</option>
+  <option>inline</option>
+  <option>none</option>
+</select>
+<input type="text" [(ngModel)]="language" />
+<input type="text" [(ngModel)]="action" />
+<div required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
+  [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
+  (data-callback)="onResolved($event)" data-expired-callback="testfunc">
+</div>
+<button type="button" [disabled]="recaptcha.size != 'invisible'" (click)="execute()">Execute</button>
+<button type="button" (click)="reset()">Reset</button>
+<button type="button" (click)="getResponse()">Get Response</button>

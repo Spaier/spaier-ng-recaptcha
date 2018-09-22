@@ -3,14 +3,22 @@ import {
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
+  MatFormFieldModule,
+  MatOptionModule,
   MatRadioModule,
+  MatSelectModule,
+  MatTabsModule,
 } from '@angular/material'
 
 const MODULES = [
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
+  MatFormFieldModule,
+  MatOptionModule,
   MatRadioModule,
+  MatSelectModule,
+  MatTabsModule,
 ]
 
 /**

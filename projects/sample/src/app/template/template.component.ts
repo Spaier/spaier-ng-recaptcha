@@ -3,13 +3,15 @@ import { Component, ViewChild } from '@angular/core'
 import { RecaptchaDirective } from 'spaier-ng-recaptcha'
 
 @Component({
-  selector: 'app-directive',
-  templateUrl: './directive.component.html',
-  styleUrls: ['./directive.component.scss']
+  selector: 'app-template',
+  templateUrl: './template.component.html',
+  styleUrls: ['./template.component.scss']
 })
-export class DirectiveComponent {
+export class TemplateComponent {
 
   @ViewChild('recaptcha') recaptcha: RecaptchaDirective
+
+  captcha
 
   theme = 'dark'
 
@@ -47,5 +49,9 @@ export class DirectiveComponent {
 
   onExpired() {
     console.log('expired')
+  }
+
+  onSubmit() {
+    console.log(this.captcha)
   }
 }
