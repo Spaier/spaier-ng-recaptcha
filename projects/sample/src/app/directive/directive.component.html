@@ -17,7 +17,7 @@
 <input type="text" [(ngModel)]="action" />
 <div required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
   [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
-  (data-callback)="onResolved($event)" data-expired-callback="testfunc">
+  (data-callback)="onResolved($event)">
 </div>
 <button type="button" [disabled]="recaptcha.size != 'invisible'" (click)="execute()">Execute</button>
 <button type="button" (click)="reset()">Reset</button>
