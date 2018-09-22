@@ -167,7 +167,7 @@
     "prefer-function-over-method": false,
     "prefer-method-signature": false,
     "prefer-switch": true,
-    "prefer-template": true,
+    "prefer-template": false,
     "quotemark": [
       true,
       "single"
