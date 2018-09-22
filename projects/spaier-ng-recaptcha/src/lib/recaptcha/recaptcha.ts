@@ -6,8 +6,8 @@ import { RecaptchaExecuteParameters } from './recaptcha-execute-parameters'
  */
 export interface Recaptcha {
   /**
-   * V2: Renders the container as a reCAPTCHA widget.
-   * V3: Renders a V3 reCAPTCHA.
+   * Renders the container as a reCAPTCHA widget.
+   * If parameters are specified instead of a container renders an invisible isolated reCAPTCHA.
    * Returns the ID of the newly created widget.
    * @param containerOrParameters
    * V2: The HTML element to render the reCAPTCHA widget. Specify either the ID of the container (string) or the DOM element itself.
@@ -27,12 +27,13 @@ export interface Recaptcha {
   reset(widgetId?: number, parameters?: Partial<RecaptchaParameters>): void
   /**
    * Executes reCAPTCHA and returns promise of response.
-   * @param widgetIdOrSitekey
-   * V2: Optional widget ID, defaults to the first widget created if unspecified.
-   * V3: Sitekey.
-   * @param parameters reCAPTCHA parameters.
+   * @param widgetIdOrSitekeyOrParameters
+   * Optional widget ID that defaults to the first widget created if unspecified.
+   * or sitekey or reCAPTCHA execute parameters.
+   * @param parameters reCAPTCHA execute parameters.
    */
-  execute(widgetIdOrSitekey?: number | string, parameters?: RecaptchaExecuteParameters): Promise<string>
+  execute(widgetIdOrSitekeyOrParameters?: number | string | RecaptchaExecuteParameters,
+    parameters?: RecaptchaExecuteParameters): Promise<string>
   /**
    * Gets the response for the reCAPTCHA widget.
    * @param widgetId Optional widget ID, defaults to the first widget created if unspecified.
