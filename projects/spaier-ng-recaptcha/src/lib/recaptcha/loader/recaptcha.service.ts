@@ -23,20 +23,24 @@ declare var grecaptcha: Recaptcha
 })
 export class RecaptchaService {
 
-  readonly recaptcha: Observable<Recaptcha>
+  get recaptcha(): Recaptcha {
+    return this._recaptcha.value
+  }
+
+  readonly recaptcha$: Observable<Recaptcha>
 
   private _recaptcha: BehaviorSubject<Recaptcha>
 
   constructor(
+    rendererFactory: RendererFactory2,
+    @Inject(RECAPTCHA_URL) recaptchaUrl: string,
+    @Inject(RECAPTCHA_RENDER) public readonly render: RecaptchaRender | string,
+    @Inject(RECAPTCHA_LANGUAGE) @Optional() language?: string,
+    @Inject(RECAPTCHA_ONLOAD) @Optional() onload?: string,
+    @Optional() onloadService?: RecaptchaOnloadService,
     // See issue: https://github.com/angular/angular/issues/15640
-    @Inject(DOCUMENT) @Optional() documentWrapper,
-    @Inject(RECAPTCHA_WINDOW) @Optional() windowWrapper,
-    @Inject(RECAPTCHA_URL) @Optional() recaptchaUrl: string,
-    @Inject(RECAPTCHA_LANGUAGE) @Optional() language: string,
-    @Inject(RECAPTCHA_RENDER) @Optional() render: RecaptchaRender | string,
-    @Inject(RECAPTCHA_ONLOAD) @Optional() onload: string,
-    @Optional() private readonly onloadService: RecaptchaOnloadService,
-    rendererFactory: RendererFactory2
+    @Inject(DOCUMENT) @Optional() documentWrapper?,
+    @Inject(RECAPTCHA_WINDOW) @Optional() windowWrapper?,
   ) {
     this._recaptcha = new BehaviorSubject<any>(null)
     this.load(
@@ -47,8 +51,9 @@ export class RecaptchaService {
       language,
       render,
       onload,
+      onloadService,
     )
-    this.recaptcha = this._recaptcha.asObservable()
+    this.recaptcha$ = this._recaptcha.asObservable()
   }
 
   private load(
@@ -59,6 +64,7 @@ export class RecaptchaService {
     language?: string,
     render?: string,
     onload?: string,
+    onloadService?: RecaptchaOnloadService
   ) {
     if (windowWrapper && documentWrapper) {
       const url = new URL(recaptchaUrl)
@@ -69,8 +75,8 @@ export class RecaptchaService {
         windowWrapper[onload] = () => {
           this._recaptcha.next(grecaptcha)
           grecaptcha.ready(() => {
-            if (this.onloadService && this.onloadService.onload) {
-              this.onloadService.onload(grecaptcha)
+            if (onloadService && onloadService.onload) {
+              onloadService.onload(grecaptcha)
             }
           })
         }
