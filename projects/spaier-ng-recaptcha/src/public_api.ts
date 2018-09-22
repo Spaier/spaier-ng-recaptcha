@@ -1,4 +1,4 @@
-export * from './lib/recaptcha/loader/recaptcha-constants'
+export * from './lib/recaptcha/loader/recaptcha-loader-constants'
 export * from './lib/recaptcha/loader/recaptcha-language.token'
 export * from './lib/recaptcha/loader/recaptcha-onload.service'
 export * from './lib/recaptcha/loader/recaptcha-onload.token'
@@ -10,6 +10,7 @@ export * from './lib/recaptcha/loader/recaptcha.service'
 export * from './lib/recaptcha/loader/recaptcha-loader.module'
 
 export * from './lib/recaptcha/recaptcha-test-sitekeys'
+export * from './lib/recaptcha/recaptcha-constants'
 export * from './lib/recaptcha/recaptcha'
 export * from './lib/recaptcha/recaptcha-badge'
 export * from './lib/recaptcha/recaptcha-execute-parameters'
