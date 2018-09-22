@@ -1,7 +1,7 @@
 /**
  * An initial problem to solve.
  */
-export enum RecaptchaType {
+export const enum RecaptchaType {
   Image = 'image',
   Audio = 'audio',
 }

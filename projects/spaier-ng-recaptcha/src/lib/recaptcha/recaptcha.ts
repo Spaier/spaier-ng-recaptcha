@@ -15,8 +15,8 @@ export interface Recaptcha {
    * @param parameters reCAPTCHA parameters.
    * @param inherit V2: whether html data-* attributes of container should be used.
    */
-  render(containerOrParameters?: string | HTMLElement | RecaptchaParameters,
-    parameters?: RecaptchaParameters,
+  render(containerOrParameters?: string | HTMLElement | Partial<RecaptchaParameters>,
+    parameters?: Partial<RecaptchaParameters>,
     inherit?: boolean
   ): number
   /**
@@ -24,7 +24,7 @@ export interface Recaptcha {
    * @param widgetId Optional widget ID, defaults to the first widget created if unspecified.
    * @param parameters Parameters.
    */
-  reset(widgetId?: number, parameters?: RecaptchaParameters): void
+  reset(widgetId?: number, parameters?: Partial<RecaptchaParameters>): void
   /**
    * Executes reCAPTCHA and returns promise of response.
    * @param widgetIdOrSitekey

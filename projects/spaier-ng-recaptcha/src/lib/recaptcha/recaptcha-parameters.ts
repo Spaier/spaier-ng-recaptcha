@@ -36,12 +36,14 @@ export interface RecaptchaParameters {
    */
   stoken?: string
   /**
+   * @deprecated
    * Don't touch it.
    * Binds reCAPTCHA execution to html element by reference or id.
    * Attribute: data-bind.
    */
   bind?: string | HTMLElement
   /**
+   * @deprecated
    * Don't touch it.
    * Attribute: data-preload.
    */
@@ -53,16 +55,19 @@ export interface RecaptchaParameters {
    */
   badge?: RecaptchaBadge | string
   /**
+   * @deprecated
    * Don't touch it.
    * Attribute: data-s.
    */
   s?: string
   /**
+   * @deprecated
    * Don't touch it.
    * Attribute: data-pool.
    */
   pool?: string
   /**
+   * @deprecated
    * Don't touch it.
    * Attribute: data-content-binding.
    */
@@ -76,24 +81,29 @@ export interface RecaptchaParameters {
    * Optional. Your callback function that's executed when the user submits a successful CAPTCHA response.
    * Attribute: data-callback.
    * The user's response, g-recaptcha-response, will be the input for your callback function.
+   * A function or a name of the function from the window object (window[this.callback]).
    */
-  callback?(response: string): void
+  callback?: ((response: string) => void) | string
   /**
    * Optional. Your callback function that's executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
+   * A function or a name of the function from the window object (window[this["expired-callback"]]).
    * Attribute: data-expired-callback.
    */
-  'expired-callback'?(): void
+  'expired-callback'?: (() => void) | string
   /**
    * Optional. Your callback function that's executed when reCAPTCHA encounters an error (usually network connectivity)
    * and cannot continue until connectivity is restored.
+   * A function or a name of the function from the window object (window[this["error-callback"]]).
    * Attribute: data-error-callback.
    */
-  'error-callback'?(): void
+  'error-callback'?: (() => void) | string
   /**
+   * @deprecated
    * Don't touch it.
    */
   origin?: string
   /**
+   * @deprecated
    * Don't touch it.
    */
   version?: string

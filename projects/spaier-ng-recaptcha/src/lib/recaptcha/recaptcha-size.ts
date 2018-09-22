@@ -1,7 +1,7 @@
 /**
  * A size of the reCAPTCHA.
  */
-export enum RecaptchaSize {
+export const enum RecaptchaSize {
   Normal = 'normal',
   Compact = 'compact',
   Invisible = 'invisible',
