@@ -11,7 +11,7 @@ import { RECAPTCHA_LANGUAGE } from './recaptcha-language.token'
 import { RECAPTCHA_ONLOAD } from './recaptcha-onload.token'
 import { RecaptchaOnloadService } from './recaptcha-onload.service'
 import { RecaptchaRender } from './recaptcha-render'
-import { RecaptchaOnloadEventName, RecaptchaGoogleUrl } from './recaptcha-constants'
+import { RecaptchaOnloadEventName, RecaptchaGoogleUrl } from './recaptcha-loader-constants'
 import { Recaptcha } from '../recaptcha'
 
 /**
@@ -43,7 +43,7 @@ export class RecaptchaLoaderModule {
       /**
        * Language code. https://developers.google.com/recaptcha/docs/language.
        */
-      language?: string,
+      language?: string | null,
       /**
        * GoogleRecaptchaUrl or GlobalRecaptchaUrl can be used.
        */
@@ -58,7 +58,7 @@ export class RecaptchaLoaderModule {
       /**
        * Onload handler name.
        */
-      onload?: string,
+      onload?: string | null,
       /**
        * Onload handler. Can be used to execute V3 reCAPTCHA.
        */
@@ -67,7 +67,7 @@ export class RecaptchaLoaderModule {
   ): ModuleWithProviders {
     if (parameters.onload === undefined) parameters.onload = RecaptchaOnloadEventName
     if (parameters.recaptchaUrl === undefined) parameters.recaptchaUrl = RecaptchaGoogleUrl
-    if (parameters.render === undefined) parameters.render = RecaptchaRender.Onload
+    if (parameters.render === undefined) parameters.render = RecaptchaRender.Explicit
     const providers = []
     function addTokenValue<T>(token: InjectionToken<T>, value: T) {
       if (value) providers.push({ provide: token, useValue: value })
