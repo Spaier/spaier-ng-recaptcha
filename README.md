@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/Spaier/spaier-ng-recaptcha.svg?branch=master)](https://travis-ci.org/Spaier/spaier-ng-recaptcha)
 [![npm](https://img.shields.io/npm/v/spaier-ng-recaptcha.svg)](https://www.npmjs.com/package/spaier-ng-recaptcha)
 [![npm](https://img.shields.io/npm/l/spaier-ng-recaptcha.svg)](https://www.npmjs.com/package/spaier-ng-recaptcha)
+[![devDependencies](https://david-dm.org/spaier/spaier-ng-recaptcha/dev-status.svg)](https://david-dm.org/spaier/spaier-ng-recaptcha?type=dev)
 
 ## Prerequisites
 
