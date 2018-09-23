@@ -20,7 +20,7 @@ export class ReactiveComponent {
 
   sitekey
 
-  size = 'invisible'
+  size = 'normal'
 
   badge = 'none'
 

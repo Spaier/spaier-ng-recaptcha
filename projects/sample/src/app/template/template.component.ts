@@ -17,7 +17,7 @@ export class TemplateComponent {
 
   sitekey
 
-  size = 'invisible'
+  size = 'normal'
 
   badge = 'none'
 

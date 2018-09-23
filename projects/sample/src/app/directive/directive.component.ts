@@ -15,7 +15,7 @@ export class DirectiveComponent {
 
   sitekey
 
-  size = 'invisible'
+  size = 'normal'
 
   badge = 'none'
 
