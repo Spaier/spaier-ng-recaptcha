@@ -37,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Modules</li>
-  <li>RecaptchaFormsModule</li>
+  <li>RecaptchaDirectiveModule</li>
 </ol>
 
       <div class="text-center module-graph-container">
@@ -65,15 +65,15 @@
 <polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
-<title>cluster_RecaptchaFormsModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="163,-70 163,-268 333,-268 333,-70 163,-70"/>
+<title>cluster_RecaptchaDirectiveModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="155,-70 155,-268 341,-268 341,-70 155,-70"/>
 </g>
 <g id="clust2" class="cluster">
-<title>cluster_RecaptchaFormsModule_declarations</title>
+<title>cluster_RecaptchaDirectiveModule_declarations</title>
 <polygon fill="none" stroke="#000000" points="177,-78 177,-130 319,-130 319,-78 177,-78"/>
 </g>
 <g id="clust5" class="cluster">
-<title>cluster_RecaptchaFormsModule_exports</title>
+<title>cluster_RecaptchaDirectiveModule_exports</title>
 <polygon fill="none" stroke="#000000" points="175,-208 175,-260 321,-260 321,-208 175,-208"/>
 </g>
 <!-- RecaptchaDirective -->
@@ -82,15 +82,15 @@
 <polygon fill="#ffffb3" stroke="#000000" points="311.3836,-122 184.6164,-122 184.6164,-86 311.3836,-86 311.3836,-122"/>
 <text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">RecaptchaDirective</text>
 </g>
-<!-- RecaptchaFormsModule -->
+<!-- RecaptchaDirectiveModule -->
 <g id="node2" class="node">
-<title>RecaptchaFormsModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="324.6288,-187 321.6288,-191 300.6288,-191 297.6288,-187 171.3712,-187 171.3712,-151 324.6288,-151 324.6288,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">RecaptchaFormsModule</text>
+<title>RecaptchaDirectiveModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="332.9328,-187 329.9328,-191 308.9328,-191 305.9328,-187 163.0672,-187 163.0672,-151 332.9328,-151 332.9328,-187"/>
+<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">RecaptchaDirectiveModule</text>
 </g>
-<!-- RecaptchaDirective&#45;&gt;RecaptchaFormsModule -->
+<!-- RecaptchaDirective&#45;&gt;RecaptchaDirectiveModule -->
 <g id="edge1" class="edge">
-<title>RecaptchaDirective&#45;&gt;RecaptchaFormsModule</title>
+<title>RecaptchaDirective&#45;&gt;RecaptchaDirectiveModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
@@ -100,9 +100,9 @@
 <polygon fill="#fb8072" stroke="#000000" points="312.8831,-252 183.1169,-252 183.1169,-216 312.8831,-216 312.8831,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">RecaptchaDirective </text>
 </g>
-<!-- RecaptchaFormsModule&#45;&gt;RecaptchaDirective  -->
+<!-- RecaptchaDirectiveModule&#45;&gt;RecaptchaDirective  -->
 <g id="edge2" class="edge">
-<title>RecaptchaFormsModule&#45;&gt;RecaptchaDirective </title>
+<title>RecaptchaDirectiveModule&#45;&gt;RecaptchaDirective </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
 </g>
@@ -136,7 +136,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha-forms.module.ts</code>
+            <code>projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha-directive.module.ts</code>
         </p>
 
 
@@ -144,7 +144,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>An NgModule that enables angular forms for reCAPTCHA.</p>
+                <p>An NgModule that exports and declares RecaptchaDirective.</p>
 
             </p>
         
@@ -175,14 +175,14 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;
 
-import { RecaptchaValueAccessorDirective } from &#x27;./recaptcha-value-accessor.directive&#x27;
+import { RecaptchaDirective } from &#x27;./recaptcha.directive&#x27;
 
 const DIRECTIVES &#x3D; [
-  RecaptchaValueAccessorDirective
+  RecaptchaDirective
 ]
 
 /**
- * An NgModule that enables angular forms for reCAPTCHA.
+ * An NgModule that exports and declares RecaptchaDirective.
  */
 @NgModule({
   exports: [
@@ -192,7 +192,7 @@ const DIRECTIVES &#x3D; [
     ...DIRECTIVES
   ]
 })
-export class RecaptchaFormsModule { }
+export class RecaptchaDirectiveModule { }
 </code></pre>
     </div>
 </div>
@@ -228,7 +228,7 @@ export class RecaptchaFormsModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'RecaptchaFormsModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RecaptchaDirectiveModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

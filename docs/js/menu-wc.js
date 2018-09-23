@@ -69,13 +69,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-1cd8d066731d25fbb80bf0a28f1431cc"' : 'data-target="#xs-components-links-module-AppModule-1cd8d066731d25fbb80bf0a28f1431cc"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' : 'data-target="#xs-components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-AppModule-1cd8d066731d25fbb80bf0a28f1431cc"' : 'id="xs-components-links-module-AppModule-1cd8d066731d25fbb80bf0a28f1431cc"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' : 'id="xs-components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' }>
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
                                         </li>
@@ -96,6 +96,23 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     </li>
                     <li class="link">
                         <a href="modules/MaterialModule.html" data-type="entity-link">MaterialModule</a>
+                    </li>
+                    <li class="link">
+                        <a href="modules/RecaptchaDirectiveModule.html" data-type="entity-link">RecaptchaDirectiveModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                    ${ isNormalMode ? 'data-target="#directives-links-module-RecaptchaDirectiveModule-a202a81def883c8bbb11f8bcf58db2fe"' : 'data-target="#xs-directives-links-module-RecaptchaDirectiveModule-a202a81def883c8bbb11f8bcf58db2fe"' }>
+                                    <span class="icon ion-md-code-working"></span>
+                                    <span>Directives</span>
+                                    <span class="icon ion-ios-arrow-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                    ${ isNormalMode ? 'id="directives-links-module-RecaptchaDirectiveModule-a202a81def883c8bbb11f8bcf58db2fe"' : 'id="xs-directives-links-module-RecaptchaDirectiveModule-a202a81def883c8bbb11f8bcf58db2fe"' }>
+                                        <li class="link">
+                                            <a href="directives/RecaptchaDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RecaptchaDirective</a>
+                                        </li>
+                                </ul>
+                            </li>
                     </li>
                     <li class="link">
                         <a href="modules/RecaptchaFormsModule.html" data-type="entity-link">RecaptchaFormsModule</a>
@@ -127,23 +144,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     ${ isNormalMode ? 'id="injectables-links-module-RecaptchaLoaderModule-df529a3ff4814faa5a0bd6860794ac6c"' : 'id="xs-injectables-links-module-RecaptchaLoaderModule-df529a3ff4814faa5a0bd6860794ac6c"' }>
                                         <li class="link">
                                             <a href="injectables/RecaptchaService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>RecaptchaService</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-                    <li class="link">
-                        <a href="modules/RecaptchaModule.html" data-type="entity-link">RecaptchaModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#directives-links-module-RecaptchaModule-8563b04f8c6dfcbea372276188701923"' : 'data-target="#xs-directives-links-module-RecaptchaModule-8563b04f8c6dfcbea372276188701923"' }>
-                                    <span class="icon ion-md-code-working"></span>
-                                    <span>Directives</span>
-                                    <span class="icon ion-ios-arrow-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="directives-links-module-RecaptchaModule-8563b04f8c6dfcbea372276188701923"' : 'id="xs-directives-links-module-RecaptchaModule-8563b04f8c6dfcbea372276188701923"' }>
-                                        <li class="link">
-                                            <a href="directives/RecaptchaDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RecaptchaDirective</a>
                                         </li>
                                 </ul>
                             </li>

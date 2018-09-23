@@ -60,38 +60,135 @@ To use with Angular 6 <code>rxjs-compat</code> node package must be installed.</
 <div><pre class="line-numbers"><code class="language-bash">yarn add spaier-ng-recaptcha</code></pre></div><p>To use version with Angular 6+ install <code>rxjs-compat</code></p>
 <div><pre class="line-numbers"><code class="language-bash">npm install rxjs-compat</code></pre></div><div><pre class="line-numbers"><code class="language-bash">yarn add rxjs-compat</code></pre></div><h2 id="overview">Overview</h2>
 <h2 id="usage">Usage</h2>
-<h3 id="recaptchaloadermodule">RecaptchaLoaderModule</h3>
+<h3 id="directive">Directive</h3>
+<ul>
+<li>Add <code>RecaptchaModule</code> to any module that uses <code>reCAPTCHA</code> or <code>SharedModule</code>.</li>
+</ul>
+<h3 id="load-script">Load script</h3>
 <p>Add <code>RecaptchaLoaderModule</code> to <code>CoreModule</code> or <code>AppModule</code>.</p>
+<p>It provides <code>RecaptchaService</code>.</p>
 <p><code>language</code>: overrides default language.</p>
 <p><code>render</code>:</p>
 <ol>
-<li><code>RecaptchaRender.Explicit</code> doesn&#39;t render anything.</li>
+<li><code>RecaptchaRender.Explicit</code> doesn&#39;t render anything. Default.</li>
 <li><code>RecaptchaRender.Onload</code> renders the first element with <code>g-recaptcha</code> class.</li>
 <li><code>your_sitekey</code> renders isolated invisible reCAPTCHA that can be used from <code>RecaptchaService</code>. V3 best practice.</li>
 </ol>
-<p><code>onload</code>: specifies function name on window object.</p>
-<p>`onloadFunc</p>
+<p><code>onload</code>: specifies function name on the window object.</p>
+<p><code>onloadFunc</code>: specifies function that is executed after reCAPTCHA loads.</p>
+<p><code>recaptchaUrl</code>: script&#39;s url. Defaults to <code>RecaptchaGoogleUrl = &#39;https://www.google.com/recaptcha/api.js&#39;</code></p>
 <div><pre class="line-numbers"><code class="language-ts">    RecaptchaLoaderModule.withParameters({
       language: &#39;en&#39;,
       // render: &#39;your_sitekey`,
       onloadFunc: async (recaptcha: Recaptcha) =&gt; {
-        // V3 Execution
+        // Sitekey Execution
         const result = await recaptcha.execute(v3Sitekey, { action: &#39;background&#39; })
       },
-    }),</code></pre></div><ul>
-<li>Add <code>RecaptchaModule</code> to any module that uses reCAPTCHA or <code>SharedModule</code>.</li>
+    }),</code></pre></div><h3 id="recaptchaservice">RecaptchaService</h3>
+<p>Inject <code>RecaptchaService</code> and use provided <code>recaptcha$</code> observable or <code>recaptcha</code> object.
+If you use <code>recaptcha</code> object be sure to check that reCAPTCHA library is loaded.</p>
+<div><pre class="line-numbers"><code class="language-ts">  constructor(private readonly recaptchaService: RecaptchaService) { }
+
+  async execute() {
+    // Observable
+    const recaptcha = await this.recaptchaService.recaptcha$.toPromise()
+    const result1 = await recaptcha.execute({ action: &#39;something&#39; })
+    // Value
+    const result2 = await this.recaptchaService.recaptcha.execute({ action: &#39;something&#39; })
+  }</code></pre></div><h3 id="recaptchadirective">RecaptchaDirective</h3>
+<ul>
+<li>Add <code>RecaptchaDirectiveModule</code> to use <code>RecaptchaDirective</code> to any module that uses it or <code>SharedModule</code>.</li>
+</ul>
+<p>Use it in your template:</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;select [(ngModel)]=&quot;theme&quot;&gt;
+  &lt;option&gt;dark&lt;/option&gt;
+  &lt;option&gt;light&lt;/option&gt;
+&lt;/select&gt;
+&lt;select [(ngModel)]=&quot;size&quot;&gt;
+  &lt;option&gt;normal&lt;/option&gt;
+  &lt;option&gt;compact&lt;/option&gt;
+  &lt;option&gt;invisible&lt;/option&gt;
+&lt;/select&gt;
+&lt;select [(ngModel)]=&quot;badge&quot;&gt;
+  &lt;option&gt;bottomright&lt;/option&gt;
+  &lt;option&gt;bottomleft&lt;/option&gt;
+  &lt;option&gt;inline&lt;/option&gt;
+  &lt;option&gt;none&lt;/option&gt;
+&lt;/select&gt;
+&lt;input type=&quot;text&quot; [(ngModel)]=&quot;language&quot; /&gt;
+&lt;input type=&quot;text&quot; [(ngModel)]=&quot;action&quot; /&gt;
+&lt;div required #recaptcha=&quot;rcpRecaptcha&quot; rcpRecaptcha data-sitekey=&quot;your_sitekey&quot;
+  [data-theme]=&quot;theme&quot; [data-size]=&quot;size&quot; [data-hl]=&quot;language&quot; [data-badge]=&quot;badge&quot; [data-action]=&quot;action&quot;
+  (data-callback)=&quot;onResolved($event)&quot; (data-expired-callback)=&quot;onExpired()&quot; (data-error-callback)=&quot;onError()&quot;&gt;
+&lt;/div&gt;
+&lt;button type=&quot;button&quot; [disabled]=&quot;recaptcha.size != &#39;invisible&#39;&quot; (click)=&quot;execute()&quot;&gt;Execute&lt;/button&gt;
+&lt;button type=&quot;button&quot; (click)=&quot;reset()&quot;&gt;Reset&lt;/button&gt;
+&lt;button type=&quot;button&quot; (click)=&quot;getResponse()&quot;&gt;Get Response&lt;/button&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-ts">  &#64;ViewChild(&#39;recaptcha&#39;) recaptcha: RecaptchaDirective
+  theme = &#39;dark&#39;
+  size = &#39;normal&#39;
+  badge = &#39;none&#39;
+  language = &#39;en&#39;
+  action = &#39;form&#39;
+
+  async execute() {
+    console.log(&#39;executed button: &#39; + await this.recaptcha.execute())
+  }
+
+  reset() {
+    this.recaptcha.reset()
+  }
+
+  getResponse() {
+    console.log(&#39;response: &#39; + this.recaptcha.getResponse())
+  }
+
+  onResolved(response: string) {
+    console.log(&#39;callback: &#39; + response)
+  }
+
+  onError() {
+    console.log(&#39;error&#39;)
+  }
+
+  onExpired() {
+    console.log(&#39;expired&#39;)
+  }</code></pre></div><h4 id="forms">Forms</h4>
+<ul>
 <li>Add <code>RecaptchaFormsModule</code> to use reCAPTCHA with <code>@angular/forms</code> to any module that uses it or <code>SharedModule</code>.</li>
 </ul>
-<p><code>AppModule</code> or <code>CoreModule</code> example.</p>
-<div><pre class="line-numbers"><code class="language-ts">
-    RecaptchaModule,
-    RecaptchaFormsModule,</code></pre></div><h3 id="service">Service</h3>
-<h3 id="directive">Directive</h3>
-<h3 id="template-forms">Template forms</h3>
-<h3 id="reactive-forms">Reactive forms</h3>
-<h2 id="resources">Resources</h2>
+<h5 id="template-forms">Template forms</h5>
+<div><pre class="line-numbers"><code class="language-html">&lt;form (ngSubmit)=&quot;onSubmit()&quot; #form=&quot;ngForm&quot;&gt;
+  &lt;div [(ngModel)]=&quot;captcha&quot; name=&quot;captcha&quot; required #recaptcha=&quot;rcpRecaptcha&quot; rcpRecaptcha data-sitekey=&quot;your_sitekey&quot;
+    [data-theme]=&quot;theme&quot; [data-size]=&quot;size&quot; [data-hl]=&quot;language&quot; [data-badge]=&quot;badge&quot; [data-action]=&quot;action&quot;&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; [disabled]=&quot;recaptcha.size != &#39;invisible&#39;&quot; (click)=&quot;execute()&quot;&gt;Execute&lt;/button&gt;
+  &lt;button type=&quot;button&quot; (click)=&quot;reset()&quot;&gt;Reset&lt;/button&gt;
+  &lt;button type=&quot;button&quot; (click)=&quot;getResponse()&quot;&gt;Get Response&lt;/button&gt;
+  &lt;button type=&quot;submit&quot; [disabled]=&quot;!form.form.valid&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-ts">captcha: string
+
+onSubmit() {
+  console.log(captcha)
+}</code></pre></div><h5 id="reactive-forms">Reactive forms</h5>
+<div><pre class="line-numbers"><code class="language-html">&lt;form [formGroup]=&quot;form&quot; (ngSubmit)=&quot;onSubmit()&quot;&gt;
+  &lt;div formControlName=&quot;captcha&quot; required #recaptcha=&quot;rRecaptcha&quot; rcpRecaptcha data-sitekey=&quot;your_sitekey&quot;
+    [data-theme]=&quot;theme&quot; [data-size]=&quot;size&quot; [data-hl]=&quot;language&quot; [data-badge]=&quot;badge&quot; [data-action]=&quot;action&quot;&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; [disabled]=&quot;recaptcha.size != &#39;invisible&#39;&quot; (click)=&quot;execute()&quot;&gt;Execute&lt;/button&gt;
+  &lt;button type=&quot;button&quot; (click)=&quot;reset()&quot;&gt;Reset&lt;/button&gt;
+  &lt;button type=&quot;button&quot; (click)=&quot;getResponse()&quot;&gt;Get Response&lt;/button&gt;
+  &lt;button type=&quot;submit&quot; [disabled]=&quot;!form.valid&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-ts">  form = this.fb.group({
+    &#39;captcha&#39;: [&#39;&#39;, Validators.required]
+  })
+
+  constructor(private readonly fb: FormBuilder) { }
+
+  onSubmit() {
+    console.log(this.form.value)
+  }</code></pre></div><h2 id="resources">Resources</h2>
 <ul>
-<li>Docs: &lt;&gt;</li>
+<li>Docs: <a href="https://spaier.github.io/spaier-ng-recaptcha">https://spaier.github.io/spaier-ng-recaptcha</a></li>
 <li>Sample: <a href="https://github.io/spaier/spaier-ng-recaptcha/tree/master/projects/sample">https://github.io/spaier/spaier-ng-recaptcha/tree/master/projects/sample</a></li>
 <li>Keys: <a href="https://www.google.com/recaptcha/intro/index.html">https://www.google.com/recaptcha/intro/index.html</a></li>
 <li>reCAPTCHA: <a href="https://developers.google.com/recaptcha/docs">https://developers.google.com/recaptcha/docs</a></li>
