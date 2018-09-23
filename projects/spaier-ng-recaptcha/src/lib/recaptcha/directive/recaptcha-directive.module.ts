@@ -17,4 +17,4 @@ const DIRECTIVES = [
     ...DIRECTIVES
   ]
 })
-export class RecaptchaModule { }
+export class RecaptchaDirectiveModule { }

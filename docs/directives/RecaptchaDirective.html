@@ -1,0 +1,2159 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>spaier-ng-recaptcha documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">spaier-ng-recaptcha documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content directive">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Directives</li>
+  <li>RecaptchaDirective</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>A directive that renders a recaptcha widget in a host element.</p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                        <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                        <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+            </p>
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>[rcpRecaptcha]</code></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#grecaptcha">grecaptcha</a>
+                            </li>
+                            <li>
+                                <a href="#onChange">onChange</a>
+                            </li>
+                            <li>
+                                <a href="#onTouched">onTouched</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#widgetId">widgetId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#execute">execute</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getParameters">getParameters</a>
+                            </li>
+                            <li>
+                                <a href="#getResponse">getResponse</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onCallback">onCallback</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onError">onError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onExpired">onExpired</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#render">render</a>
+                            </li>
+                            <li>
+                                <a href="#reset">reset</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#triggerEvents">triggerEvents</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(loader: <a href="../injectables/RecaptchaService.html">RecaptchaService</a>, zone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, el: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, sitekey?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, type?: <a href="../interfaces/Recaptcha.html">RecaptchaType | string</a>, theme?: <a href="../interfaces/Recaptcha.html">RecaptchaTheme | string</a>, size?: <a href="../interfaces/Recaptcha.html">RecaptchaSize | string</a>, tabIndex?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, stoken?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, bind?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, preload?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, badge?: <a href="../interfaces/Recaptcha.html">RecaptchaBadge | string</a>, s?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, pool?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, contentBinding?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, action?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, isolated?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, hl?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:184</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>loader</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/RecaptchaService.html" target="_self" >RecaptchaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>zone</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>el</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sitekey</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>type</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaType | string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>theme</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaTheme | string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>size</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaSize | string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabIndex</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stoken</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>bind</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>preload</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>badge</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaBadge | string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>s</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pool</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>contentBinding</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>action</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>isolated</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hl</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:123</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Your sitekey.
+Attribute: data-sitekey.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:63</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>The color theme of the widget.
+Attribute: data-theme.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaTheme | string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:75</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Size of the reCAPTCHA.
+Attribute: data-size.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaSize | string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:81</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Tab index.
+Attribute: data-tabindex.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:87</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:94</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code>string | HTMLElement</code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:102</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:109</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>The badge location for g-recaptcha with size of &quot;invisible&quot;.
+If isolated this value is ignored.
+Attribute: data-badge.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaBadge | string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:116</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>An initial problem to solve.
+Attribute: data-type.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaType | string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:69</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:130</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:137</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Specifies V3 recaptcha&#39;s action parameter.
+Attribute: data-action.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:143</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Your callback function that&#39;s executed when the user submits a successful CAPTCHA response.
+Attribute: data-callback.
+The user&#39;s response, g-recaptcha-response, will be the input for your callback function.
+A function or a name of the function from the window object (window[this.callback]).</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code>EventEmitter&lt;string&gt;</code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>new EventEmitter&lt;string&gt;()</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:152</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Your callback function that&#39;s executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
+A function or a name of the function from the window object (window[this[&quot;expired-callback&quot;]]).
+Attribute: data-expired-callback.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code>EventEmitter&lt;void&gt;</code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>new EventEmitter&lt;void&gt;()</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="160" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:160</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Your callback function that&#39;s executed when reCAPTCHA encounters an error (usually network connectivity)
+and cannot continue until connectivity is restored.
+A function or a name of the function from the window object (window[this[&quot;error-callback&quot;]]).
+Attribute: data-error-callback.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code>EventEmitter&lt;void&gt;</code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>new EventEmitter&lt;void&gt;()</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:169</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional.
+If true, this reCAPTCHA instance will be part of a separate ID space and badge value will be set to &quot;none&quot;.
+Id starts with 1E5 instead of 0.
+Has no corresponding attribute.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:177</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Defaults to language specified in script(hl query parameter) or browser language.
+Has no corresponding attribute.
+Accepted values: <a href="https://developers.google.com/recaptcha/docs/language">https://developers.google.com/recaptcha/docs/language</a>.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:184</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="execute"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Async</span>
+                            execute
+                            </b>
+                            <a href="#execute"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>execute(parameters: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="269" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:269</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>parameters</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/RecaptchaExecuteParameters.html" target="_self" >RecaptchaExecuteParameters</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>{ action: this.action }</code>
+                                                        </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getParameters"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            getParameters
+                            </b>
+                            <a href="#getParameters"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getParameters()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:286</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getResponse"></a>
+                        <span class="name">
+                            <b>
+                            getResponse
+                            </b>
+                            <a href="#getResponse"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getResponse()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="262" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:262</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Returns the stored value.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnChanges"></a>
+                        <span class="name">
+                            <b>
+                            ngOnChanges
+                            </b>
+                            <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:232</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>changes</td>
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="244" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:244</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="225" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:225</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onCallback"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            onCallback
+                            </b>
+                            <a href="#onCallback"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>onCallback(response: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="324" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:324</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>response</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onError"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            onError
+                            </b>
+                            <a href="#onError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>onError()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="336" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:336</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onExpired"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            onExpired
+                            </b>
+                            <a href="#onExpired"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>onExpired()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="330" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:330</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="render"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            render
+                            </b>
+                            <a href="#render"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>render()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="253" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:253</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Renders recaptcha.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reset"></a>
+                        <span class="name">
+                            <b>
+                            reset
+                            </b>
+                            <a href="#reset"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reset()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="278" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:278</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Resets and rerenders the reCAPTCHA widget.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="triggerEvents"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            triggerEvents
+                            </b>
+                            <a href="#triggerEvents"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>triggerEvents(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="342" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:342</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="grecaptcha"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            grecaptcha
+                            </b>
+                            <a href="#grecaptcha"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>grecaptcha:     <code><a href="../interfaces/Recaptcha.html" target="_self" >Recaptcha</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Recaptcha.html" target="_self" >Recaptcha</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onChange"></a>
+                        <span class="name">
+                            <b>
+                            onChange
+                            </b>
+                            <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>onChange:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:48</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onTouched"></a>
+                        <span class="name">
+                            <b>
+                            onTouched
+                            </b>
+                            <a href="#onTouched"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>onTouched:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscription
+                            </b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>subscription:     <code>Subscription</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:56</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="widgetId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            widgetId
+                            </b>
+                            <a href="#widgetId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>widgetId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.directive.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Attribute, Directive, ElementRef, EventEmitter,
+  Input, NgZone, OnChanges, OnDestroy, OnInit, Output,
+  SimpleChanges
+} from &#x27;@angular/core&#x27;
+
+import { Subscription } from &#x27;rxjs/Subscription&#x27;
+
+import { RecaptchaService } from &#x27;./loader/recaptcha.service&#x27;
+import { RecaptchaBadge } from &#x27;./recaptcha-badge&#x27;
+import { RecaptchaSize } from &#x27;./recaptcha-size&#x27;
+import { RecaptchaTheme } from &#x27;./recaptcha-theme&#x27;
+import { RecaptchaType } from &#x27;./recaptcha-type&#x27;
+import { Recaptcha } from &#x27;./recaptcha&#x27;
+import { RecaptchaParameters } from &#x27;./recaptcha-parameters&#x27;
+import {
+  actionName,
+  badgeName,
+  bindName,
+  callbackName,
+  contentBindingName,
+  errorCallbackName,
+  expiredCallbackName,
+  getAttributeName,
+  hlName,
+  isolatedName,
+  poolName,
+  preloadName,
+  sitekeyName,
+  sizeName,
+  sName,
+  stokenName,
+  tabIndexName,
+  themeName,
+  typeName,
+} from &#x27;./recaptcha-parameter-names&#x27;
+import { RecaptchaExecuteParameters } from &#x27;./recaptcha-execute-parameters&#x27;
+
+/**
+ * A directive that renders a recaptcha widget in a host element.
+ */
+@Directive({
+  selector: &#x27;[rcpRecaptcha]&#x27;,
+  exportAs: &#x27;rcpRecaptcha&#x27;,
+})
+export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
+
+  onChange: (value: string) &#x3D;&gt; void
+
+  onTouched: () &#x3D;&gt; void
+
+  private widgetId: number
+
+  private grecaptcha: Recaptcha
+
+  private subscription: Subscription
+
+  /**
+   * Your sitekey.
+   * Attribute: data-sitekey.
+   */
+  @Input(getAttributeName(sitekeyName))
+  sitekey: string
+  /**
+   * An initial problem to solve.
+   * Attribute: data-type.
+   */
+  @Input(getAttributeName(typeName))
+  type?: RecaptchaType | string
+  /**
+   * The color theme of the widget.
+   * Attribute: data-theme.
+   */
+  @Input(getAttributeName(themeName))
+  theme?: RecaptchaTheme | string
+  /**
+   * Size of the reCAPTCHA.
+   * Attribute: data-size.
+   */
+  @Input(getAttributeName(sizeName))
+  size?: RecaptchaSize | string
+  /**
+   * Tab index.
+   * Attribute: data-tabindex.
+   */
+  @Input(getAttributeName(tabIndexName))
+  tabindex?: number
+  /**
+   * @deprecated
+   * Don&#x27;t touch it.
+   * Attribute: data-stoken.
+   */
+  @Input(getAttributeName(stokenName))
+  stoken?: string
+  /**
+   * @deprecated
+   * Don&#x27;t touch it.
+   * Binds reCAPTCHA execution to html element by reference or id.
+   * Attribute: data-bind.
+   */
+  @Input(getAttributeName(bindName))
+  bind?: string | HTMLElement
+  /**
+   * @deprecated
+   * Don&#x27;t touch it.
+   * Attribute: data-preload.
+   */
+  @Input(getAttributeName(preloadName))
+  preload?: boolean
+  /**
+   * The badge location for g-recaptcha with size of &quot;invisible&quot;.
+   * If isolated this value is ignored.
+   * Attribute: data-badge.
+   */
+  @Input(getAttributeName(badgeName))
+  badge?: RecaptchaBadge | string
+  /**
+   * @deprecated
+   * Don&#x27;t touch it.
+   * Attribute: data-s.
+   */
+  @Input(getAttributeName(sName))
+  s?: string
+  /**
+   * @deprecated
+   * Don&#x27;t touch it.
+   * Attribute: data-pool.
+   */
+  @Input(getAttributeName(poolName))
+  pool?: string
+  /**
+   * @deprecated
+   * Don&#x27;t touch it.
+   * Attribute: data-content-binding.
+   */
+  @Input(getAttributeName(contentBindingName))
+  contentBinding: string
+  /**
+   * Specifies V3 recaptcha&#x27;s action parameter.
+   * Attribute: data-action.
+   */
+  @Input(getAttributeName(actionName))
+  action?: string
+  /**
+   * Optional. Your callback function that&#x27;s executed when the user submits a successful CAPTCHA response.
+   * Attribute: data-callback.
+   * The user&#x27;s response, g-recaptcha-response, will be the input for your callback function.
+   * A function or a name of the function from the window object (window[this.callback]).
+   */
+  @Input(getAttributeName(callbackName))
+  @Output(getAttributeName(callbackName))
+  callback?: EventEmitter&lt;string&gt; &#x3D; new EventEmitter&lt;string&gt;()
+  /**
+   * Optional. Your callback function that&#x27;s executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
+   * A function or a name of the function from the window object (window[this[&quot;expired-callback&quot;]]).
+   * Attribute: data-expired-callback.
+   */
+  @Input(getAttributeName(expiredCallbackName))
+  @Output(getAttributeName(expiredCallbackName))
+  expiredCallback?: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;()
+  /**
+   * Optional. Your callback function that&#x27;s executed when reCAPTCHA encounters an error (usually network connectivity)
+   * and cannot continue until connectivity is restored.
+   * A function or a name of the function from the window object (window[this[&quot;error-callback&quot;]]).
+   * Attribute: data-error-callback.
+   */
+  @Input(getAttributeName(errorCallbackName))
+  @Output(getAttributeName(errorCallbackName))
+  errorCallback?: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;()
+  /**
+   * Optional.
+   * If true, this reCAPTCHA instance will be part of a separate ID space and badge value will be set to &quot;none&quot;.
+   * Id starts with 1E5 instead of 0.
+   * Has no corresponding attribute.
+   */
+  @Input(getAttributeName(isolatedName))
+  isolated?: boolean
+  /**
+   * Optional. Defaults to language specified in script(hl query parameter) or browser language.
+   * Has no corresponding attribute.
+   * Accepted values: https://developers.google.com/recaptcha/docs/language.
+   */
+  @Input(getAttributeName(hlName))
+  public hl?: string
+
+  constructor(
+    private readonly loader: RecaptchaService,
+    private readonly zone: NgZone,
+    private readonly el: ElementRef,
+    @Attribute(getAttributeName(sitekeyName)) sitekey?: string,
+    @Attribute(getAttributeName(typeName)) type?: RecaptchaType | string,
+    @Attribute(getAttributeName(themeName)) theme?: RecaptchaTheme | string,
+    @Attribute(getAttributeName(sizeName)) size?: RecaptchaSize | string,
+    @Attribute(getAttributeName(tabIndexName)) tabIndex?: number,
+    @Attribute(getAttributeName(stokenName)) stoken?: string,
+    @Attribute(getAttributeName(bindName)) bind?: string,
+    @Attribute(getAttributeName(preloadName)) preload?: boolean,
+    @Attribute(getAttributeName(badgeName)) badge?: RecaptchaBadge | string,
+    @Attribute(getAttributeName(sName)) s?: string,
+    @Attribute(getAttributeName(poolName)) pool?: string,
+    @Attribute(getAttributeName(contentBindingName)) contentBinding?: string,
+    @Attribute(getAttributeName(actionName)) action?: string,
+    @Attribute(getAttributeName(isolatedName)) isolated?: boolean,
+    @Attribute(getAttributeName(hlName)) hl?: string,
+  ) {
+    if (sitekey) this.sitekey &#x3D; sitekey
+    if (type) this.type &#x3D; type
+    if (theme) this.theme &#x3D; theme
+    if (size) this.size &#x3D; size
+    if (tabIndex) this.tabindex &#x3D; tabIndex
+    if (stoken) this.stoken &#x3D; stoken
+    if (bind) this.bind &#x3D; bind
+    if (preload) this.preload &#x3D; preload
+    if (badge) this.badge &#x3D; badge
+    if (s) this.s &#x3D; s
+    if (pool) this.pool &#x3D; pool
+    if (contentBinding) this.contentBinding &#x3D; contentBinding
+    if (action) this.action &#x3D; action
+    if (isolated) this.isolated &#x3D; isolated
+    if (hl) this.hl &#x3D; hl
+  }
+
+  // Lifecycle hooks
+
+  ngOnInit(): void {
+    this.subscription &#x3D; this.loader.recaptcha$.subscribe(recaptcha &#x3D;&gt; {
+      this.grecaptcha &#x3D; recaptcha
+      this.render()
+    })
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    for (const key in changes) {
+      if (changes.hasOwnProperty(key)) {
+        const element &#x3D; changes[key]
+        if (element.currentValue !&#x3D;&#x3D; element.previousValue) {
+          this.reset()
+          break
+        }
+      }
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
+  }
+
+  // grecaptcha methods
+
+  /**
+   * Renders recaptcha.
+   */
+  private render() {
+    if (this.grecaptcha) {
+      this.widgetId &#x3D; this.grecaptcha.render(this.el.nativeElement, this.getParameters(), true)
+    }
+  }
+
+  /**
+   * Returns the stored value.
+   */
+  getResponse(): string {
+    return this.grecaptcha ? this.grecaptcha.getResponse(this.widgetId) : &#x27;&#x27;
+  }
+
+  /**
+   * Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.
+   */
+  async execute(parameters: RecaptchaExecuteParameters &#x3D; { action: this.action }): Promise&lt;string&gt; {
+    if (this.grecaptcha) {
+      return this.grecaptcha.execute(this.widgetId, parameters)
+    }
+  }
+
+  /**
+   * Resets and rerenders the reCAPTCHA widget.
+   */
+  reset(): void {
+    if (this.grecaptcha) {
+      this.zone.runOutsideAngular(
+        () &#x3D;&gt; this.grecaptcha.reset(this.widgetId, this.getParameters())
+      )
+    }
+  }
+
+  private getParameters() {
+    const params: Partial&lt;RecaptchaParameters&gt; &#x3D; {}
+    const assign &#x3D; (propName: string, value) &#x3D;&gt; {
+      if (value) params[propName] &#x3D; value
+    }
+    assign(sitekeyName, this.sitekey)
+    assign(contentBindingName, this.contentBinding)
+    assign(actionName, this.action)
+    assign(badgeName, this.badge)
+    assign(bindName, this.bind)
+    assign(hlName, this.hl)
+    assign(isolatedName, this.isolated)
+    assign(poolName, this.pool)
+    assign(preloadName, this.preload)
+    assign(sName, this.s)
+    assign(sizeName, this.size)
+    assign(stokenName, this.stoken)
+    assign(tabIndexName, this.tabindex)
+    assign(themeName, this.theme)
+    assign(typeName, this.type)
+    params[callbackName] &#x3D; (response: string) &#x3D;&gt; {
+      this.zone.run(() &#x3D;&gt; {
+        this.onCallback(response)
+      })
+    }
+    params[expiredCallbackName] &#x3D; () &#x3D;&gt; {
+      this.zone.run(() &#x3D;&gt; {
+        this.onExpired()
+      })
+    }
+    params[errorCallbackName] &#x3D; () &#x3D;&gt; {
+      this.zone.run(() &#x3D;&gt; {
+        this.onError()
+      })
+    }
+    return params
+  }
+
+  private onCallback(response: string): void {
+    this.triggerEvents(response)
+    const emitter &#x3D; this.callback as EventEmitter&lt;string&gt;
+    if (emitter) emitter.emit(response)
+  }
+
+  private onExpired(): void {
+    this.triggerEvents(null)
+    const emitter &#x3D; this.expiredCallback as EventEmitter&lt;void&gt;
+    if (emitter) emitter.emit()
+  }
+
+  private onError(): void {
+    this.triggerEvents(null)
+    const emitter &#x3D; this.errorCallback as EventEmitter&lt;void&gt;
+    if (emitter) emitter.emit()
+  }
+
+  private triggerEvents(value: string): void {
+    if (this.onChange) {
+      this.onChange(value)
+    }
+    if (this.onTouched) {
+      this.onTouched()
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'RecaptchaDirective.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -3,7 +3,7 @@ import {
 } from '@angular/core'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
-import { RecaptchaDirective } from '../recaptcha.directive'
+import { RecaptchaDirective } from './recaptcha.directive'
 
 /**
  * A directive that enables angular forms for reCAPTCHA.

@@ -6,13 +6,13 @@ import {
 
 import { Subscription } from 'rxjs/Subscription'
 
-import { RecaptchaService } from './loader/recaptcha.service'
-import { RecaptchaBadge } from './recaptcha-badge'
-import { RecaptchaSize } from './recaptcha-size'
-import { RecaptchaTheme } from './recaptcha-theme'
-import { RecaptchaType } from './recaptcha-type'
-import { Recaptcha } from './recaptcha'
-import { RecaptchaParameters } from './recaptcha-parameters'
+import { RecaptchaService } from '../loader/recaptcha.service'
+import { RecaptchaBadge } from '../recaptcha-badge'
+import { RecaptchaSize } from '../recaptcha-size'
+import { RecaptchaTheme } from '../recaptcha-theme'
+import { RecaptchaType } from '../recaptcha-type'
+import { Recaptcha } from '../recaptcha'
+import { RecaptchaParameters } from '../recaptcha-parameters'
 import {
   actionName,
   badgeName,
@@ -33,8 +33,8 @@ import {
   tabIndexName,
   themeName,
   typeName,
-} from './recaptcha-parameter-names'
-import { RecaptchaExecuteParameters } from './recaptcha-execute-parameters'
+} from '../recaptcha-parameter-names'
+import { RecaptchaExecuteParameters } from '../recaptcha-execute-parameters'
 
 /**
  * A directive that renders a recaptcha widget in a host element.

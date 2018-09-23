@@ -50,9 +50,9 @@ export class RecaptchaLoaderModule {
       recaptchaUrl?: string,
       /**
        * Render mode or sitekey.
-       * Expilicit: nothing is rendered.
-       * Onload: First element with g-recaptcha class is rendered.
-       * Sitekey: V3 reCAPTCHA will be rendered with parameters = { sitekey: 'your_sitekey', isolated: true }.
+       * Expilicit: nothing will be rendered.
+       * Onload: First element with g-recaptcha class will be rendered.
+       * Sitekey: invisible reCAPTCHA will be rendered with parameters = { sitekey: 'your_sitekey', isolated: true }.
        */
       render?: RecaptchaRender | string,
       /**

@@ -4,7 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { Recaptcha, RecaptchaModule, RecaptchaFormsModule, RecaptchaLoaderModule, RecaptchaRender } from 'spaier-ng-recaptcha'
+import {
+  Recaptcha,
+  RecaptchaDirectiveModule,
+  RecaptchaFormsModule,
+  RecaptchaLoaderModule,
+  RecaptchaRender
+} from 'spaier-ng-recaptcha'
 
 import { MaterialModule } from './material/material.module'
 
@@ -35,18 +41,18 @@ const useV3 = false
     FlexLayoutModule,
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
-      language: 'ru',
+      language: 'en',
       render: useV3 ? '6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj' : RecaptchaRender.Explicit,
       onloadFunc: async (recaptcha: Recaptcha) => {
-        // V3 Execution
+        // Sitekey Execution
         if (useV3) {
-          const result = await recaptcha.execute(v3Sitekey, { action: 'shit' })
+          const result = await recaptcha.execute(v3Sitekey, { action: 'background' })
           console.log(result)
         }
       },
-    }),
-    RecaptchaModule,
-    RecaptchaFormsModule,
+    }), // load script and allows to use `RecaptchaService`
+    RecaptchaDirectiveModule, // allows to use RecaptchaDirective
+    RecaptchaFormsModule, // integrates RecaptchaDirective with @angular/forms
     AppRoutingModule
   ],
   providers: [],

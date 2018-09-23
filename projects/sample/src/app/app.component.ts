@@ -17,7 +17,8 @@ export class AppComponent {
   constructor(private readonly recaptchaService: RecaptchaService) { }
 
   async execute() {
-    const result = await this.recaptchaService.recaptcha.execute({ action: 'something' })
-    console.log(result)
+    const recaptcha = await this.recaptchaService.recaptcha$.toPromise()
+    const result1 = await recaptcha.execute({ action: 'something' })
+    const result2 = await this.recaptchaService.recaptcha.execute({ action: 'something' })
   }
 }

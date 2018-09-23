@@ -7,13 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0]
+
 ### Added
 
-- Use enums for string properties
+- Add `RecaptchaDirectiveModule`. 
+- Add `RecaptchaFormsModule`
+- `@angular/forms` is now an optional dependency
+- Add V3 Support
+- Add render, url, onload, onloadFunc parameters to `RecaptchaLoaderModule`
+- Add `RecaptchaType`, `RecaptchaTheme`, `RecaptchaSize`, `RecaptchaBadge` enums
+
+### Changed
+
+- Updated type definitions
+- Object parameter is used in `RecaptchaLoaderModule.withParameters`
+- Rename `RecaptchaLoaderService` to `RecaptchaService`
+- `RecaptchaDirective` now uses `data-*` attributes. Example: `data-theme` instead of `theme`.
+
+### Removed
+
+- `RecaptchaModule`
 
 ### Fixed
 
-- Use lowest possible versions in dependencies
+- `RecaptchaDirective` attributes were undefined or null on `ngOnInit`
+- Use renderer2 to add script tag
 
 ## [1.1.1]
 
@@ -46,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Provide empty configs if none specified
 
-[Unreleased]: https://github.com/Spaier/spaier-ng-recaptcha/compare/1.1.1...HEAD
+[Unreleased]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/Spaier/spaier-ng-recaptcha/compare/1.1.0...2.0.0
 [1.1.1]: https://github.com/Spaier/spaier-ng-recaptcha/compare/1.0.0...1.1.0
 [1.1.0]: https://github.com/Spaier/spaier-ng-recaptcha/compare/1.0.0...1.1.0
