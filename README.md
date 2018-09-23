@@ -51,10 +51,6 @@ yarn add rxjs-compat
 
 ## Usage
 
-### Directive
-
-- Add `RecaptchaModule` to any module that uses `reCAPTCHA` or `SharedModule`.
-
 ### Load script
 
 Add `RecaptchaLoaderModule` to `CoreModule` or `AppModule`.
