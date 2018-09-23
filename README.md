@@ -71,6 +71,8 @@ It provides `RecaptchaService`.
 
 `onloadFunc`: specifies function that is executed after reCAPTCHA loads.
 
+`recaptchaUrl`: script's url. Defaults to `RecaptchaGoogleUrl = 'https://www.google.com/recaptcha/api.js'`
+
 ```ts
     RecaptchaLoaderModule.withParameters({
       language: 'en',
@@ -82,7 +84,7 @@ It provides `RecaptchaService`.
     }),
 ```
 
-### Use RecaptchaService
+### RecaptchaService
 
 Inject `RecaptchaService` and use provided `recaptcha$` observable or `recaptcha` object.
 If you use `recaptcha` object be sure to check that reCAPTCHA library is loaded.
@@ -99,7 +101,7 @@ If you use `recaptcha` object be sure to check that reCAPTCHA library is loaded.
   }
 ```
 
-### Directive
+### RecaptchaDirective
 
 - Add `RecaptchaDirectiveModule` to use `RecaptchaDirective` to any module that uses it or `SharedModule`.
 
@@ -132,8 +134,7 @@ Use it in your template:
 <button type="button" (click)="getResponse()">Get Response</button>
 ```
 ```ts
-@ViewChild('recaptcha') recaptcha: RecaptchaDirective
-
+  @ViewChild('recaptcha') recaptcha: RecaptchaDirective
   theme = 'dark'
   size = 'normal'
   badge = 'none'
@@ -220,7 +221,7 @@ onSubmit() {
 
 ## Resources
 
-* Docs: 
+* Docs: <https://spaier.github.io/spaier-ng-recaptcha>
 * Sample: <https://github.io/spaier/spaier-ng-recaptcha/tree/master/projects/sample>
 * Keys: <https://www.google.com/recaptcha/intro/index.html>
 * reCAPTCHA: <https://developers.google.com/recaptcha/docs>
