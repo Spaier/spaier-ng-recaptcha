@@ -45,9 +45,9 @@ import { RecaptchaExecuteParameters } from './recaptcha-execute-parameters'
 })
 export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
-  public onChange: (value: string) => void
+  onChange: (value: string) => void
 
-  public onTouched: () => void
+  onTouched: () => void
 
   private widgetId: number
 
@@ -60,38 +60,38 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Attribute: data-sitekey.
    */
   @Input(getAttributeName(sitekeyName))
-  public [sitekeyName]?: string
+  sitekey: string
   /**
    * An initial problem to solve.
    * Attribute: data-type.
    */
   @Input(getAttributeName(typeName))
-  public [typeName]?: RecaptchaType | string
+  type?: RecaptchaType | string
   /**
    * The color theme of the widget.
    * Attribute: data-theme.
    */
   @Input(getAttributeName(themeName))
-  public [themeName]?: RecaptchaTheme | string
+  theme?: RecaptchaTheme | string
   /**
    * Size of the reCAPTCHA.
    * Attribute: data-size.
    */
   @Input(getAttributeName(sizeName))
-  public [sizeName]?: RecaptchaSize | string
+  size?: RecaptchaSize | string
   /**
    * Tab index.
    * Attribute: data-tabindex.
    */
   @Input(getAttributeName(tabIndexName))
-  public [tabIndexName]?: number
+  tabindex?: number
   /**
    * @deprecated
    * Don't touch it.
    * Attribute: data-stoken.
    */
   @Input(getAttributeName(stokenName))
-  public [stokenName]?: string
+  stoken?: string
   /**
    * @deprecated
    * Don't touch it.
@@ -99,48 +99,48 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Attribute: data-bind.
    */
   @Input(getAttributeName(bindName))
-  public [bindName]?: string | HTMLElement
+  bind?: string | HTMLElement
   /**
    * @deprecated
    * Don't touch it.
    * Attribute: data-preload.
    */
   @Input(getAttributeName(preloadName))
-  public [preloadName]?: boolean
+  preload?: boolean
   /**
    * The badge location for g-recaptcha with size of "invisible".
    * If isolated this value is ignored.
    * Attribute: data-badge.
    */
   @Input(getAttributeName(badgeName))
-  public [badgeName]?: RecaptchaBadge | string
+  badge?: RecaptchaBadge | string
   /**
    * @deprecated
    * Don't touch it.
    * Attribute: data-s.
    */
   @Input(getAttributeName(sName))
-  public [sName]?: string
+  s?: string
   /**
    * @deprecated
    * Don't touch it.
    * Attribute: data-pool.
    */
   @Input(getAttributeName(poolName))
-  public [poolName]?: string
+  pool?: string
   /**
    * @deprecated
    * Don't touch it.
    * Attribute: data-content-binding.
    */
   @Input(getAttributeName(contentBindingName))
-  public [contentBindingName]?: string
+  contentBinding: string
   /**
    * Specifies V3 recaptcha's action parameter.
    * Attribute: data-action.
    */
   @Input(getAttributeName(actionName))
-  public [actionName]?: string
+  action?: string
   /**
    * Optional. Your callback function that's executed when the user submits a successful CAPTCHA response.
    * Attribute: data-callback.
@@ -149,7 +149,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    */
   @Input(getAttributeName(callbackName))
   @Output(getAttributeName(callbackName))
-  public [callbackName]?: string | EventEmitter<string> = new EventEmitter<string>()
+  callback?: EventEmitter<string> = new EventEmitter<string>()
   /**
    * Optional. Your callback function that's executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
    * A function or a name of the function from the window object (window[this["expired-callback"]]).
@@ -157,7 +157,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    */
   @Input(getAttributeName(expiredCallbackName))
   @Output(getAttributeName(expiredCallbackName))
-  public [expiredCallbackName]?: string | EventEmitter<void> = new EventEmitter<void>()
+  expiredCallback?: EventEmitter<void> = new EventEmitter<void>()
   /**
    * Optional. Your callback function that's executed when reCAPTCHA encounters an error (usually network connectivity)
    * and cannot continue until connectivity is restored.
@@ -166,7 +166,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    */
   @Input(getAttributeName(errorCallbackName))
   @Output(getAttributeName(errorCallbackName))
-  public [errorCallbackName]?: string | EventEmitter<void> = new EventEmitter<void>()
+  errorCallback?: EventEmitter<void> = new EventEmitter<void>()
   /**
    * Optional.
    * If true, this reCAPTCHA instance will be part of a separate ID space and badge value will be set to "none".
@@ -174,14 +174,14 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Has no corresponding attribute.
    */
   @Input(getAttributeName(isolatedName))
-  public [isolatedName]?: boolean
+  isolated?: boolean
   /**
    * Optional. Defaults to language specified in script(hl query parameter) or browser language.
    * Has no corresponding attribute.
    * Accepted values: https://developers.google.com/recaptcha/docs/language.
    */
   @Input(getAttributeName(hlName))
-  public [hlName]?: string
+  public hl?: string
 
   constructor(
     private readonly loader: RecaptchaService,
@@ -193,37 +193,31 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
     @Attribute(getAttributeName(sizeName)) size?: RecaptchaSize | string,
     @Attribute(getAttributeName(tabIndexName)) tabIndex?: number,
     @Attribute(getAttributeName(stokenName)) stoken?: string,
-    @Attribute(getAttributeName(bindName)) bind?: string | HTMLElement,
+    @Attribute(getAttributeName(bindName)) bind?: string,
     @Attribute(getAttributeName(preloadName)) preload?: boolean,
     @Attribute(getAttributeName(badgeName)) badge?: RecaptchaBadge | string,
     @Attribute(getAttributeName(sName)) s?: string,
     @Attribute(getAttributeName(poolName)) pool?: string,
     @Attribute(getAttributeName(contentBindingName)) contentBinding?: string,
     @Attribute(getAttributeName(actionName)) action?: string,
-    @Attribute(getAttributeName(callbackName)) callback?: string,
-    @Attribute(getAttributeName(expiredCallbackName)) expiredCallback?: string,
-    @Attribute(getAttributeName(errorCallbackName)) errorCallback?: string,
     @Attribute(getAttributeName(isolatedName)) isolated?: boolean,
     @Attribute(getAttributeName(hlName)) hl?: string,
   ) {
-    this.optionalAssign(sitekeyName, sitekey)
-    this.optionalAssign(typeName, type)
-    this.optionalAssign(themeName, theme)
-    this.optionalAssign(sizeName, size)
-    this.optionalAssign(tabIndexName, tabIndex)
-    this.optionalAssign(stokenName, stoken)
-    this.optionalAssign(bindName, bind)
-    this.optionalAssign(preloadName, preload)
-    this.optionalAssign(badgeName, badge)
-    this.optionalAssign(sName, s)
-    this.optionalAssign(poolName, pool)
-    this.optionalAssign(contentBindingName, contentBinding)
-    this.optionalAssign(actionName, action)
-    this.optionalAssign(callbackName, callback)
-    this.optionalAssign(expiredCallbackName, expiredCallback)
-    this.optionalAssign(errorCallbackName, errorCallback)
-    this.optionalAssign(isolatedName, isolated)
-    this.optionalAssign(hlName, hl)
+    if (sitekey) this.sitekey = sitekey
+    if (type) this.type = type
+    if (theme) this.theme = theme
+    if (size) this.size = size
+    if (tabIndex) this.tabindex = tabIndex
+    if (stoken) this.stoken = stoken
+    if (bind) this.bind = bind
+    if (preload) this.preload = preload
+    if (badge) this.badge = badge
+    if (s) this.s = s
+    if (pool) this.pool = pool
+    if (contentBinding) this.contentBinding = contentBinding
+    if (action) this.action = action
+    if (isolated) this.isolated = isolated
+    if (hl) this.hl = hl
   }
 
   // Lifecycle hooks
@@ -291,62 +285,57 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
   private getParameters() {
     const params: Partial<RecaptchaParameters> = {}
-    const assign = (propName: string) => {
-      if (this[propName]) params[propName] = this[propName]
+    const assign = (propName: string, value) => {
+      if (value) params[propName] = value
     }
-    const assignFunc = (propName: string, func) => {
-      if (this[propName]) {
-        params[propName] = (this[propName] instanceof EventEmitter) ? func : this[propName] as string
-      }
-    }
-    assign(sitekeyName)
-    assign(contentBindingName)
-    assign(actionName)
-    assign(badgeName)
-    assign(bindName)
-    assign(hlName)
-    assign(isolatedName)
-    assign(poolName)
-    assign(preloadName)
-    assign(sName)
-    assign(sizeName)
-    assign(stokenName)
-    assign(tabIndexName)
-    assign(themeName)
-    assign(typeName)
-    assignFunc(callbackName, (response: string) => {
+    assign(sitekeyName, this.sitekey)
+    assign(contentBindingName, this.contentBinding)
+    assign(actionName, this.action)
+    assign(badgeName, this.badge)
+    assign(bindName, this.bind)
+    assign(hlName, this.hl)
+    assign(isolatedName, this.isolated)
+    assign(poolName, this.pool)
+    assign(preloadName, this.preload)
+    assign(sName, this.s)
+    assign(sizeName, this.size)
+    assign(stokenName, this.stoken)
+    assign(tabIndexName, this.tabindex)
+    assign(themeName, this.theme)
+    assign(typeName, this.type)
+    params[callbackName] = (response: string) => {
       this.zone.run(() => {
         this.onCallback(response)
       })
-    })
-    assignFunc(expiredCallbackName, () => {
+    }
+    params[expiredCallbackName] = () => {
       this.zone.run(() => {
         this.onExpired()
       })
-    })
-    assignFunc(errorCallbackName, () => {
+    }
+    params[errorCallbackName] = () => {
       this.zone.run(() => {
         this.onError()
       })
-    })
+    }
     return params
   }
 
   private onCallback(response: string): void {
     this.triggerEvents(response)
-    const emitter = this[callbackName] as EventEmitter<string>
+    const emitter = this.callback as EventEmitter<string>
     if (emitter) emitter.emit(response)
   }
 
   private onExpired(): void {
     this.triggerEvents(null)
-    const emitter = this[expiredCallbackName] as EventEmitter<void>
+    const emitter = this.expiredCallback as EventEmitter<void>
     if (emitter) emitter.emit()
   }
 
   private onError(): void {
     this.triggerEvents(null)
-    const emitter = this[errorCallbackName] as EventEmitter<void>
+    const emitter = this.errorCallback as EventEmitter<void>
     if (emitter) emitter.emit()
   }
 
@@ -357,9 +346,5 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
     if (this.onTouched) {
       this.onTouched()
     }
-  }
-
-  private optionalAssign(propName: string, value) {
-    if (value) this[propName] = value
   }
 }
