@@ -73,10 +73,10 @@ It provides `RecaptchaService`.
 ```ts
     RecaptchaLoaderModule.withParameters({
       language: 'en',
-      // render: 'your_sitekey`,
+      render: 'your_sitekey`,
       onloadFunc: async (recaptcha: Recaptcha) => {
         // Sitekey Execution
-        const result = await recaptcha.execute(v3Sitekey, { action: 'background' })
+        const result = await recaptcha.execute('your_sitekey', { action: 'background' })
       },
     }),
 ```
