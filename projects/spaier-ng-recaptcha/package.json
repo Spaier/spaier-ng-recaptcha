@@ -1,7 +1,7 @@
 {
   "name": "spaier-ng-recaptcha",
-  "version": "2.0.0",
-  "description": "library for using reCAPTCHA in angular",
+  "version": "2.0.1",
+  "description": "Google reCAPTCHA v2 or v3 for angular. Directive with forms support and service.",
   "author": "Pavel Levchuk <SpaierInstinct@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/Spaier/spaier-ng-recaptcha",
@@ -12,7 +12,13 @@
   },
   "keywords": [
     "angular",
+    "captcha",
     "recaptcha",
+    "google",
+    "forms",
+    "recaptcha v2",
+    "recaptcha v3",
+    "invisible recaptcha",
     "angular-recaptcha",
     "ng-recaptcha",
     "grecaptcha"
