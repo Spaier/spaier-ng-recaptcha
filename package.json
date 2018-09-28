@@ -28,7 +28,7 @@
     "@types/node": "^10.11.2",
     "codelyzer": "^4.4.4",
     "core-js": "^2.5.7",
-    "eslint": "^5.6.0",
+    "eslint": "^5.6.1",
     "eslint-plugin-jasmine": "^2.10.1",
     "eslint-plugin-protractor": "^1.41.0",
     "gulp": "^4.0.0",
