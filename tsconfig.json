@@ -20,10 +20,10 @@
     ],
     "paths": {
       "spaier-ng-recaptcha": [
-        "projects/spaier-ng-recaptcha"
+        "dist/spaier-ng-recaptcha"
       ],
       "spaier-ng-recaptcha/*": [
-        "projects/spaier-ng-recaptcha/*"
+        "dist/spaier-ng-recaptcha/*"
       ]
     }
   }
