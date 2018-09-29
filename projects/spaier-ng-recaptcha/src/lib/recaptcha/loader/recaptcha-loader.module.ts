@@ -43,7 +43,7 @@ export class RecaptchaLoaderModule {
       /**
        * Language code. https://developers.google.com/recaptcha/docs/language.
        */
-      language?: string | null,
+      language?: string,
       /**
        * GoogleRecaptchaUrl or GlobalRecaptchaUrl can be used.
        */
@@ -63,29 +63,30 @@ export class RecaptchaLoaderModule {
        * Onload handler. Can be used to execute V3 reCAPTCHA.
        */
       onloadFunc?: (recaptcha: Recaptcha) => void,
-    } = { }
+    } = {}
   ): ModuleWithProviders {
-    if (parameters.onload === undefined) parameters.onload = RecaptchaOnloadEventName
-    if (parameters.recaptchaUrl === undefined) parameters.recaptchaUrl = RecaptchaGoogleUrl
-    if (parameters.render === undefined) parameters.render = RecaptchaRender.Explicit
-    const providers = []
-    function addTokenValue<T>(token: InjectionToken<T>, value: T) {
-      if (value) providers.push({ provide: token, useValue: value })
-    }
-    addTokenValue(RECAPTCHA_URL, parameters.recaptchaUrl)
-    addTokenValue(RECAPTCHA_LANGUAGE, parameters.language)
-    addTokenValue(RECAPTCHA_RENDER, parameters.render)
-    addTokenValue(RECAPTCHA_ONLOAD, parameters.onload)
-    if (parameters.onloadFunc) {
-      providers.push({
-        provide: RecaptchaOnloadService,
-        useValue: {
-          onload: parameters.onloadFunc
-        }
-      })
-    }
     return {
-      ngModule: RecaptchaLoaderModule, providers: [...providers]
+      ngModule: RecaptchaLoaderModule, providers: [
+        { provide: RECAPTCHA_LANGUAGE, useValue: parameters.language },
+        {
+          provide: RECAPTCHA_RENDER,
+          useValue: parameters.render !== undefined ? parameters.render : RecaptchaRender.Explicit
+        },
+        {
+          provide: RECAPTCHA_ONLOAD,
+          useValue: parameters.onload !== undefined ? parameters.onload : RecaptchaOnloadEventName
+        },
+        {
+          provide: RECAPTCHA_URL,
+          useValue: parameters.recaptchaUrl !== undefined ? parameters.recaptchaUrl : RecaptchaGoogleUrl
+        },
+        {
+          provide: RecaptchaOnloadService,
+          useValue: {
+            onload: parameters.onloadFunc
+          }
+        }
+      ]
     }
   }
 }
