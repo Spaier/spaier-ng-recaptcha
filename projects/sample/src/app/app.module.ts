@@ -9,7 +9,6 @@ import {
   RecaptchaDirectiveModule,
   RecaptchaFormsModule,
   RecaptchaLoaderModule,
-  RecaptchaRender
 } from 'spaier-ng-recaptcha'
 
 import { MaterialModule } from './material/material.module'
