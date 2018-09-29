@@ -24,7 +24,11 @@ const v2CheckboxSitekey = '6LeuTU4UAAAAADq1qPnyrCHnzgET3PqQlxRbC0Er'
 const v2InvisibleSitekey = '6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW'
 const v3Sitekey = '6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj'
 
-const useV3 = false
+export async function onLoad(recaptcha: Recaptcha) {
+  // Sitekey Execution
+  const result = await recaptcha.execute(v3Sitekey, { action: 'background' })
+  console.log(result)
+}
 
 @NgModule({
   declarations: [
@@ -42,15 +46,9 @@ const useV3 = false
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
       language: 'en',
-      render: useV3 ? '6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj' : RecaptchaRender.Explicit,
-      onloadFunc: async (recaptcha: Recaptcha) => {
-        // Sitekey Execution
-        if (useV3) {
-          const result = await recaptcha.execute(v3Sitekey, { action: 'background' })
-          console.log(result)
-        }
-      },
-    }), // load script and allows to use `RecaptchaService`
+      render: '6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj', // or RecaptchaRender.Explicit,
+      onloadFunc: onLoad
+    }), // loads script and allows to use `RecaptchaService`
     RecaptchaDirectiveModule, // allows to use RecaptchaDirective
     RecaptchaFormsModule, // integrates RecaptchaDirective with @angular/forms
     AppRoutingModule
