@@ -1,6 +1,6 @@
 {
   "name": "spaier-ng-recaptcha",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.3",

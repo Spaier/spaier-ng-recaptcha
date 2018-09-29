@@ -306,7 +306,6 @@ import {
   RecaptchaDirectiveModule,
   RecaptchaFormsModule,
   RecaptchaLoaderModule,
-  RecaptchaRender
 } from &#x27;spaier-ng-recaptcha&#x27;
 
 import { MaterialModule } from &#x27;./material/material.module&#x27;
@@ -321,7 +320,11 @@ const v2CheckboxSitekey &#x3D; &#x27;6LeuTU4UAAAAADq1qPnyrCHnzgET3PqQlxRbC0Er&#x
 const v2InvisibleSitekey &#x3D; &#x27;6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW&#x27;
 const v3Sitekey &#x3D; &#x27;6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj&#x27;
 
-const useV3 &#x3D; false
+export async function onLoad(recaptcha: Recaptcha) {
+  // Sitekey Execution
+  const result &#x3D; await recaptcha.execute(v3Sitekey, { action: &#x27;background&#x27; })
+  console.log(result)
+}
 
 @NgModule({
   declarations: [
@@ -339,15 +342,9 @@ const useV3 &#x3D; false
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
       language: &#x27;en&#x27;,
-      render: useV3 ? &#x27;6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj&#x27; : RecaptchaRender.Explicit,
-      onloadFunc: async (recaptcha: Recaptcha) &#x3D;&gt; {
-        // Sitekey Execution
-        if (useV3) {
-          const result &#x3D; await recaptcha.execute(v3Sitekey, { action: &#x27;background&#x27; })
-          console.log(result)
-        }
-      },
-    }), // load script and allows to use &#x60;RecaptchaService&#x60;
+      render: &#x27;6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj&#x27;, // or RecaptchaRender.Explicit,
+      onloadFunc: onLoad
+    }), // loads script and allows to use &#x60;RecaptchaService&#x60;
     RecaptchaDirectiveModule, // allows to use RecaptchaDirective
     RecaptchaFormsModule, // integrates RecaptchaDirective with @angular/forms
     AppRoutingModule

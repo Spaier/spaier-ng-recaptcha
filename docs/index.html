@@ -71,17 +71,28 @@ To use with Angular 6 <code>rxjs-compat</code> node package must be installed.</
 <li><code>RecaptchaRender.Onload</code> renders the first element with <code>g-recaptcha</code> class.</li>
 <li><code>your_sitekey</code> renders isolated invisible reCAPTCHA that can be used from <code>RecaptchaService</code>. V3 best practice.</li>
 </ol>
-<p><code>onload</code>: specifies function name on the window object.</p>
-<p><code>onloadFunc</code>: specifies function that is executed after reCAPTCHA loads.</p>
+<p><code>onload</code>: specifies a function name on the window object. Defaults to <code>RecaptchaOnloadEventName = &#39;recaptchaloaded&#39;</code></p>
+<p><code>onloadFunc</code>: specifies a function that is executed after reCAPTCHA loads.</p>
 <p><code>recaptchaUrl</code>: script&#39;s url. Defaults to <code>RecaptchaGoogleUrl = &#39;https://www.google.com/recaptcha/api.js&#39;</code></p>
-<div><pre class="line-numbers"><code class="language-ts">    RecaptchaLoaderModule.withParameters({
+<div><pre class="line-numbers"><code class="language-ts">export async function onLoad(recaptcha: Recaptcha) {
+  // Sitekey Execution
+  const result = await recaptcha.execute(&#39;your_sitekey&#39;, { action: &#39;background&#39; })
+  console.log(result)
+}
+
+&#64;NgModule({
+  imports: [
+    // ...
+    RecaptchaLoaderModule.withParameters({
       language: &#39;en&#39;,
       render: &#39;your_sitekey&#39;,
-      onloadFunc: async aptcha: Recaptcha) =&gt; {
-        // Sitekey Execution
-        const result = await recaptcha.execute(&#39;your_sitekey&#39;, { action: &#39;background&#39; })
-      },
-    }),</code></pre></div><h3 id="recaptchaservice">RecaptchaService</h3>
+      onloadFunc: onLoad
+    }), // loads script and allows to use `RecaptchaService`
+    // ...
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})</code></pre></div><h3 id="recaptchaservice">RecaptchaService</h3>
 <p>Inject <code>RecaptchaService</code> and use provided <code>recaptcha$</code> observable or <code>recaptcha</code> object.
 If you use <code>recaptcha</code> object be sure to check that reCAPTCHA library is loaded.</p>
 <div><pre class="line-numbers"><code class="language-ts">  constructor(private readonly recaptchaService: RecaptchaService) { }

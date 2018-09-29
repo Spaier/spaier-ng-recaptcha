@@ -69,13 +69,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' : 'data-target="#xs-components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-b09e201eaa4c5711f4cbd3fb68359f3c"' : 'data-target="#xs-components-links-module-AppModule-b09e201eaa4c5711f4cbd3fb68359f3c"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' : 'id="xs-components-links-module-AppModule-bd690e63bfdbe86943dc5ec39bbe278d"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-AppModule-b09e201eaa4c5711f4cbd3fb68359f3c"' : 'id="xs-components-links-module-AppModule-b09e201eaa4c5711f4cbd3fb68359f3c"' }>
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
                                         </li>
@@ -135,13 +135,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/RecaptchaLoaderModule.html" data-type="entity-link">RecaptchaLoaderModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#injectables-links-module-RecaptchaLoaderModule-df529a3ff4814faa5a0bd6860794ac6c"' : 'data-target="#xs-injectables-links-module-RecaptchaLoaderModule-df529a3ff4814faa5a0bd6860794ac6c"' }>
+                                    ${ isNormalMode ? 'data-target="#injectables-links-module-RecaptchaLoaderModule-b1f01472bc43b49abc712b8e07b8a848"' : 'data-target="#xs-injectables-links-module-RecaptchaLoaderModule-b1f01472bc43b49abc712b8e07b8a848"' }>
                                     <span class="icon ion-md-arrow-round-down"></span>
                                     <span>Injectables</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="injectables-links-module-RecaptchaLoaderModule-df529a3ff4814faa5a0bd6860794ac6c"' : 'id="xs-injectables-links-module-RecaptchaLoaderModule-df529a3ff4814faa5a0bd6860794ac6c"' }>
+                                    ${ isNormalMode ? 'id="injectables-links-module-RecaptchaLoaderModule-b1f01472bc43b49abc712b8e07b8a848"' : 'id="xs-injectables-links-module-RecaptchaLoaderModule-b1f01472bc43b49abc712b8e07b8a848"' }>
                                         <li class="link">
                                             <a href="injectables/RecaptchaService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>RecaptchaService</a>
                                         </li>
