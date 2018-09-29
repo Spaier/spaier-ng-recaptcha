@@ -76,8 +76,8 @@ To use with Angular 6 <code>rxjs-compat</code> node package must be installed.</
 <p><code>recaptchaUrl</code>: script&#39;s url. Defaults to <code>RecaptchaGoogleUrl = &#39;https://www.google.com/recaptcha/api.js&#39;</code></p>
 <div><pre class="line-numbers"><code class="language-ts">    RecaptchaLoaderModule.withParameters({
       language: &#39;en&#39;,
-      render: &#39;your_sitekey`,
-      onloadFunc: async (recaptcha: Recaptcha) =&gt; {
+      render: &#39;your_sitekey&#39;,
+      onloadFunc: async aptcha: Recaptcha) =&gt; {
         // Sitekey Execution
         const result = await recaptcha.execute(&#39;your_sitekey&#39;, { action: &#39;background&#39; })
       },
