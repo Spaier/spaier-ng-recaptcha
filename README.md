@@ -64,21 +64,30 @@ It provides `RecaptchaService`.
 2. `RecaptchaRender.Onload` renders the first element with `g-recaptcha` class.
 3. `your_sitekey` renders isolated invisible reCAPTCHA that can be used from `RecaptchaService`. V3 best practice.
 
-`onload`: specifies function name on the window object.
+`onload`: specifies a function name on the window object. Defaults to `RecaptchaOnloadEventName = 'recaptchaloaded'`
 
-`onloadFunc`: specifies function that is executed after reCAPTCHA loads.
+`onloadFunc`: specifies a function that is executed after reCAPTCHA loads.
 
 `recaptchaUrl`: script's url. Defaults to `RecaptchaGoogleUrl = 'https://www.google.com/recaptcha/api.js'`
 
 ```ts
+export async function onLoad(recaptcha: Recaptcha) {
+  // Sitekey Execution
+  const result = await recaptcha.execute('your_sitekey', { action: 'background' })
+  console.log(result)
+}
+
+@NgModule({
+  imports: [
+    // ...
     RecaptchaLoaderModule.withParameters({
       language: 'en',
       render: 'your_sitekey',
-      onloadFunc: async aptcha: Recaptcha) => {
-        // Sitekey Execution
-        const result = await recaptcha.execute('your_sitekey', { action: 'background' })
-      },
-    }),
+      onloadFunc: onLoad
+    }), // loads script and allows to use `RecaptchaService`
+    // ...
+  ],
+})
 ```
 
 ### RecaptchaService
