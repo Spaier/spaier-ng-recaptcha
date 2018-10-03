@@ -63,7 +63,7 @@ export class RecaptchaLoaderModule {
        * Onload handler. Can be used to execute V3 reCAPTCHA.
        */
       onloadFunc?: (recaptcha: Recaptcha) => void,
-    } = {}
+    }
   ): ModuleWithProviders {
     return {
       ngModule: RecaptchaLoaderModule, providers: [
