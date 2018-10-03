@@ -20,6 +20,9 @@ import { Recaptcha } from '../recaptcha'
 @NgModule({
   providers: [
     { provide: RECAPTCHA_WINDOW, useFactory: getWindow },
+    { provide: RECAPTCHA_RENDER, useValue: RecaptchaRender.Explicit },
+    { provide: RECAPTCHA_ONLOAD, useValue: RecaptchaOnloadEventName },
+    { provide: RECAPTCHA_URL, useValue: RecaptchaGoogleUrl },
     RecaptchaService,
   ]
 })
