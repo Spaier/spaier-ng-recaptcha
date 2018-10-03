@@ -34,7 +34,7 @@
           "options": {
             "main": "projects/spaier-ng-recaptcha/src/test.ts",
             "tsConfig": "projects/spaier-ng-recaptcha/tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js"
+            "karmaConfig": "projects/spaier-ng-recaptcha/karma.conf.js"
           },
           "configurations": {
             "ci": {
@@ -129,7 +129,7 @@
             "main": "projects/sample/src/test.ts",
             "polyfills": "projects/sample/src/polyfills.ts",
             "tsConfig": "projects/sample/tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "karmaConfig": "projects/sample/karma.conf.js",
             "styles": [
               "projects/sample/src/styles.scss"
             ],
@@ -154,6 +154,40 @@
               "projects/sample/tsconfig.app.json",
               "projects/sample/tsconfig.spec.json"
             ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "sample-e2e": {
+      "root": "projects/sample-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/sample-e2e/protractor.conf.js",
+            "devServerTarget": "sample:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sample:serve:production"
+            },
+            "ci": {
+              "protractorConfig": "projects/sample-e2e/protractor.conf.ci.js"
+            },
+            "ci-prod": {
+              "devServerTarget": "sample:serve:production",
+              "protractorConfig": "projects/sample-e2e/protractor.conf.ci.js"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/sample-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
