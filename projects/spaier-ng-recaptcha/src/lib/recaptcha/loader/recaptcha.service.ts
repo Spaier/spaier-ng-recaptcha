@@ -1,8 +1,7 @@
 import { DOCUMENT } from '@angular/common'
 import { Inject, Injectable, Optional, Renderer2, RendererFactory2 } from '@angular/core'
 
-import { Observable } from 'rxjs/Observable'
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { BehaviorSubject, Observable } from 'rxjs'
 
 import { Recaptcha } from '../recaptcha'
 import { RecaptchaRender } from './recaptcha-render'
