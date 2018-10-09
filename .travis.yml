@@ -15,4 +15,4 @@ before_install:
 install:
   - yarn
 script:
-  - yarn nps build
+  - yarn nps ci
