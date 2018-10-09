@@ -16,3 +16,15 @@ install:
   - yarn
 script:
   - yarn nps ci
+before_deploy:
+- cd dist/spaier-ng-recaptcha
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: SpaierInstinct@gmail.com
+  api_key:
+    secure: Rp0ql14ufl/+Z0W9CLPZGI11+mPbua1uJ4y+xksj93vG0QIzhMWj3AVcU9seBED5TwNvHLbmhT6s6lHjUFhREPj5c7pNKVxXTy0nSEL1zCsQKOZYCFyBwK+kNoipXikKBWpdJqL6XVCHQU3KjYerca9AU6v1etjt4w2X6ELYPLot7KBBDrQveOsfb/khpg1zUrI3Z//R4V8ZpZRll0n4TDFyu51WLfq0ZhgKR1//6iJLna63jVduusHwz9Ki9UYmIlm3eDo20WPlR1o2H6Acl2TOj9/cSSXLnUhDldEszmndMBftmwCymOzL3QUQvpWoU0HmkugcHce5gA19AAUGOgm8TwcY+JS48CaabOcU5byeePqE5zNsNbXFDAZeQ3V25QbU9AETiAuT+rNZ9IIG/MKuH/XtY/z946qo9YuLTvW+78GPwJ2w1alQuD5IhTdJ9ueYhSgyWJEpwBn3mq9qb8cZgekr7DGy+tCzp3TcqDE4uVkIefryvQ2Jje/uBk226eoqe6t2WXjqrZg5j9HzehsDfeCapnu+lT7jQM5eGu7DyGbRuMdVhKq8UXUQF7OVeH/QjWvULFMzWlyCGz9UAK01xG/ECZ/mOnLqeTu6liZkqAIiMGH7hPIaDJLCKP20iR6btZjnoTVBU+yYp+Gdf1sHnfKG+9iQ6aZw3Tqd5Nk=
+  on:
+    repo: Spaier/spaier-ng-recaptcha
+    branch: master
+    tags: true
