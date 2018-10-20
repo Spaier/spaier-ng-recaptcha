@@ -25,13 +25,13 @@
   ],
   "readme": "README.md",
   "dependencies": {
-    "ngx-dom-wrappers": "^0.0.3"
+    "ngx-dom-wrappers": "^0.0.4"
   },
   "peerDependencies": {
-    "@angular/common": "^6.0.0",
-    "@angular/core": "^6.0.0"
+    "@angular/common": ">=6.0.0",
+    "@angular/core": ">=6.0.0"
   },
   "optionalDependencies": {
-    "@angular/forms": "^6.0.0"
+    "@angular/forms": ">=6.0.0"
   }
 }
