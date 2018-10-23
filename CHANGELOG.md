@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Fixed
 
 - Provide default token values for `RECAPTCHA_RENDER`, `RECAPTCHA_ONLOAD`, `RECAPTCHA_URL` when using `RecaptchaLoaderModule` without parameters
-- Default parameter for `RecaptchaLoaderModule.withParameters`
+- Remove default parameter for `RecaptchaLoaderModule.withParameters`
 
 ## [2.0.3]
 
