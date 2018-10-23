@@ -171,6 +171,9 @@ import { Recaptcha } from &#x27;../recaptcha&#x27;
 @NgModule({
   providers: [
     { provide: RECAPTCHA_WINDOW, useFactory: getWindow },
+    { provide: RECAPTCHA_RENDER, useValue: RecaptchaRender.Explicit },
+    { provide: RECAPTCHA_ONLOAD, useValue: RecaptchaOnloadEventName },
+    { provide: RECAPTCHA_URL, useValue: RecaptchaGoogleUrl },
     RecaptchaService,
   ]
 })
@@ -179,7 +182,7 @@ export class RecaptchaLoaderModule {
    * Prevents module from being imported twice.
    * @param parentModule Another instance of this module.
    */
-  constructor(@Optional() @SkipSelf() parentModule: RecaptchaLoaderModule) {
+  constructor(@Optional() @SkipSelf() parentModule?: RecaptchaLoaderModule) {
     if (parentModule) {
       throw new Error(
         &#x27;RecaptchaLoaderModule is already loaded. Import it only in the CoreModule or AppModule.&#x27;)
@@ -214,7 +217,7 @@ export class RecaptchaLoaderModule {
        * Onload handler. Can be used to execute V3 reCAPTCHA.
        */
       onloadFunc?: (recaptcha: Recaptcha) &#x3D;&gt; void,
-    } &#x3D; {}
+    }
   ): ModuleWithProviders {
     return {
       ngModule: RecaptchaLoaderModule, providers: [

@@ -208,7 +208,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>registerOnChange(fn: (value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>) => void)</code>
+<code>registerOnChange(fn: (value: string | null) => void)</code>
                     </td>
                 </tr>
 
@@ -435,7 +435,7 @@ export class RecaptchaValueAccessorDirective implements ControlValueAccessor {
     this.recaptchaDirective.reset()
   }
 
-  registerOnChange(fn: (value: string) &#x3D;&gt; void): void {
+  registerOnChange(fn: (value: string | null) &#x3D;&gt; void): void {
     this.recaptchaDirective.onChange &#x3D; fn
   }
 

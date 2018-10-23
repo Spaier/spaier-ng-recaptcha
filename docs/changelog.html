@@ -37,8 +37,24 @@
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
 and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
-<h2 id="unreleased"><a href="https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.2...HEAD">Unreleased</a></h2>
-<h2 id="2-0-2"><a href="https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.1...2.0.2">2.0.2</a></h2>
+<h2 id="unreleased"><a href="https://github.com/Spaier/spaier-ng-recaptcha/compare/3.0.0...HEAD">Unreleased</a></h2>
+<h2 id="3-0-0"><a href="https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.3...3.0.0">3.0.0</a></h2>
+<h2 id="changed">Changed</h2>
+<ul>
+<li>Angular &gt;= 6 peer dependency</li>
+<li>Use strict mode</li>
+<li>Refactor <code>grecaptcha.execute</code> and <code>grecaptcha.render</code> type definitions</li>
+</ul>
+<h2 id="removed">Removed</h2>
+<ul>
+<li>Removed optional <code>rxjs-compat</code> dependency</li>
+</ul>
+<h2 id="fixed">Fixed</h2>
+<ul>
+<li>Provide default token values for <code>RECAPTCHA_RENDER</code>, <code>RECAPTCHA_ONLOAD</code>, <code>RECAPTCHA_URL</code> when using <code>RecaptchaLoaderModule</code> without parameters</li>
+<li>Remove default parameter for <code>RecaptchaLoaderModule.withParameters</code></li>
+</ul>
+<h2 id="2-0-3"><a href="https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.1...2.0.3">2.0.3</a></h2>
 <h3 id="fixed">Fixed</h3>
 <ul>
 <li>Fix <code>RecaptchaLoaderModule.withParameters</code> AOT build errors</li>

@@ -92,10 +92,19 @@
                                     <a href="#execute">execute</a>
                                 </li>
                                 <li>
+                                    <a href="#execute">execute</a>
+                                </li>
+                                <li>
+                                    <a href="#execute">execute</a>
+                                </li>
+                                <li>
                                     <a href="#getResponse">getResponse</a>
                                 </li>
                                 <li>
                                     <a href="#ready">ready</a>
+                                </li>
+                                <li>
+                                    <a href="#render">render</a>
                                 </li>
                                 <li>
                                     <a href="#render">render</a>
@@ -130,14 +139,14 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>execute(widgetIdOrSitekeyOrParameters?: <a href="../interfaces/RecaptchaExecuteParameters.html">number | string | RecaptchaExecuteParameters</a>, parameters?: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
+<code>execute(widgetId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, parameters?: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -160,9 +169,9 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>widgetIdOrSitekeyOrParameters</td>
+                                                        <td>widgetId</td>
                                                         <td>
-                                                                    <code><a href="../interfaces/RecaptchaExecuteParameters.html" target="_self" >number | string | RecaptchaExecuteParameters</a></code>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -171,8 +180,7 @@
                                                     
 
                                                         <td>
-                                                                <code><p>Optional widget ID that defaults to the first widget created if unspecified.
-or sitekey or reCAPTCHA execute parameters.</p>
+                                                                <code><p>Optional widget ID that defaults to the first widget created if unspecified.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -184,6 +192,174 @@ or sitekey or reCAPTCHA execute parameters.</p>
                                                     
                                                     <td>
                                                             Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>reCAPTCHA execute parameters.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="execute"></a>
+                        <span class="name">
+                            <b>
+                            execute
+                            </b>
+                            <a href="#execute"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>execute(sitekey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, parameters?: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Executes reCAPTCHA and returns promise of response.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>sitekey</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>sitekey.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>parameters</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/RecaptchaExecuteParameters.html" target="_self" >RecaptchaExecuteParameters</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>reCAPTCHA execute parameters.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="execute"></a>
+                        <span class="name">
+                            <b>
+                            execute
+                            </b>
+                            <a href="#execute"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>execute(parameters: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Executes reCAPTCHA and returns promise of response.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>parameters</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/RecaptchaExecuteParameters.html" target="_self" >RecaptchaExecuteParameters</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
                                                     </td>
                                                     
 
@@ -230,7 +406,7 @@ or sitekey or reCAPTCHA execute parameters.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -306,7 +482,7 @@ or sitekey or reCAPTCHA execute parameters.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -350,7 +526,7 @@ or sitekey or reCAPTCHA execute parameters.</p>
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -375,23 +551,21 @@ or sitekey or reCAPTCHA execute parameters.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>render(containerOrParameters?: <a href="../interfaces/RecaptchaParameters.html">string | HTMLElement | Partial<RecaptchaParameters></a>, parameters?: <a href="../interfaces/RecaptchaParameters.html">Partial<RecaptchaParameters></a>, inherit?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+<code>render(container?: string | HTMLElement, parameters?: <a href="../interfaces/RecaptchaParameters.html">Partial<RecaptchaParameters></a>, inherit?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:15</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Renders the container as a reCAPTCHA widget.
-If parameters are specified instead of a container renders an invisible isolated reCAPTCHA.
-Returns the ID of the newly created widget.</p>
+                            <div class="io-description"><p>Renders the container as a reCAPTCHA widget and returns the ID of the newly created widget.</p>
 </div>
 
                             <div class="io-description">
@@ -407,9 +581,9 @@ Returns the ID of the newly created widget.</p>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>containerOrParameters</td>
+                                                        <td>container</td>
                                                         <td>
-                                                                    <code><a href="../interfaces/RecaptchaParameters.html" target="_self" >string | HTMLElement | Partial&lt;RecaptchaParameters&gt;</a></code>
+                                                                    <code>string | HTMLElement</code>
                                                         </td>
                                                     
                                                     <td>
@@ -418,8 +592,8 @@ Returns the ID of the newly created widget.</p>
                                                     
 
                                                         <td>
-                                                                <code><p>V2: The HTML element to render the reCAPTCHA widget. Specify either the ID of the container (string) or the DOM element itself.
-V3: reCAPTCHA parameters.</p>
+                                                                <code><p>The HTML element to render the reCAPTCHA widget.
+Specify either the ID of the container (string) or the DOM element itself.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -451,7 +625,84 @@ V3: reCAPTCHA parameters.</p>
                                                     
 
                                                         <td>
-                                                                <code><p>V2: whether html data-* attributes of container should be used.</p>
+                                                                <code><p>whether html data-* attributes of container should be used.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="render"></a>
+                        <span class="name">
+                            <b>
+                            render
+                            </b>
+                            <a href="#render"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>render(parameters?: <a href="../interfaces/RecaptchaParameters.html">Partial<RecaptchaParameters></a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Renders an invisible isolated reCAPTCHA.
+Returns the ID of the newly created widget.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>parameters</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/RecaptchaParameters.html" target="_self" >Partial&lt;RecaptchaParameters&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>reCAPTCHA parameters.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -493,7 +744,7 @@ V3: reCAPTCHA parameters.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -578,19 +829,22 @@ import { RecaptchaExecuteParameters } from &#x27;./recaptcha-execute-parameters&
  */
 export interface Recaptcha {
   /**
-   * Renders the container as a reCAPTCHA widget.
-   * If parameters are specified instead of a container renders an invisible isolated reCAPTCHA.
-   * Returns the ID of the newly created widget.
-   * @param containerOrParameters
-   * V2: The HTML element to render the reCAPTCHA widget. Specify either the ID of the container (string) or the DOM element itself.
-   * V3: reCAPTCHA parameters.
+   * Renders the container as a reCAPTCHA widget and returns the ID of the newly created widget.
+   * @param container The HTML element to render the reCAPTCHA widget.
+   * Specify either the ID of the container (string) or the DOM element itself.
    * @param parameters reCAPTCHA parameters.
-   * @param inherit V2: whether html data-* attributes of container should be used.
+   * @param inherit whether html data-* attributes of container should be used.
    */
-  render(containerOrParameters?: string | HTMLElement | Partial&lt;RecaptchaParameters&gt;,
+  render(container?: string | HTMLElement,
     parameters?: Partial&lt;RecaptchaParameters&gt;,
     inherit?: boolean
   ): number
+  /**
+   * Renders an invisible isolated reCAPTCHA.
+   * Returns the ID of the newly created widget.
+   * @param parameters reCAPTCHA parameters.
+   */
+  render(parameters?: Partial&lt;RecaptchaParameters&gt;): number
   /**
    * Resets the reCAPTCHA widget.
    * @param widgetId Optional widget ID, defaults to the first widget created if unspecified.
@@ -599,13 +853,21 @@ export interface Recaptcha {
   reset(widgetId?: number, parameters?: Partial&lt;RecaptchaParameters&gt;): void
   /**
    * Executes reCAPTCHA and returns promise of response.
-   * @param widgetIdOrSitekeyOrParameters
-   * Optional widget ID that defaults to the first widget created if unspecified.
-   * or sitekey or reCAPTCHA execute parameters.
+   * @param widgetId Optional widget ID that defaults to the first widget created if unspecified.
    * @param parameters reCAPTCHA execute parameters.
    */
-  execute(widgetIdOrSitekeyOrParameters?: number | string | RecaptchaExecuteParameters,
-    parameters?: RecaptchaExecuteParameters): Promise&lt;string&gt;
+  execute(widgetId?: number, parameters?: RecaptchaExecuteParameters): Promise&lt;string&gt;
+  /**
+   * Executes reCAPTCHA and returns promise of response.
+   * @param sitekey sitekey.
+   * @param parameters reCAPTCHA execute parameters.
+   */
+  execute(sitekey: string, parameters?: RecaptchaExecuteParameters): Promise&lt;string&gt;
+  /**
+   * Executes reCAPTCHA and returns promise of response.
+   * @param parameters reCAPTCHA execute parameters.
+   */
+  execute(parameters: RecaptchaExecuteParameters): Promise&lt;string&gt;
   /**
    * Gets the response for the reCAPTCHA widget.
    * @param widgetId Optional widget ID, defaults to the first widget created if unspecified.
@@ -615,7 +877,7 @@ export interface Recaptcha {
    * Runs function when the reCAPTCHA library is loaded.
    * @param handler fuinction to execute.
    */
-  ready(handler?: () &#x3D;&gt; void)
+  ready(handler?: () &#x3D;&gt; void): void
 }
 </code></pre>
     </div>

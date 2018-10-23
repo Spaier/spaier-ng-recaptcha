@@ -303,6 +303,7 @@ import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animatio
 
 import {
   Recaptcha,
+  RecaptchaRender,
   RecaptchaDirectiveModule,
   RecaptchaFormsModule,
   RecaptchaLoaderModule,
@@ -342,7 +343,7 @@ export async function onLoad(recaptcha: Recaptcha) {
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
       language: &#x27;en&#x27;,
-      render: &#x27;6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj&#x27;, // or RecaptchaRender.Explicit,
+      render: RecaptchaRender.Explicit, // RecaptchaRender.Explicit for directive, Sitekey for service
       onloadFunc: onLoad
     }), // loads script and allows to use &#x60;RecaptchaService&#x60;
     RecaptchaDirectiveModule, // allows to use RecaptchaDirective

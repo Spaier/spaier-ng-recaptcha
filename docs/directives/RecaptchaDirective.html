@@ -235,6 +235,18 @@
                             <li>
                                 <a href="#"></a>
                             </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
                             <li>
                                 <a href="#"></a>
                             </li>
@@ -247,7 +259,6 @@
                         </ul>
                     </td>
                 </tr>
-
 
 
 
@@ -266,7 +277,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:184</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:178</a></div>
                             </td>
                         </tr>
 
@@ -519,14 +530,14 @@
                     </td>
                     <td class="col-md-10">
                             <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                             </p>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:123</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:109</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -677,15 +688,18 @@ Attribute: data-tabindex.</p>
                         <code></code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>An initial problem to solve.
+Attribute: data-type.</p>
+</div>
                             <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <em>Type :</em>    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaType | string</a></code>
 
                             </p>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:109</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:69</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -723,18 +737,15 @@ Attribute: data-badge.</p>
                         <code></code>
                     </td>
                     <td class="col-md-10">
-                        <div><p>An initial problem to solve.
-Attribute: data-type.</p>
-</div>
                             <p>
-                            <em>Type :</em>    <code><a href="../interfaces/Recaptcha.html" target="_self" >RecaptchaType | string</a></code>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                             </p>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:69</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:123</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -813,92 +824,6 @@ Attribute: data-action.</p>
                         <code></code>
                     </td>
                     <td class="col-md-10">
-                        <div><p>Optional. Your callback function that&#39;s executed when the user submits a successful CAPTCHA response.
-Attribute: data-callback.
-The user&#39;s response, g-recaptcha-response, will be the input for your callback function.
-A function or a name of the function from the window object (window[this.callback]).</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code>EventEmitter&lt;string&gt;</code>
-
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>new EventEmitter&lt;string&gt;()</code>
-                        </p>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:152</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name=""></a>
-                        <code></code>
-                    </td>
-                    <td class="col-md-10">
-                        <div><p>Optional. Your callback function that&#39;s executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
-A function or a name of the function from the window object (window[this[&quot;expired-callback&quot;]]).
-Attribute: data-expired-callback.</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code>EventEmitter&lt;void&gt;</code>
-
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>new EventEmitter&lt;void&gt;()</code>
-                        </p>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="160" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:160</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name=""></a>
-                        <code></code>
-                    </td>
-                    <td class="col-md-10">
-                        <div><p>Optional. Your callback function that&#39;s executed when reCAPTCHA encounters an error (usually network connectivity)
-and cannot continue until connectivity is restored.
-A function or a name of the function from the window object (window[this[&quot;error-callback&quot;]]).
-Attribute: data-error-callback.</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code>EventEmitter&lt;void&gt;</code>
-
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>new EventEmitter&lt;void&gt;()</code>
-                        </p>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:169</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name=""></a>
-                        <code></code>
-                    </td>
-                    <td class="col-md-10">
                         <div><p>Optional.
 If true, this reCAPTCHA instance will be part of a separate ID space and badge value will be set to &quot;none&quot;.
 Id starts with 1E5 instead of 0.
@@ -912,7 +837,7 @@ Has no corresponding attribute.</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:177</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:171</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -937,13 +862,83 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:184</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:178</a></div>
                             </td>
                         </tr>
             </tbody>
         </table>
 </section>
+            <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Your callback function that&#39;s executed when the user submits a successful CAPTCHA response.
+Attribute: data-callback.
+The user&#39;s response, g-recaptcha-response, will be the input for your callback function.</p>
+</div>
+                        <em><code>$event</code> Type:</em>    <code>EventEmitter&lt;string&gt;</code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:150</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Your callback function that&#39;s executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
+Attribute: data-expired-callback.</p>
+</div>
+                        <em><code>$event</code> Type:</em>    <code>EventEmitter&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:156</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name=""></a>
+                        <code></code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Optional. Your callback function that&#39;s executed when reCAPTCHA encounters an error (usually network connectivity)
+and cannot continue until connectivity is restored.
+Attribute: data-error-callback.</p>
+</div>
+                        <em><code>$event</code> Type:</em>    <code>EventEmitter&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:163</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
             <section>
@@ -975,7 +970,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="269" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:269</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="263" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:263</a></div>
                             </td>
                         </tr>
 
@@ -1018,7 +1013,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+                                <b>Returns : </b>    <code>Promise&lt;string | undefined&gt;</code>
 
                             </div>
                                 <div class="io-description">
@@ -1052,7 +1047,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:286</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="280" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:280</a></div>
                             </td>
                         </tr>
 
@@ -1090,7 +1085,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="262" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:262</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="256" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:256</a></div>
                             </td>
                         </tr>
 
@@ -1130,7 +1125,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:232</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="226" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:226</a></div>
                             </td>
                         </tr>
 
@@ -1199,7 +1194,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="244" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:244</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="238" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:238</a></div>
                             </td>
                         </tr>
 
@@ -1237,7 +1232,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="225" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:225</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="219" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:219</a></div>
                             </td>
                         </tr>
 
@@ -1277,7 +1272,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="324" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:324</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="319" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:319</a></div>
                             </td>
                         </tr>
 
@@ -1348,7 +1343,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="336" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:336</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="331" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:331</a></div>
                             </td>
                         </tr>
 
@@ -1388,7 +1383,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="330" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:330</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="325" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:325</a></div>
                             </td>
                         </tr>
 
@@ -1428,7 +1423,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="253" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:253</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="247" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:247</a></div>
                             </td>
                         </tr>
 
@@ -1468,7 +1463,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="278" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:278</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="272" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:272</a></div>
                             </td>
                         </tr>
 
@@ -1503,14 +1498,14 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>triggerEvents(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                        <code>triggerEvents(value: string | null)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="342" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:342</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="337" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/directive/recaptcha.directive.ts:337</a></div>
                             </td>
                         </tr>
 
@@ -1532,7 +1527,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
                                                 <tr>
                                                         <td>value</td>
                                                         <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                                    <code>string | null</code>
                                                         </td>
                                                     
                                                     <td>
@@ -1750,7 +1745,7 @@ Accepted values: <a href="https://developers.google.com/recaptcha/docs/language"
   SimpleChanges
 } from &#x27;@angular/core&#x27;
 
-import { Subscription } from &#x27;rxjs/Subscription&#x27;
+import { Subscription } from &#x27;rxjs&#x27;
 
 import { RecaptchaService } from &#x27;../loader/recaptcha.service&#x27;
 import { RecaptchaBadge } from &#x27;../recaptcha-badge&#x27;
@@ -1791,22 +1786,22 @@ import { RecaptchaExecuteParameters } from &#x27;../recaptcha-execute-parameters
 })
 export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
-  onChange: (value: string) &#x3D;&gt; void
+  onChange!: (value: string | null) &#x3D;&gt; void
 
-  onTouched: () &#x3D;&gt; void
+  onTouched!: () &#x3D;&gt; void
 
-  private widgetId: number
+  private widgetId!: number
 
-  private grecaptcha: Recaptcha
+  private grecaptcha!: Recaptcha
 
-  private subscription: Subscription
+  private subscription!: Subscription
 
   /**
    * Your sitekey.
    * Attribute: data-sitekey.
    */
   @Input(getAttributeName(sitekeyName))
-  sitekey: string
+  sitekey!: string
   /**
    * An initial problem to solve.
    * Attribute: data-type.
@@ -1880,7 +1875,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Attribute: data-content-binding.
    */
   @Input(getAttributeName(contentBindingName))
-  contentBinding: string
+  contentBinding?: string
   /**
    * Specifies V3 recaptcha&#x27;s action parameter.
    * Attribute: data-action.
@@ -1891,26 +1886,20 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Optional. Your callback function that&#x27;s executed when the user submits a successful CAPTCHA response.
    * Attribute: data-callback.
    * The user&#x27;s response, g-recaptcha-response, will be the input for your callback function.
-   * A function or a name of the function from the window object (window[this.callback]).
    */
-  @Input(getAttributeName(callbackName))
   @Output(getAttributeName(callbackName))
   callback?: EventEmitter&lt;string&gt; &#x3D; new EventEmitter&lt;string&gt;()
   /**
    * Optional. Your callback function that&#x27;s executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
-   * A function or a name of the function from the window object (window[this[&quot;expired-callback&quot;]]).
    * Attribute: data-expired-callback.
    */
-  @Input(getAttributeName(expiredCallbackName))
   @Output(getAttributeName(expiredCallbackName))
   expiredCallback?: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;()
   /**
    * Optional. Your callback function that&#x27;s executed when reCAPTCHA encounters an error (usually network connectivity)
    * and cannot continue until connectivity is restored.
-   * A function or a name of the function from the window object (window[this[&quot;error-callback&quot;]]).
    * Attribute: data-error-callback.
    */
-  @Input(getAttributeName(errorCallbackName))
   @Output(getAttributeName(errorCallbackName))
   errorCallback?: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;()
   /**
@@ -2012,7 +2001,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
   /**
    * Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.
    */
-  async execute(parameters: RecaptchaExecuteParameters &#x3D; { action: this.action }): Promise&lt;string&gt; {
+  async execute(parameters: RecaptchaExecuteParameters &#x3D; { action: this.action }): Promise&lt;string | undefined&gt; {
     if (this.grecaptcha) {
       return this.grecaptcha.execute(this.widgetId, parameters)
     }
@@ -2031,8 +2020,8 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
   private getParameters() {
     const params: Partial&lt;RecaptchaParameters&gt; &#x3D; {}
-    const assign &#x3D; (propName: string, value) &#x3D;&gt; {
-      if (value) params[propName] &#x3D; value
+    const assign &#x3D; (propName: string, value: any) &#x3D;&gt; {
+      if (value) (params as any)[propName] &#x3D; value
     }
     assign(sitekeyName, this.sitekey)
     assign(contentBindingName, this.contentBinding)
@@ -2064,6 +2053,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
         this.onError()
       })
     }
+    console.log(params)
     return params
   }
 
@@ -2085,7 +2075,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
     if (emitter) emitter.emit()
   }
 
-  private triggerEvents(value: string): void {
+  private triggerEvents(value: string | null): void {
     if (this.onChange) {
       this.onChange(value)
     }
