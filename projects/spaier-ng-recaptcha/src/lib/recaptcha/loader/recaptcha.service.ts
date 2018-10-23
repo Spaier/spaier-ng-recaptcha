@@ -28,7 +28,7 @@ export class RecaptchaService {
 
   readonly recaptcha$: Observable<Recaptcha>
 
-  private _recaptcha: BehaviorSubject<Recaptcha>
+  private readonly _recaptcha: BehaviorSubject<Recaptcha>
 
   constructor(
     rendererFactory: RendererFactory2,
