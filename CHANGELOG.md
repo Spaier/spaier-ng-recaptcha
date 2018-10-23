@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0]
+
+## Changed
+
+- Angular >= 6 peer dependency
+- Use strict mode
+- Refactor `grecaptcha.execute` and `grecaptcha.render` type definitions
+
+## Removed
+
+- Removed optional `rxjs-compat` dependency
+
+## Fixed
+
+- Provide default token values for `RECAPTCHA_RENDER`, `RECAPTCHA_ONLOAD`, `RECAPTCHA_URL` when using `RecaptchaLoaderModule` without parameters
+- Default parameter for `RecaptchaLoaderModule.withParameters`
+
 ## [2.0.3]
 
 ### Fixed
@@ -77,7 +94,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Provide empty configs if none specified
 
-[Unreleased]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.3...HEAD
+[Unreleased]: https://github.com/Spaier/spaier-ng-recaptcha/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.3...3.0.0
 [2.0.3]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.1...2.0.3
 [2.0.1]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/Spaier/spaier-ng-recaptcha/compare/1.1.0...2.0.0
