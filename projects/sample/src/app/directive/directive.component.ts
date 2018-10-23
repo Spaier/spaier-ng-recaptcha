@@ -9,11 +9,9 @@ import { RecaptchaDirective } from 'spaier-ng-recaptcha'
 })
 export class DirectiveComponent {
 
-  @ViewChild('recaptcha') recaptcha: RecaptchaDirective
+  @ViewChild('recaptcha') recaptcha!: RecaptchaDirective
 
   theme = 'dark'
-
-  sitekey
 
   size = 'normal'
 

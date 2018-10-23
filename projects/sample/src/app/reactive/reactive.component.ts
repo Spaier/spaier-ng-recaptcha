@@ -10,15 +10,13 @@ import { RecaptchaDirective } from 'spaier-ng-recaptcha'
 })
 export class ReactiveComponent {
 
-  @ViewChild('recaptcha') recaptcha: RecaptchaDirective
+  @ViewChild('recaptcha') recaptcha!: RecaptchaDirective
 
   form = this.fb.group({
     'captcha': ['', Validators.required]
   })
 
   theme = 'dark'
-
-  sitekey
 
   size = 'normal'
 

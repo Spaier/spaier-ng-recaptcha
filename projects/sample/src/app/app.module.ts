@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import {
   Recaptcha,
+  RecaptchaRender,
   RecaptchaDirectiveModule,
   RecaptchaFormsModule,
   RecaptchaLoaderModule,
@@ -45,7 +46,7 @@ export async function onLoad(recaptcha: Recaptcha) {
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
       language: 'en',
-      render: '6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj', // or RecaptchaRender.Explicit,
+      render: RecaptchaRender.Explicit, // RecaptchaRender.Explicit for directive, Sitekey for service
       onloadFunc: onLoad
     }), // loads script and allows to use `RecaptchaService`
     RecaptchaDirectiveModule, // allows to use RecaptchaDirective

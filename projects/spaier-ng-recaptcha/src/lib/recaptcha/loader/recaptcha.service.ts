@@ -38,8 +38,8 @@ export class RecaptchaService {
     @Inject(RECAPTCHA_ONLOAD) @Optional() onload?: string,
     @Optional() onloadService?: RecaptchaOnloadService,
     // See issue: https://github.com/angular/angular/issues/15640
-    @Inject(DOCUMENT) @Optional() documentWrapper?,
-    @Inject(RECAPTCHA_WINDOW) @Optional() windowWrapper?,
+    @Inject(DOCUMENT) @Optional() documentWrapper?: any,
+    @Inject(RECAPTCHA_WINDOW) @Optional() windowWrapper?: any,
   ) {
     this._recaptcha = new BehaviorSubject<any>(null)
     this.load(
@@ -70,8 +70,8 @@ export class RecaptchaService {
       if (language) url.searchParams.append('hl', language)
       if (render) url.searchParams.append('render', render)
       if (onload) {
-        url.searchParams.append('onload', onload)
-        windowWrapper[onload] = () => {
+        url.searchParams.append('onload', onload);
+        (windowWrapper as any)[onload] = () => {
           this._recaptcha.next(grecaptcha)
           grecaptcha.ready(() => {
             if (onloadService && onloadService.onload) {

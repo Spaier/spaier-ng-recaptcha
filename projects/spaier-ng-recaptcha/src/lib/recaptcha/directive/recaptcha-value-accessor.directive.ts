@@ -25,7 +25,7 @@ export class RecaptchaValueAccessorDirective implements ControlValueAccessor {
     this.recaptchaDirective.reset()
   }
 
-  registerOnChange(fn: (value: string) => void): void {
+  registerOnChange(fn: (value: string | null) => void): void {
     this.recaptchaDirective.onChange = fn
   }
 

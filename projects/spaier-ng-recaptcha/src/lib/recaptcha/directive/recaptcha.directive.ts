@@ -45,22 +45,22 @@ import { RecaptchaExecuteParameters } from '../recaptcha-execute-parameters'
 })
 export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
-  onChange: (value: string) => void
+  onChange!: (value: string | null) => void
 
-  onTouched: () => void
+  onTouched!: () => void
 
-  private widgetId: number
+  private widgetId!: number
 
-  private grecaptcha: Recaptcha
+  private grecaptcha!: Recaptcha
 
-  private subscription: Subscription
+  private subscription!: Subscription
 
   /**
    * Your sitekey.
    * Attribute: data-sitekey.
    */
   @Input(getAttributeName(sitekeyName))
-  sitekey: string
+  sitekey!: string
   /**
    * An initial problem to solve.
    * Attribute: data-type.
@@ -134,7 +134,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Attribute: data-content-binding.
    */
   @Input(getAttributeName(contentBindingName))
-  contentBinding: string
+  contentBinding?: string
   /**
    * Specifies V3 recaptcha's action parameter.
    * Attribute: data-action.
@@ -145,26 +145,20 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    * Optional. Your callback function that's executed when the user submits a successful CAPTCHA response.
    * Attribute: data-callback.
    * The user's response, g-recaptcha-response, will be the input for your callback function.
-   * A function or a name of the function from the window object (window[this.callback]).
    */
-  @Input(getAttributeName(callbackName))
   @Output(getAttributeName(callbackName))
   callback?: EventEmitter<string> = new EventEmitter<string>()
   /**
    * Optional. Your callback function that's executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
-   * A function or a name of the function from the window object (window[this["expired-callback"]]).
    * Attribute: data-expired-callback.
    */
-  @Input(getAttributeName(expiredCallbackName))
   @Output(getAttributeName(expiredCallbackName))
   expiredCallback?: EventEmitter<void> = new EventEmitter<void>()
   /**
    * Optional. Your callback function that's executed when reCAPTCHA encounters an error (usually network connectivity)
    * and cannot continue until connectivity is restored.
-   * A function or a name of the function from the window object (window[this["error-callback"]]).
    * Attribute: data-error-callback.
    */
-  @Input(getAttributeName(errorCallbackName))
   @Output(getAttributeName(errorCallbackName))
   errorCallback?: EventEmitter<void> = new EventEmitter<void>()
   /**
@@ -266,7 +260,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
   /**
    * Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.
    */
-  async execute(parameters: RecaptchaExecuteParameters = { action: this.action }): Promise<string> {
+  async execute(parameters: RecaptchaExecuteParameters = { action: this.action }): Promise<string | undefined> {
     if (this.grecaptcha) {
       return this.grecaptcha.execute(this.widgetId, parameters)
     }
@@ -285,8 +279,8 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
   private getParameters() {
     const params: Partial<RecaptchaParameters> = {}
-    const assign = (propName: string, value) => {
-      if (value) params[propName] = value
+    const assign = (propName: string, value: any) => {
+      if (value) (params as any)[propName] = value
     }
     assign(sitekeyName, this.sitekey)
     assign(contentBindingName, this.contentBinding)
@@ -318,6 +312,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
         this.onError()
       })
     }
+    console.log(params)
     return params
   }
 
@@ -339,7 +334,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
     if (emitter) emitter.emit()
   }
 
-  private triggerEvents(value: string): void {
+  private triggerEvents(value: string | null): void {
     if (this.onChange) {
       this.onChange(value)
     }

@@ -54,5 +54,5 @@ export interface Recaptcha {
    * Runs function when the reCAPTCHA library is loaded.
    * @param handler fuinction to execute.
    */
-  ready(handler?: () => void)
+  ready(handler?: () => void): void
 }
