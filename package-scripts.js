@@ -16,6 +16,10 @@ module.exports = {
       sample: 'ng build sample --prod',
       ci: 'nps build && nps build.sample'
     },
+    serve: {
+      default: 'ng serve',
+      prod: 'ng serve --prod'
+    },
     test: {
       default: 'ng test',
       ci: 'ng test -c ci'
