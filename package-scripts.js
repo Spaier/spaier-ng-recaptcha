@@ -28,6 +28,6 @@ module.exports = {
       default: 'ng e2e',
       ci: 'ng e2e -c ci-prod'
     },
-    ci: 'nps lint.all && nps build.ci && nps test.ci && nps e2e.ci'
+    ci: 'nps lint.js && nps build.ci && nps test.ci && nps e2e.ci'
   },
 }
