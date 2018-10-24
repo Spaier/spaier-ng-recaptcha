@@ -85,6 +85,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#_recaptcha">_recaptcha</a>
                             </li>
                             <li>
@@ -446,6 +447,7 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Private</span>
+                                <span class="modifier">Readonly</span>
                             _recaptcha
                             </b>
                             <a href="#_recaptcha"><span class="icon ion-ios-link"></span></a>
@@ -612,7 +614,7 @@ export class RecaptchaService {
 
   readonly recaptcha$: Observable&lt;Recaptcha&gt;
 
-  private _recaptcha: BehaviorSubject&lt;Recaptcha&gt;
+  private readonly _recaptcha: BehaviorSubject&lt;Recaptcha&gt;
 
   constructor(
     rendererFactory: RendererFactory2,
