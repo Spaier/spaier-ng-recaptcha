@@ -9,17 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0]
 
-## Changed
+### Changed
 
 - Angular >= 6 peer dependency
 - Use strict mode
 - Refactor `grecaptcha.execute` and `grecaptcha.render` type definitions
 
-## Removed
+### Removed
 
 - Removed optional `rxjs-compat` dependency
 
-## Fixed
+### Fixed
 
 - Provide default token values for `RECAPTCHA_RENDER`, `RECAPTCHA_ONLOAD`, `RECAPTCHA_URL` when using `RecaptchaLoaderModule` without parameters
 - Remove default parameter for `RecaptchaLoaderModule.withParameters`
