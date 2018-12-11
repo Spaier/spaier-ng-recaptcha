@@ -1,5 +1,3 @@
-// const npsUtils = require('nps-utils') // not required, but handy!
-
 module.exports = {
   scripts: {
     compodoc: {
