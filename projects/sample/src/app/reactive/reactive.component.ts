@@ -18,7 +18,9 @@ export class ReactiveComponent extends DirectiveComponent {
     super()
   }
 
-  onSubmit() {
+  onSubmit(event: any) {
+    console.log('submit')
+    console.log(event)
     console.log(this.form.value)
   }
 }
