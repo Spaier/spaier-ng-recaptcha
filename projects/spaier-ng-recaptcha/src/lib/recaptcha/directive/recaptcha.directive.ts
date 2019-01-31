@@ -262,7 +262,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
   /**
    * Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.
    */
-  async execute(parameters: RecaptchaExecuteParameters = { action: this.action }) {
+  execute(parameters: RecaptchaExecuteParameters = { action: this.action }) {
     if (this.grecaptcha)
       this.zone.runOutsideAngular(() => this.grecaptcha.execute(this.widgetId, parameters))
   }
