@@ -13,9 +13,9 @@ Node and npm or yarn.
 
 - Supports Angular forms.
 - Supports required attribute.
-- Supports V2(I'm not a robot and Invisible) and V3 reCAPTCHA.
+- Supports V2(Checkbox and Invisible) and V3 reCAPTCHA.
 - Supports dynamic updating.
-- Supports loading script with `RecaptchaLoaderModule` or with a custom loader and provide `RecaptchaService`.
+- Supports custom script loading via providing `RecaptchaService`
 
 ## Table of Contents
 
@@ -50,7 +50,7 @@ It provides `RecaptchaService`.
 
 `render`:
 1. `RecaptchaRender.Explicit` doesn't render anything. Default.
-2. `RecaptchaRender.Onload` renders the first element with `g-recaptcha` class.
+2. `RecaptchaRender.Onload` renders the first element with a `g-recaptcha` class.
 3. `your_sitekey` renders isolated invisible reCAPTCHA that can be used from `RecaptchaService`. V3 best practice.
 
 `onload`: specifies a function name on the window object. Defaults to `RecaptchaOnloadEventName = 'recaptchaloaded'`
@@ -73,7 +73,7 @@ export async function onLoad(recaptcha: Recaptcha) {
       language: 'en',
       render: 'your_sitekey',
       onloadFunc: onLoad
-    }), // loads script and allows to use `RecaptchaService`
+    }),
     // ...
   ],
 })
@@ -81,19 +81,21 @@ export async function onLoad(recaptcha: Recaptcha) {
 
 ### RecaptchaService
 
+V3 Only.
+
 Inject `RecaptchaService` and use provided `recaptcha$` observable or `recaptcha` object.
 If you use `recaptcha` object be sure to check that reCAPTCHA library is loaded.
 
 ```ts
-  constructor(private readonly recaptchaService: RecaptchaService) { }
+constructor(private readonly recaptchaService: RecaptchaService) { }
 
-  async execute() {
-    // Observable
-    const recaptcha = await this.recaptchaService.recaptcha$.toPromise()
-    const result1 = await recaptcha.execute({ action: 'something' })
-    // Value
-    const result2 = await this.recaptchaService.recaptcha.execute({ action: 'something' })
-  }
+async execute() {
+  // Observable
+  const recaptcha = await this.recaptchaService.recaptcha$.toPromise()
+  const result1 = await recaptcha.execute({ action: 'something' })
+  // Value
+  const result2 = await this.recaptchaService.recaptcha.execute({ action: 'something' })
+}
 ```
 
 ### RecaptchaDirective
@@ -120,45 +122,52 @@ Use it in your template:
 </select>
 <input type="text" [(ngModel)]="language" />
 <input type="text" [(ngModel)]="action" />
-<div required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="your_sitekey"
+<div
+  required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
   [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
-  (data-callback)="onResolved($event)" (data-expired-callback)="onExpired()" (data-error-callback)="onError()">
+  (data-callback)="onResolved($event)"
+  (data-expired-callback)="onExpired($event)"
+  (data-error-callback)="onError($event)">
 </div>
 <button type="button" [disabled]="recaptcha.size != 'invisible'" (click)="execute()">Execute</button>
 <button type="button" (click)="reset()">Reset</button>
 <button type="button" (click)="getResponse()">Get Response</button>
 ```
 ```ts
-  @ViewChild('recaptcha') recaptcha: RecaptchaDirective
-  theme = 'dark'
-  size = 'normal'
-  badge = 'none'
-  language = 'en'
-  action = 'form'
+@ViewChild('recaptcha') recaptcha!: RecaptchaDirective
 
-  async execute() {
-    console.log('executed button: ' + await this.recaptcha.execute())
-  }
+theme = 'dark'
+size = 'normal'
+badge = 'none'
+language = 'en'
+action = 'form'
 
-  reset() {
-    this.recaptcha.reset()
-  }
+execute() {
+  this.recaptcha.execute()
+  console.log('executed')
+}
 
-  getResponse() {
-    console.log('response: ' + this.recaptcha.getResponse())
-  }
+reset() {
+  this.recaptcha.reset()
+}
 
-  onResolved(response: string) {
-    console.log('callback: ' + response)
-  }
+getResponse() {
+  console.log('response: ' + this.recaptcha.getResponse())
+}
 
-  onError() {
-    console.log('error')
-  }
+onResolved(response: string) {
+  console.log('callback: ' + response)
+}
 
-  onExpired() {
-    console.log('expired')
-  }
+onError(event: any) {
+  console.log('error')
+  console.log(event)
+}
+
+onExpired(event: any) {
+  console.log('expired')
+  console.log(event)
+}
 ```
 
 
@@ -169,9 +178,13 @@ Use it in your template:
 ##### Template forms
 
 ```html
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div [(ngModel)]="captcha" name="captcha" required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="your_sitekey"
-    [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action">
+<form (ngSubmit)="onSubmit($event)" #form="ngForm">
+  <div [(ngModel)]="captcha" name="captcha"
+    required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
+    [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
+    (data-callback)="onResolved($event)"
+    (data-expired-callback)="onExpired($event)"
+    (data-error-callback)="onError($event)">
   </div>
   <button type="button" [disabled]="recaptcha.size != 'invisible'" (click)="execute()">Execute</button>
   <button type="button" (click)="reset()">Reset</button>
@@ -181,10 +194,12 @@ Use it in your template:
 ```
 
 ```ts
-captcha: string
+captcha!: any
 
-onSubmit() {
-  console.log(captcha)
+onSubmit(event: any) {
+  console.log('submit')
+  console.log(event)
+  console.log(this.captcha)
 }
 ```
 
@@ -192,8 +207,12 @@ onSubmit() {
 
 ```html
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div formControlName="captcha" required #recaptcha="rRecaptcha" rcpRecaptcha data-sitekey="your_sitekey"
-    [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action">
+  <div formControlName="captcha"
+    required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
+    [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
+    (data-callback)="onResolved($event)"
+    (data-expired-callback)="onExpired($event)"
+    (data-error-callback)="onError($event)">
   </div>
   <button type="button" [disabled]="recaptcha.size != 'invisible'" (click)="execute()">Execute</button>
   <button type="button" (click)="reset()">Reset</button>
@@ -203,15 +222,17 @@ onSubmit() {
 ```
 
 ```ts
-  form = this.fb.group({
-    'captcha': ['', Validators.required]
-  })
+form = this.fb.group({
+  'captcha': ['', Validators.required]
+})
 
-  constructor(private readonly fb: FormBuilder) { }
+constructor(private readonly fb: FormBuilder) { }
 
-  onSubmit() {
-    console.log(this.form.value)
-  }
+onSubmit(event: any) {
+  console.log('submit')
+  console.log(event)
+  console.log(this.form.value)
+}
 ```
 
 ## Resources
