@@ -30,6 +30,19 @@ export async function onLoad(recaptcha: Recaptcha) {
   console.log(result)
 }
 
+// V2 can be used
+export const V2Parameters = {
+  language: 'en',
+  render: RecaptchaRender.Explicit,
+}
+
+// V2 and V3 can be used.
+export const V3Parameters = {
+  language: 'en',
+  render: v3Sitekey,
+  onloadFunc: onLoad
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,14 +59,13 @@ export async function onLoad(recaptcha: Recaptcha) {
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
       language: 'en',
-      render: RecaptchaRender.Explicit, // RecaptchaRender.Explicit for directive, Sitekey for service
+      render: v3Sitekey,
       onloadFunc: onLoad
-    }), // loads script and allows to use `RecaptchaService`
+    }), // loads script
     RecaptchaDirectiveModule, // allows to use RecaptchaDirective
     RecaptchaFormsModule, // integrates RecaptchaDirective with @angular/forms
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
