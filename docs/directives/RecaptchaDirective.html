@@ -133,7 +133,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Async</span>
                                 <a href="#execute">execute</a>
                             </li>
                             <li>
@@ -950,7 +949,6 @@ Attribute: data-error-callback.</p>
                         <a name="execute"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Async</span>
                             execute
                             </b>
                             <a href="#execute"><span class="icon ion-ios-link"></span></a>
@@ -959,8 +957,7 @@ Attribute: data-error-callback.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>execute(parameters: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
+<code>execute(parameters: <a href="../interfaces/RecaptchaExecuteParameters.html">RecaptchaExecuteParameters</a>)</code>
                     </td>
                 </tr>
 
@@ -1010,7 +1007,7 @@ Attribute: data-error-callback.</p>
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -2000,7 +1997,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
   /**
    * Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.
    */
-  async execute(parameters: RecaptchaExecuteParameters &#x3D; { action: this.action }) {
+  execute(parameters: RecaptchaExecuteParameters &#x3D; { action: this.action }) {
     if (this.grecaptcha)
       this.zone.runOutsideAngular(() &#x3D;&gt; this.grecaptcha.execute(this.widgetId, parameters))
   }
