@@ -1,8 +1,6 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf, InjectionToken } from '@angular/core'
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core'
 
 import { getWindow } from 'ngx-dom-wrappers'
-
-import { RecaptchaService } from './recaptcha.service'
 
 import { RECAPTCHA_WINDOW } from './recaptcha-window.token'
 import { RECAPTCHA_URL } from './recaptcha-url.token'
@@ -23,7 +21,6 @@ import { Recaptcha } from '../recaptcha'
     { provide: RECAPTCHA_RENDER, useValue: RecaptchaRender.Explicit },
     { provide: RECAPTCHA_ONLOAD, useValue: RecaptchaOnloadEventName },
     { provide: RECAPTCHA_URL, useValue: RecaptchaGoogleUrl },
-    RecaptchaService,
   ]
 })
 export class RecaptchaLoaderModule {
