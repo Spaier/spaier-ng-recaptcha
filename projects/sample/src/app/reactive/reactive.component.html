@@ -15,7 +15,7 @@
 </select>
 <input type="text" [(ngModel)]="language" />
 <input type="text" [(ngModel)]="action" />
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit($event)" [formGroup]="form">
   <div formControlName="captcha"
     required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
     [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
