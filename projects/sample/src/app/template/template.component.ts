@@ -1,55 +1,19 @@
-import { Component, ViewChild } from '@angular/core'
+import { Component } from '@angular/core'
 
-import { RecaptchaDirective } from 'spaier-ng-recaptcha'
+import { DirectiveComponent } from '../directive/directive.component'
 
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.scss']
 })
-export class TemplateComponent {
-
-  @ViewChild('recaptcha') recaptcha!: RecaptchaDirective
+export class TemplateComponent extends DirectiveComponent {
 
   captcha!: any
 
-  theme = 'dark'
-
-  size = 'normal'
-
-  badge = 'none'
-
-  language = 'en'
-
-  action = 'form'
-
-  constructor() { }
-
-  async execute() {
-    console.log('executed button: ' + await this.recaptcha.execute())
-  }
-
-  reset() {
-    this.recaptcha.reset()
-  }
-
-  getResponse() {
-    console.log('response: ' + this.recaptcha.getResponse())
-  }
-
-  onResolved(response: string) {
-    console.log('callback: ' + response)
-  }
-
-  onError() {
-    console.log('error')
-  }
-
-  onExpired() {
-    console.log('expired')
-  }
-
-  onSubmit() {
+  onSubmit(event: any) {
+    console.log('submit')
+    console.log(event)
     console.log(this.captcha)
   }
 }

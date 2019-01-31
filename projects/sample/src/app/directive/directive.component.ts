@@ -23,8 +23,9 @@ export class DirectiveComponent {
 
   constructor() { }
 
-  async execute() {
-    console.log('executed button: ' + await this.recaptcha.execute())
+  execute() {
+    this.recaptcha.execute()
+    console.log('executed')
   }
 
   reset() {
@@ -39,11 +40,13 @@ export class DirectiveComponent {
     console.log('callback: ' + response)
   }
 
-  onError() {
+  onError(event: any) {
     console.log('error')
+    console.log(event)
   }
 
-  onExpired() {
+  onExpired(event: any) {
     console.log('expired')
+    console.log(event)
   }
 }

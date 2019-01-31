@@ -15,10 +15,13 @@
 </select>
 <input type="text" [(ngModel)]="language" />
 <input type="text" [(ngModel)]="action" />
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div [(ngModel)]="captcha" name="captcha" required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
+<form (ngSubmit)="onSubmit($event)" #form="ngForm">
+  <div [(ngModel)]="captcha" name="captcha"
+    required #recaptcha="rcpRecaptcha" rcpRecaptcha data-sitekey="6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW"
     [data-theme]="theme" [data-size]="size" [data-hl]="language" [data-badge]="badge" [data-action]="action"
-    (data-callback)="onResolved($event)">
+    (data-callback)="onResolved($event)"
+    (data-expired-callback)="onExpired($event)"
+    (data-error-callback)="onError($event)">
   </div>
   <button type="button" [disabled]="recaptcha.size != 'invisible'" (click)="execute()">Execute</button>
   <button type="button" (click)="reset()">Reset</button>
