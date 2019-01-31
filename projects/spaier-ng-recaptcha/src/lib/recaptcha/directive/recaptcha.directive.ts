@@ -45,7 +45,7 @@ import { RecaptchaExecuteParameters } from '../recaptcha-execute-parameters'
 })
 export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
-  onChange!: (value: string | null) => void
+  onChange!: (value?: string | null) => void
 
   onTouched!: () => void
 
@@ -216,14 +216,14 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
 
   // Lifecycle hooks
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.subscription = this.loader.recaptcha$.subscribe(recaptcha => {
       this.grecaptcha = recaptcha
       this.render()
     })
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     for (const key in changes) {
       if (changes.hasOwnProperty(key)) {
         const element = changes[key]
@@ -235,7 +235,7 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
     }
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.subscription.unsubscribe()
   }
 
@@ -246,35 +246,34 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
    */
   private render() {
     if (this.grecaptcha) {
-      this.widgetId = this.grecaptcha.render(this.el.nativeElement, this.getParameters(), true)
+      this.zone.runOutsideAngular(() => {
+        this.widgetId = this.grecaptcha.render(this.el.nativeElement, this.getParameters(), true)
+      })
     }
   }
 
   /**
    * Returns the stored value.
    */
-  getResponse(): string {
+  getResponse() {
     return this.grecaptcha ? this.grecaptcha.getResponse(this.widgetId) : ''
   }
 
   /**
    * Executes the recaptcha. Returns promise of a response for a V3 reCAPTCHA.
    */
-  async execute(parameters: RecaptchaExecuteParameters = { action: this.action }): Promise<string | undefined> {
-    if (this.grecaptcha) {
-      return this.grecaptcha.execute(this.widgetId, parameters)
-    }
+  async execute(parameters: RecaptchaExecuteParameters = { action: this.action }) {
+    if (this.grecaptcha)
+      this.zone.runOutsideAngular(() => this.grecaptcha.execute(this.widgetId, parameters))
   }
 
   /**
    * Resets and rerenders the reCAPTCHA widget.
    */
-  reset(): void {
-    if (this.grecaptcha) {
-      this.zone.runOutsideAngular(
-        () => this.grecaptcha.reset(this.widgetId, this.getParameters())
-      )
-    }
+  reset() {
+    this.triggerEvents()
+    if (this.grecaptcha)
+      this.zone.runOutsideAngular(() => this.grecaptcha.reset(this.widgetId, this.getParameters()))
   }
 
   private getParameters() {
@@ -312,29 +311,28 @@ export class RecaptchaDirective implements OnChanges, OnDestroy, OnInit {
         this.onError()
       })
     }
-    console.log(params)
     return params
   }
 
-  private onCallback(response: string): void {
+  private onCallback(response: string) {
     this.triggerEvents(response)
     const emitter = this.callback as EventEmitter<string>
     if (emitter) emitter.emit(response)
   }
 
-  private onExpired(): void {
-    this.triggerEvents(null)
+  private onExpired() {
+    this.triggerEvents()
     const emitter = this.expiredCallback as EventEmitter<void>
     if (emitter) emitter.emit()
   }
 
-  private onError(): void {
-    this.triggerEvents(null)
+  private onError() {
+    this.triggerEvents()
     const emitter = this.errorCallback as EventEmitter<void>
     if (emitter) emitter.emit()
   }
 
-  private triggerEvents(value: string | null): void {
+  private triggerEvents(value?: string | null) {
     if (this.onChange) {
       this.onChange(value)
     }
