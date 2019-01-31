@@ -319,14 +319,27 @@ import { DirectiveComponent } from &#x27;./directive/directive.component&#x27;
 import { TemplateComponent } from &#x27;./template/template.component&#x27;
 import { ReactiveComponent } from &#x27;./reactive/reactive.component&#x27;
 
-const v2CheckboxSitekey &#x3D; &#x27;6LeuTU4UAAAAADq1qPnyrCHnzgET3PqQlxRbC0Er&#x27;
-const v2InvisibleSitekey &#x3D; &#x27;6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW&#x27;
-const v3Sitekey &#x3D; &#x27;6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj&#x27;
+export const v2CheckboxSitekey &#x3D; &#x27;6LeuTU4UAAAAADq1qPnyrCHnzgET3PqQlxRbC0Er&#x27;
+export const v2InvisibleSitekey &#x3D; &#x27;6LcqUE4UAAAAAKZ5w4ejDKGo8GxOLkPMy6RhaErW&#x27;
+export const v3Sitekey &#x3D; &#x27;6Lcj7WcUAAAAAD-LipyB7wyI7mv5ONLDS0wRPXVj&#x27;
 
 export async function onLoad(recaptcha: Recaptcha) {
   // Sitekey Execution
   const result &#x3D; await recaptcha.execute(v3Sitekey, { action: &#x27;background&#x27; })
   console.log(result)
+}
+
+// V2 Checkbox and V2 Invisible can be used
+export const V2Parameters &#x3D; {
+  language: &#x27;en&#x27;,
+  render: RecaptchaRender.Explicit,
+}
+
+// V2 Checkbox and V3 Invisible can be used.
+export const V3Parameters &#x3D; {
+  language: &#x27;en&#x27;,
+  render: v3Sitekey,
+  onloadFunc: onLoad
 }
 
 @NgModule({
@@ -345,14 +358,12 @@ export async function onLoad(recaptcha: Recaptcha) {
     MaterialModule,
     RecaptchaLoaderModule.withParameters({
       language: &#x27;en&#x27;,
-      render: RecaptchaRender.Explicit, // RecaptchaRender.Explicit for directive, Sitekey for service
-      onloadFunc: onLoad
-    }), // loads script and allows to use &#x60;RecaptchaService&#x60;
+      render: RecaptchaRender.Explicit,
+    }), // loads script
     RecaptchaDirectiveModule, // allows to use RecaptchaDirective
     RecaptchaFormsModule, // integrates RecaptchaDirective with @angular/forms
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -143,7 +143,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -203,11 +203,12 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+                                <b>Returns : </b>    <code>Promise&lt;string | null&gt;</code>
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>V2: null, V3: response</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -235,7 +236,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -295,11 +296,12 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+                                <b>Returns : </b>    <code>Promise&lt;string | null&gt;</code>
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>V2: null, V3: response</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -327,7 +329,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -371,11 +373,12 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+                                <b>Returns : </b>    <code>Promise&lt;string | null&gt;</code>
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>V2: null, V3: response</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -403,7 +406,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:52</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -479,7 +482,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:57</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">projects/spaier-ng-recaptcha/src/lib/recaptcha/recaptcha.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -852,19 +855,22 @@ export interface Recaptcha {
    * Executes reCAPTCHA and returns promise of response.
    * @param widgetId Optional widget ID that defaults to the first widget created if unspecified.
    * @param parameters reCAPTCHA execute parameters.
+   * @returns V2: null, V3: response
    */
-  execute(widgetId?: number, parameters?: RecaptchaExecuteParameters): Promise&lt;string&gt;
+  execute(widgetId?: number, parameters?: RecaptchaExecuteParameters): Promise&lt;string | null&gt;
   /**
    * Executes reCAPTCHA and returns promise of response.
    * @param sitekey sitekey.
    * @param parameters reCAPTCHA execute parameters.
+   * @returns V2: null, V3: response
    */
-  execute(sitekey: string, parameters?: RecaptchaExecuteParameters): Promise&lt;string&gt;
+  execute(sitekey: string, parameters?: RecaptchaExecuteParameters): Promise&lt;string | null&gt;
   /**
    * Executes reCAPTCHA and returns promise of response.
    * @param parameters reCAPTCHA execute parameters.
+   * @returns V2: null, V3: response
    */
-  execute(parameters: RecaptchaExecuteParameters): Promise&lt;string&gt;
+  execute(parameters: RecaptchaExecuteParameters): Promise&lt;string | null&gt;
   /**
    * Gets the response for the reCAPTCHA widget.
    * @param widgetId Optional widget ID, defaults to the first widget created if unspecified.

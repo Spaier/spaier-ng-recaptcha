@@ -327,6 +327,7 @@ export class AppComponent {
   constructor(private readonly recaptchaService: RecaptchaService) { }
 
   async execute() {
+    // V3 Execution
     const recaptcha &#x3D; await this.recaptchaService.recaptcha$.toPromise()
     const result1 &#x3D; await recaptcha.execute({ action: &#x27;something&#x27; })
     const result2 &#x3D; await this.recaptchaService.recaptcha.execute({ action: &#x27;something&#x27; })
