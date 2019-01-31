@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.1]
+
+## Fixed
+
+- Set `grecaptcha.execute` return type to `Promise<string | null>`
+- Set `RecaptchaDirective.execute` return type to `void`
+- Update `ngModel` on `RecaptchaDirective.reset`
+- Run `grecaptcha` functions with `zone.runOutsideAngular`
+
 ## [3.0.0]
 
 ### Changed
@@ -94,7 +103,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Provide empty configs if none specified
 
-[Unreleased]: https://github.com/Spaier/spaier-ng-recaptcha/compare/3.0.0...HEAD
+[Unreleased]: https://github.com/Spaier/spaier-ng-recaptcha/compare/3.0.1...HEAD
+[3.0.1]: https://github.com/Spaier/spaier-ng-recaptcha/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.3...3.0.0
 [2.0.3]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.1...2.0.3
 [2.0.1]: https://github.com/Spaier/spaier-ng-recaptcha/compare/2.0.0...2.0.1
