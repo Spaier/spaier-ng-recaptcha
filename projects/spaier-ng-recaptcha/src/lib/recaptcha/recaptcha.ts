@@ -32,19 +32,22 @@ export interface Recaptcha {
    * Executes reCAPTCHA and returns promise of response.
    * @param widgetId Optional widget ID that defaults to the first widget created if unspecified.
    * @param parameters reCAPTCHA execute parameters.
+   * @returns V2: null, V3: response
    */
-  execute(widgetId?: number, parameters?: RecaptchaExecuteParameters): Promise<string>
+  execute(widgetId?: number, parameters?: RecaptchaExecuteParameters): Promise<string | null>
   /**
    * Executes reCAPTCHA and returns promise of response.
    * @param sitekey sitekey.
    * @param parameters reCAPTCHA execute parameters.
+   * @returns V2: null, V3: response
    */
-  execute(sitekey: string, parameters?: RecaptchaExecuteParameters): Promise<string>
+  execute(sitekey: string, parameters?: RecaptchaExecuteParameters): Promise<string | null>
   /**
    * Executes reCAPTCHA and returns promise of response.
    * @param parameters reCAPTCHA execute parameters.
+   * @returns V2: null, V3: response
    */
-  execute(parameters: RecaptchaExecuteParameters): Promise<string>
+  execute(parameters: RecaptchaExecuteParameters): Promise<string | null>
   /**
    * Gets the response for the reCAPTCHA widget.
    * @param widgetId Optional widget ID, defaults to the first widget created if unspecified.
